@@ -1,0 +1,22 @@
+10/25
+
+Paper - Got sources for evaluating educational computer games.  There's a lot there!  I feel like I could write a paper just on this sub-topic.  But, I want to be sure I am focusing only on CS related games, and probably only on college-level age group.  Tomorrow I'll begin the reading/taking notes stage of this part of the paper.
+
+Game - I've decided to scrap both GIMP and ClanLib and just write the game myself in c++ using OpenGL for graphics.  I think the game is simple enough, it would have been a lot of work to learn how to use ClanLib, and I already am familiar with OpenGL, so I don't think I'll regret my decision.
+With that decision behind me, I've implemented the basic display class that will display the game window.  I've also started implementing Jim's component class with the components of the game, and made a list of what they will be.
+
+
+10/26
+
+I now have working a basic avatar that moves around the screen.  Right now it's a green-blue humanoid, which might end up sticking if I don't do more detailed graphics.  I also have working a simple wall panel that prints a debug message when the player walks into it.
+Drawing the graphics via OpenGL is rather cumbersome, since I have to keep specifying specific vertices for drawing rectangles, etc.  Luckily, there are not too many complicated graphics planned.  Though, the gate screen could prove difficult; I will want to be sure to make it as automated as possible.
+Today's task took about 4 hours, which was 4 times as much as I had planned.  The paper is lagging behind also, so I will want to get on the ball with that tomorrow.  
+Tomorrow's task is to implement the user's interface.  I think I might implement it as a GLUI, since this is a built-in feature of OpenGL I am already familiar with.  That should help speed up the task, as today's took 4 times longer than I expected.
+I'm lagging behind on the paper as well, so I'll want to get cracking on that tomorrow.
+
+
+10/27
+
+There is now a menu bar with colored boxes corresponding to new, save, load, and quit.  I am still trying to get GLUI to work on my mac, to no avail so far.
+
+Great progress on the paper!  I found some really intriguing sources, and it looks like there are plenty of them.  I have started reading through them; over the next few days I should be able to write the evaluation section of the paper.}
