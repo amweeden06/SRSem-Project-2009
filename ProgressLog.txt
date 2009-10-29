@@ -19,4 +19,11 @@ I'm lagging behind on the paper as well, so I'll want to get cracking on that to
 
 There is now a menu bar with colored boxes corresponding to new, save, load, and quit.  I am still trying to get GLUI to work on my mac, to no avail so far.
 
-Great progress on the paper!  I found some really intriguing sources, and it looks like there are plenty of them.  I have started reading through them; over the next few days I should be able to write the evaluation section of the paper.}
+Great progress on the paper!  I found some really intriguing sources, and it looks like there are plenty of them.  I have started reading through them; over the next few days I should be able to write the evaluation section of the paper.
+
+
+10/28
+
+Got the project loaded into github.  Also ported the game over to the ACLs, where I know GLUI will be reliable.  I think unless I can definitively determine that GLUI is non-functional on OSX, I will commit to implementing the user interface as a GLUI.  That will save a lot of time, also, since the functionality of a typical GLUI is exactly what I want, and I'm familiar with using them.  So, that will go on hold for awhile while I fool around with GLUI on OSX.  The next four days I'll be working on getting the re_display() functions for the rest of the game objects finished.
+
+Tomorrow will be a paper catch up day in a big way.  By my watch, I need to by up to having written about 3/4 of the "evaluation" section of the paper after tomorrow.  If I can get to that point it would be great, but really whatever I finish tomorrow I will use to consider if I need to change around some scheduling of things.
