@@ -49,3 +49,13 @@ The next four days I'll be working on getting the re_display() functions for the
 Tomorrow will be a paper catch up day in a big way.
 By my watch, I need to by up to having written about 3/4 of the "evaluation" section of the paper after tomorrow.
 If I can get to that point it would be great, but really whatever I finish tomorrow I will use to consider if I need to change around some scheduling of things.
+
+
+10/29
+
+The initial game screen is shaping up!  I've decreased the window size and added walls and a ladder.
+The next step is to add the control panel and door, followed by the gate screen and all the gates.
+
+Found another interesting couple of sources on evaluating games.
+One of them focuses only on the useability of the game, which reminded me that there is more to evaluating a game than just learning outcomes.
+Of particular interest is a heuristic approach I found by Pinelle, Wong, and Stach that I can start applying right away.
