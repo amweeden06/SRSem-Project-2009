@@ -59,3 +59,32 @@ The next step is to add the control panel and door, followed by the gate screen 
 Found another interesting couple of sources on evaluating games.
 One of them focuses only on the useability of the game, which reminded me that there is more to evaluating a game than just learning outcomes.
 Of particular interest is a heuristic approach I found by Pinelle, Wong, and Stach that I can start applying right away.
+
+11/6
+
+First room is completely implemented.
+I've decided to change things up; no components, just a method to draw objects.
+This should simplifiy things a lot.
+I am also going to put all of the game control into a game engine class, rather
+than having the door keep track of whether it is open, for example.
+
+11/7
+
+I've lumped all the drawing of game objects into a single function, the first
+variable of which is the ID of the object to be drawn.  I can already tell this
+will make things easier down the road.  Here are the next few tasks:
+
+1) Reconstruct the first room based on the draw_object function (1 hour)
+2) Create game engine class to handle user input and game scenarios (2 hours)
+3) Create functionality to load rooms from files and test it (2 hours)
+
+11/8
+
+Instead of drawing walls on the floor, I'll draw the floor on the walls.  This
+allows one object to be drawn, rather than 4 or more.
+1) is complete.  It took about an hour, as planned.  The input file is Room1.sew
+There is now a SewersObject ADT that has as member variables the parameters of
+the function I described in 11/7.  That function is now a member function of
+the SewersObject and takes no arguments.  The main program will contain a vector
+of SewerObjects tthat it constructs when it loads a room from a file.
+Moving everything into the SewersObject took about an hour.
