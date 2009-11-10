@@ -15,6 +15,10 @@ namespace Sewers
 	class Wall : public Component
 		{
 		public:
+			// Accessors
+			GLcolor3 color() const { return _color; }
+			// Mutators
+			void set_color(GLcolor3 c) { _color = c; }
 			// Functions for GLUT
 			void re_display(void);
 		private:

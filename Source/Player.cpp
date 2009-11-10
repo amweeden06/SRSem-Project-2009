@@ -13,52 +13,53 @@ using namespace std;
 
 namespace Sewers
 {		
-	const GLint MOVE_FACTOR = 7;
-	const int WINDOW_WIDTH = 640;
-	const int WINDOW_HEIGHT = 440;
+	const int WINDOW_WIDTH = 400;
+	const int WINDOW_HEIGHT = 300;
 	
-	void Player::move_left()
+	void Player::move_left(int move_factor)
 	{
+		// Player is now only facing left
 		_facing_left = true;
 		_facing_right = _facing_down = _facing_up = false;
-		if( ( viewport().left() - MOVE_FACTOR ) >= 0 )
-			reMap(IntRect(viewport().left() - MOVE_FACTOR, viewport().right() - MOVE_FACTOR, viewport().bottom(), viewport().top()));
-		
-		_animation_frame = !_animation_frame; // Animate the player
+		// Remap the player move_factor pixels to the left
+		reMap(IntRect(viewport().left() - move_factor, viewport().right() - move_factor, viewport().bottom(), viewport().top()));
+		// Animate the player
+		_animation_frame = !_animation_frame;
 	}
-	void Player::move_right()
+	void Player::move_right(int move_factor)
 	{
+		_can_leave = true;
+		// Player is now only facing right
 		_facing_right = true;
 		_facing_left = _facing_down = _facing_up = false;
-		if( ( viewport().right() + MOVE_FACTOR ) < WINDOW_WIDTH )
-			reMap(IntRect(viewport().left() + MOVE_FACTOR, viewport().right() + MOVE_FACTOR, viewport().bottom(), viewport().top()));
+		// Remap the player move_factor pixels to the right
+		reMap(IntRect(viewport().left() + move_factor, viewport().right() + move_factor, viewport().bottom(), viewport().top()));
 		
+		if(viewport().left() > WINDOW_WIDTH)
+			exit(0);
+		
+		// Animate the player
 		_animation_frame = !_animation_frame; // Animate the player
 	}
-	void Player::move_down()
+	void Player::move_down(int move_factor)
 	{
+		// Player is now only facing down
 		_facing_down = true;
 		_facing_left = _facing_right = _facing_up = false;
-		if( ( viewport().bottom() - MOVE_FACTOR ) >= 0 )
-			 reMap(IntRect(viewport().left(), viewport().right(), viewport().bottom() - MOVE_FACTOR, viewport().top() - MOVE_FACTOR));
-		
-		_animation_frame = !_animation_frame; // Animate the player
+		// Remap the player move_factor pixels to the down
+		reMap(IntRect(viewport().left(), viewport().right(), viewport().bottom() - move_factor, viewport().top() - move_factor));
+		// Animate the player
+		_animation_frame = !_animation_frame;
 	}
-	void Player::move_up()
+	void Player::move_up(int move_factor)
 	{
+		// Player is now only facing up
 		_facing_up = true;
 		_facing_left = _facing_right = _facing_down = false;
-		if( ( viewport().top() + MOVE_FACTOR ) < WINDOW_HEIGHT )
-			reMap(IntRect(viewport().left(), viewport().right(), viewport().bottom() + MOVE_FACTOR, viewport().top() + MOVE_FACTOR));
-		
-		// Check if the player is in front of the panel
-		else if( ( ( viewport().right() > 500 ) && ( viewport().left() < 520 ) ) ||
-		    ( ( viewport().left() > 500 ) && ( viewport().left() < 520 ) ) )
-		{
-			cout << "Panel activated." << endl;
-		}
-		
-		_animation_frame = !_animation_frame; // Animate the player
+		// Remap the player move_factor pixels to the up
+		reMap(IntRect(viewport().left(), viewport().right(), viewport().bottom() + move_factor, viewport().top() + move_factor));
+		// Animate the player
+		_animation_frame = !_animation_frame;
 	}
 	
 	void Player::re_display(void)

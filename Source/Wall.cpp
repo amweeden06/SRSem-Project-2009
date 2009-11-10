@@ -15,7 +15,7 @@ namespace Sewers
 		glPushAttrib(GL_POLYGON_BIT | GL_COLOR_BUFFER_BIT);
 		initDraw();
 		_color.glColor();
-		glRecti(world().left(), world().top(), world().right(), world().bottom());
+		glRectf(world().left(), world().top(), world().right(), world().bottom());
 		glPopAttrib();
 	}
 }
