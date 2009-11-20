@@ -21,14 +21,20 @@ namespace Sewers
 		public:
 			GameEngine();
 			// Functions
-			bool load_file(string filename);
-			void init_glut(int& argc, char** argv);
-			void re_display(void);
+			bool load_file(string filename);		// Load a room from a file
+			void init_glut(int& argc, char** argv);	// Initialize drawing
+			// GLUT wrappers
+			void re_display(void);					// Draw everything in the current room
 			void key_click(unsigned char key, int x, int y);
 		private:
-			vector <SewersObject> _objs;
-			int _player_facing;
-			bool _animation_frame;
+			vector <SewersObject> _objs;	// All of the objects in the current room
+			int _player_index;				// Player is a sort of special object, so we keep its index
+											//  into the _objs vector
+			int _player_facing;				// Direction the player is currently facing
+			bool _animation_frame;			// 2 possible frames of animation
+			
+			// Returns true if the player is allowed to exist within the given rectangle
+			bool check_player_path(GLint factor, int direction);
 		};
 }
 

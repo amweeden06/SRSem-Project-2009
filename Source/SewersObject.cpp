@@ -11,12 +11,13 @@
 namespace Sewers
 {
 	// Object ids
+	const int NONE = -1;
 	const int PLAYER = 0;
-	const int FLOOR = 1;
+	const int DOOR = 1;
 	const int LADDER = 2;
 	const int PANEL = 3;
 	const int SWITCH = 4;
-	const int DOOR = 5;
+	const int FLOOR = 5;
 	const int INVERTER = 6;
 	const int AND = 7;
 	const int OR = 8;
@@ -41,9 +42,7 @@ namespace Sewers
 	
 	// Depending on object_id, int1 and bool1 will have special meaning; see the comments for each case of the switch statement for these meanings
 	void SewersObject::draw()
-	{
-		std::cout << _id << std::endl << _left << " " << _right << " " << _bottom << " " << _top << std::endl;
-		
+	{		
 		GLint height = _top - _bottom;
 		GLint width = _right - _left;
 		

@@ -9,31 +9,33 @@
 
 namespace Sewers
 {
-	const int WINDOW_WIDTH = 400;
-	const int WINDOW_HEIGHT = 300;
+	const GLint WINDOW_WIDTH = 400;
+	const GLint WINDOW_HEIGHT = 300;
+	
+	const GLint MOVE_FACTOR = 7;
 	
 	// Object ids
 	const int NONE = -1;
 	const int PLAYER = 0;
-	const int FLOOR = 1;
+	const int DOOR = 1;
 	const int LADDER = 2;
 	const int PANEL = 3;
 	const int SWITCH = 4;
-	const int DOOR = 5;
+	const int FLOOR = 5;
 	const int INVERTER = 6;
 	const int AND = 7;
 	const int OR = 8;
 	const int CIRCUIT = 9;
 	
 	// Values for int1 (see draw)
-	const int FACING_LEFT = 0;
-	const int FACING_RIGHT = 1;
-	const int FACING_DOWN = 2;
-	const int FACING_UP = 3;
+	const int LEFT = 0;
+	const int RIGHT = 1;
+	const int DOWN = 2;
+	const int UP = 3;
 	
 	GameEngine::GameEngine()
 	{
-		_objs.push_back(SewersObject(PLAYER, 0, 15, 0, 30, FACING_RIGHT, false));
+		_player_index = -1;
 	}
 	
 	void GameEngine::init_glut(int& argc, char** argv)
@@ -105,26 +107,87 @@ namespace Sewers
 		switch(key)
 		{
 			case 'a':
-				_objs[0].change_int(FACING_LEFT);
-				_objs[0].toggle();
+				_objs[_player_index].change_int(LEFT);
+				_objs[_player_index].toggle();
+				if(check_player_path(LEFT, MOVE_FACTOR))
+					_objs[_player_index].move(-MOVE_FACTOR, 0);
 				re_display();
 				break;
 			case 'd':  
-				_objs[0].change_int(FACING_RIGHT);
-				_objs[0].toggle();
+				_objs[_player_index].change_int(RIGHT);
+				_objs[_player_index].toggle();
+				if(check_player_path(RIGHT, MOVE_FACTOR))
+					_objs[_player_index].move(MOVE_FACTOR, 0);
 				re_display();
 				break;
 			case 'w':
-				_objs[0].change_int(FACING_UP);
-				_objs[0].toggle();
+				_objs[_player_index].change_int(UP);
+				_objs[_player_index].toggle();
+				if(check_player_path(UP, MOVE_FACTOR))
+					_objs[_player_index].move(0, MOVE_FACTOR);
 				re_display();
 				break;
 			case 's':
-				_objs[0].change_int(FACING_DOWN);
-				_objs[0].toggle();
+				_objs[_player_index].change_int(DOWN);
+				_objs[_player_index].toggle();
+				if(check_player_path(DOWN, MOVE_FACTOR))
+					_objs[_player_index].move(0, -MOVE_FACTOR);
 				re_display();
 				break;
 		}
+	}
+	
+	// Returns true if the player is allowed to exist factor pixels in a certain direction
+	bool GameEngine::check_player_path(int direction, GLint factor)
+	{
+		bool is_allowed = false;
+		for(int i=0; i<_objs.size(); ++i)
+		{
+			switch(direction)
+			{
+				case LEFT:
+					// Find a floor, but only if the player will not already standing on a valid one.
+					if((_objs[i].id() == FLOOR) && (!is_allowed))
+					{
+						is_allowed = (((_objs[_player_index].left() - factor) > (_objs[i].left()))
+										&&(_objs[_player_index].right() - factor) < (_objs[i].right())
+										&&(_objs[_player_index].bottom()) < (_objs[i].top())
+										&&(_objs[_player_index].bottom()) > (_objs[i].bottom()));
+					}
+					break;
+				case DOWN:
+					// Find a floor, but only if the player will not already standing on a valid one.
+					if((_objs[i].id() == FLOOR) && (!is_allowed))
+					{
+						is_allowed = (((_objs[_player_index].left()) > (_objs[i].left()))
+									  &&(_objs[_player_index].right()) < (_objs[i].right())
+									  &&(_objs[_player_index].bottom() - factor) < (_objs[i].top())
+									  &&(_objs[_player_index].bottom() - factor) > (_objs[i].bottom()));
+					}					
+					break;
+				case RIGHT:
+					// Find a floor, but only if the player will not already standing on a valid one.
+					if((_objs[i].id() == FLOOR) && (!is_allowed))
+					{
+						is_allowed = (((_objs[_player_index].left() + factor) > (_objs[i].left()))
+									  &&(_objs[_player_index].right() + factor) < (_objs[i].right())
+									  &&(_objs[_player_index].bottom() + factor) < (_objs[i].top())
+									  &&(_objs[_player_index].bottom()) > (_objs[i].bottom()));
+					}					
+					break;
+				case UP:
+					// Find a floor, but only if the player will not already standing on a valid one.
+					if((_objs[i].id() == FLOOR) && (!is_allowed))
+					{
+						is_allowed = (((_objs[_player_index].left()) > (_objs[i].left()))
+									  &&(_objs[_player_index].right()) < (_objs[i].right())
+									  &&(_objs[_player_index].bottom() + factor) < (_objs[i].top())
+									  &&(_objs[_player_index].bottom()) > (_objs[i].bottom()));
+					}					
+					break;
+			}
+		}
+		return is_allowed;
 	}
 	
 	bool GameEngine::load_file(string filename)
@@ -142,29 +205,28 @@ namespace Sewers
 			string object;
 			while(ifs >> object)
 			{
-				if(object == "FLOOR")
+				if((object == "PLAYER") && (_player_index == -1))
 				{
-					int left, right, bottom, top;
-					ifs >> left >> right >> bottom >> top;
-					_objs.push_back(SewersObject(FLOOR, left, right, bottom, top, NONE, NONE));
+					int left, bottom;
+					string facing;
+					int direction;
+					ifs >> left >> bottom >> facing;
+					if(facing == "LEFT")
+						direction = LEFT;
+					else if(facing == "RIGHT")
+						direction = RIGHT;
+					else if(facing == "DOWN")
+						direction = DOWN;
+					else
+						direction = UP;
+					_player_index = _objs.size(); // The player will now be last item in the list
+					_objs.push_back(SewersObject(PLAYER, left, left+15, bottom, bottom+30, direction, _animation_frame));
 				}
-				else if(object == "CIRCUIT")
-				{
-					int x1, y1, x2, y2, val;
-					ifs >> x1 >> y1 >> x2 >> y2 >> val;
-					_objs.push_back(SewersObject(CIRCUIT, x1, y1, x2, y2, val, NONE));
-				}
-				else if(object == "LADDER")
+				else if(object == "DOOR")
 				{
 					int left, bottom;
 					ifs >> left >> bottom;
-					_objs.push_back(SewersObject(LADDER, left, left+20, bottom, bottom+60, NONE, NONE));
-				}
-				else if(object == "PANEL")
-				{
-					int left, bottom;
-					ifs >> left >> bottom;
-					_objs.push_back(SewersObject(PANEL, left, left+20, bottom, bottom+20, NONE, NONE));
+					_objs.push_back(SewersObject(DOOR, left, left+20, bottom, bottom+60, NONE, true));
 				}
 				else if(object == "SWITCH")
 				{
@@ -172,29 +234,29 @@ namespace Sewers
 					ifs >> left >> bottom >> val;
 					_objs.push_back(SewersObject(SWITCH, left, left+10, bottom, bottom+10, NONE, val));
 				}
-				else if(object == "DOOR")
+				else if(object == "PANEL")
 				{
 					int left, bottom;
 					ifs >> left >> bottom;
-					_objs.push_back(SewersObject(DOOR, left, left+20, bottom, bottom+60, NONE, false));
+					_objs.push_back(SewersObject(PANEL, left, left+20, bottom, bottom+20, NONE, NONE));
 				}
-				else if(object == "PLAYER")
+				else if(object == "LADDER")
 				{
 					int left, bottom;
-					string facing;
-					int direction;
-					ifs >> left >> bottom >> facing;
-					cout << facing << endl;
-					if(facing == "LEFT")
-						direction = FACING_LEFT;
-					else if(facing == "RIGHT")
-						direction = FACING_RIGHT;
-					else if(facing == "DOWN")
-						direction = FACING_DOWN;
-					else
-						direction = FACING_UP;
-					_objs[0].set_pos(left, left+30, bottom, bottom+15);
-					//_objs[0].change_int(direction);
+					ifs >> left >> bottom;
+					_objs.push_back(SewersObject(LADDER, left, left+20, bottom, bottom+60, NONE, NONE));
+				}
+				else if(object == "CIRCUIT")
+				{
+					int x1, y1, x2, y2, val;
+					ifs >> x1 >> y1 >> x2 >> y2 >> val;
+					_objs.push_back(SewersObject(CIRCUIT, x1, y1, x2, y2, val, NONE));
+				}
+				else if(object == "FLOOR")
+				{
+					int left, right, bottom, top;
+					ifs >> left >> right >> bottom >> top;
+					_objs.push_back(SewersObject(FLOOR, left, right, bottom, top, NONE, NONE));
 				}
 			}
 		}

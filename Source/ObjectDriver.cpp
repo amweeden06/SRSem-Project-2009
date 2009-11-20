@@ -22,8 +22,6 @@ void wrap_display(void) { g.re_display(); }
 void wrap_key(unsigned char k, int x, int y) { g.key_click(k, x, y); }
 void wrap_mouse(int b, int state, int x, int y);
 
-vector<SewersObject> objs;
-
 int main (int argc, char ** argv)
 {
 	g.load_file("Room1.sew");
@@ -38,4 +36,3 @@ int main (int argc, char ** argv)
 	// Enter the GLUT main loop
 	glutMainLoop();
 }
-
