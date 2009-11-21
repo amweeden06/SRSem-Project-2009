@@ -1,0 +1,7 @@
+Dondlinger uses the term [italics "skill and drill"] to describe a certain type of educational game, which she calls "edutainment."  These games focus on repetitive practice of skills or memorization.
+
+Denis and Jouvelot [cited by this article] argue that the "skill and drill" style games fail to help the player learn anything non-trivial.  They argue that a better game is one in which the player must use problem solving and strategy to complete the game.  These games consist of rewards and goals for motivation.  They also include a narrative that fits the content being taught, and interactive cues for feedback.
+
+"Computer City:  Sewers" avoids "skill and drill" by allowing the player flexibility and a chance to explore the world.  The player is able to control an avatar and have it interact with many different parts of the environment.  Players are also able to explore the effects of changing gates or values in truth tables to see their effects on the circuits.  Thus, by exploring the world, the player learns more about the behavior of gates and logic.
+
+Dondlinger also finds that games should include both intrinsic and extrinsic motivations.  
