@@ -5,3 +5,16 @@ Denis and Jouvelot [cited by this article] argue that the "skill and drill" styl
 "Computer City:  Sewers" avoids "skill and drill" by allowing the player flexibility and a chance to explore the world.  The player is able to control an avatar and have it interact with many different parts of the environment.  Players are also able to explore the effects of changing gates or values in truth tables to see their effects on the circuits.  Thus, by exploring the world, the player learns more about the behavior of gates and logic.
 
 Dondlinger also finds that games should include both intrinsic and extrinsic motivations.  
+
+
+Dondlinger cites Swartout and van Lent to invoke the notion of three-levels of goals in a game.  Goals can be either short-term, medium-term, or long term.
+
+"Computer City:  Sewers" follows the three-level goal system of Dondlinger.  The short-term goal is to pick up all the items in a room, the medium-term goal is to open the door to the room, and the long-term goal is to traverse the entire sewer.
+
+
+Dondlinger writes that the player should interact with the environment in such a way that the environment provides feedback toward better game play.  The player should have the freedom to control the environment so as not to feel imprisioned by the game's rules, but there should be enough structure such that the player does not feel as though he/she is wandering around aimlessly.
+
+"Computer City:  Sewers" provides interaction with the environment in numerous ways.  In effect, every meaningful action that the player makes is given feeback; the player is informed of game events via visual changes on the screen and text explanations on the console.  The player is also able to control the flow of information via the "help" and "gate screen" keys.
+Because the player is given an avatar than can be controlled to moved throughout the room, the player has freedom to explore the room in an intuitive, human-like way.  Without the avatar, the game might merely be an exercise in plugging in gates to circuits, a "skill and drill" as described by Dondlinger.
+
+
