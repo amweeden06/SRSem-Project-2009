@@ -10,24 +10,9 @@
 
 namespace Sewers
 {
-	// Object ids
-	const int NONE = -1;
-	const int PLAYER = 0;
-	const int DOOR = 1;
-	const int LADDER = 2;
-	const int PANEL = 3;
-	const int SWITCH = 4;
-	const int FLOOR = 5;
-	const int INVERTER = 6;
-	const int AND = 7;
-	const int OR = 8;
-	const int CIRCUIT = 9;
-	
-	// Values for int1 (see draw_object)
-	const int FACING_LEFT = 0;
-	const int FACING_RIGHT = 1;
-	const int FACING_DOWN = 2;
-	const int FACING_UP = 3;
+	SewersObject::SewersObject()
+	{
+	}
 	
 	SewersObject::SewersObject(int id, GLint left, GLint right, GLint bottom, GLint top, int int1, bool bool1)
 	{
@@ -59,19 +44,19 @@ namespace Sewers
 				// For player, int1 refers to the direction the player is facing.
 				switch(_int1)
 				{
-					case FACING_LEFT:
+					case LEFT:
 						eye_l = _left;
 						eye_r = _left + width/6;
 						eye_b = _top - height/4;
 						eye_t = _top - height/8;
 						break;
-					case FACING_RIGHT:
+					case RIGHT:
 						eye_l = _right - width/6;
 						eye_r = _right;
 						eye_b = _top - height/4;
 						eye_t = _top - height/8;
 						break;
-					case FACING_DOWN:
+					case DOWN:
 						eye_l = _left + width/8;
 						eye_r = _left + width/3;
 						eye_b = _top - 3*height/8;
@@ -85,9 +70,9 @@ namespace Sewers
 				
 				// Draw eye
 				GLblack3.glColor();
-				if(_int1 != FACING_UP)
+				if(_int1 != UP)
 					glRectf(eye_l, eye_b, eye_r, eye_t);
-				if(_int1 == FACING_DOWN)
+				if(_int1 == DOWN)
 					// Draw right eye
 					glRectf(_left + 2*width/3, _top - 3*height/8, _right - width/8, _top - height/4);
 				
@@ -97,7 +82,7 @@ namespace Sewers
 				
 				// Draw shoes
 				GLblack3.glColor();
-				if(( _int1 == FACING_LEFT ) || ( _int1 == FACING_RIGHT ))
+				if(( _int1 == LEFT ) || ( _int1 == RIGHT ))
 				{
 					if( _bool1 )
 					{
@@ -155,27 +140,31 @@ namespace Sewers
 				glEnd();
 				break;
 				
-			// PANEL object : int1 and bool1 have no specified meanings
+			// PANEL object : bool1 is true iff the panel is visible
+			// int1 has no specified meanings
 			case PANEL:
-				GLblack3.glColor();
-				glBegin(GL_LINE_LOOP);
-				glVertex2f(_left, _top);
-				glVertex2f(_left, _bottom);
-				glVertex2f(_right, _bottom);
-				glVertex2f(_right, _top);
-				glEnd();
+				if(_bool1)
+				{
+					GLblack3.glColor();
+					glBegin(GL_LINE_LOOP);
+					glVertex2f(_left, _top);
+					glVertex2f(_left, _bottom);
+					glVertex2f(_right, _bottom);
+					glVertex2f(_right, _top);
+					glEnd();
+				}
 				break;
 				
-			// SWITCH object : bool1 refers to the switch's value (0 or 1)
-			//				   int1 has no specified meaning
+			// SWITCH object : int1 refers to the switch's value
+			//				   bool1 has no specified meaning
 			case SWITCH:
-				if(_bool1)
+				if(_int1 == 1)
 				{
 					// Draw the 1
 					GLgreen3.glColor();
 					glRectf(_left + width/3, _bottom, _right - width/3, _top);
 				}
-				else
+				else if(_int1 == 0)
 				{
 					// Draw the 0
 					GLblue3.glColor();
@@ -190,88 +179,124 @@ namespace Sewers
 			// DOOR object : int1 refers to the orientation of the door
 			//               bool1 is true iff the door is open
 			case DOOR:
-				if(!_bool1)
+				switch(_int1)
 				{
-					GLgreen3.glColor();
+					case LEFT:
+						if(!_bool1) // If closed
+						{
+							GLgreen3.glColor();
+							glBegin(GL_POLYGON);
+							glVertex2f(_right, _bottom);
+							glVertex2f(_right, _top - height/2);
+							glVertex2f(_left, _top);
+							glVertex2f(_left, _top - height/2);
+							glEnd();
+						}
+						GLblack3.glColor();
+						glBegin(GL_POLYGON);
+						glVertex2f(_right, _bottom);
+						glVertex2f(_left, _top - height/2);
+						glVertex2f(_left, _bottom);
+						glEnd();
+						break;
+						break;
+					case RIGHT:
+						if(!_bool1) // If closed
+						{
+							GLgreen3.glColor();
+							glBegin(GL_POLYGON);
+							glVertex2f(_left, _bottom);
+							glVertex2f(_left, _top - height/2);
+							glVertex2f(_right, _top);
+							glVertex2f(_right, _top - height/2);
+							glEnd();
+						}
+						GLblack3.glColor();
+						glBegin(GL_POLYGON);
+						glVertex2f(_left, _bottom);
+						glVertex2f(_right, _top - height/2);
+						glVertex2f(_right, _bottom);
+						glEnd();
+						break;
+				}
+				break;
+				
+			// INVERTER object : bool1 is true iff the gate is visible
+			//					 int1 has no specified meanings
+			case INVERTER:
+				if(_bool1)
+				{
+					GLred3.glColor();
+					// Draw triangle
 					glBegin(GL_POLYGON);
 					glVertex2f(_left, _bottom);
-					glVertex2f(_left, _top - height/2);
-					glVertex2f(_right, _top);
-					glVertex2f(_right, _top - height/2);
+					glVertex2f(_left, _top);
+					glVertex2f(_left+2*width/3, _bottom + height/2);
+					glEnd();
+					// Draw circle
+					glBegin(GL_POLYGON);
+					glVertex2f(_left+2*width/3, _bottom + height/2);
+					glVertex2f(_left+5*width/6, _bottom + 3*height/5);
+					glVertex2f(_left+6*width/6, _bottom + height/2);
+					glVertex2f(_left+5*width/6, _bottom + 2*height/5);
 					glEnd();
 				}
-				GLblack3.glColor();
-				glBegin(GL_POLYGON);
-				glVertex2f(_left, _bottom);
-				glVertex2f(_right, _top - height/2);
-				glVertex2f(_right, _bottom);
-				glEnd();
 				break;
 				
-			// INVERTER object : int1 and bool1 have no specified meanings
-			case INVERTER:
-				GLred3.glColor();
-				// Draw triangle
-				glBegin(GL_POLYGON);
-				glVertex2f(_left, _bottom);
-				glVertex2f(_left, _top);
-				glVertex2f(_left+2*width/3, _bottom + height/2);
-				glEnd();
-				// Draw circle
-				glBegin(GL_POLYGON);
-				glVertex2f(_left+2*width/3, _bottom + height/2);
-				glVertex2f(_left+5*width/6, _bottom + 3*height/5);
-				glVertex2f(_left+6*width/6, _bottom + height/2);
-				glVertex2f(_left+5*width/6, _bottom + 2*height/5);
-				glEnd();
-				break;
-				
-			// OR object : int1 and bool1 have no specified meanings
+			// OR object : bool1 is true iff the gate is visible
+			//             int1 has no specified meanings
 			case OR:
-				GLred3.glColor();
-				// Top of the gate
-				glBegin(GL_POLYGON);
-				glVertex2f(_left+width/3, _bottom+height/2);
-				glVertex2f(_left, _top);
-				glVertex2f(_left+2*width/3, _top);
-				glVertex2f(_right, _bottom + height/2);
-				glEnd();
-				// Bottom of the gate
-				glBegin(GL_POLYGON);
-				glVertex2f(_left+width/3, _bottom+height/2);
-				glVertex2f(_left, _bottom);
-				glVertex2f(_left+2*width/3, _bottom);
-				glVertex2f(_right, _bottom + height/2);
-				glEnd();
-				// Draw the +
-				GLblack3.glColor();
-				glBegin(GL_LINES);
-				glVertex2f(_left+4*width/7, _top-height/4);
-				glVertex2f(_left+4*width/7, _bottom+height/4);
-				glVertex2f(_left+2*width/5, _top-height/2);
-				glVertex2f(_left+4*width/5, _top-height/2);
-				glEnd();
+				if(_bool1)
+				{
+					GLred3.glColor();
+					// Top of the gate
+					glBegin(GL_POLYGON);
+					glVertex2f(_left+width/3, _bottom+height/2);
+					glVertex2f(_left, _top);
+					glVertex2f(_left+2*width/3, _top);
+					glVertex2f(_right, _bottom + height/2);
+					glEnd();
+					// Bottom of the gate
+					glBegin(GL_POLYGON);
+					glVertex2f(_left+width/3, _bottom+height/2);
+					glVertex2f(_left, _bottom);
+					glVertex2f(_left+2*width/3, _bottom);
+					glVertex2f(_right, _bottom + height/2);
+					glEnd();
+					// Draw the +
+					GLblack3.glColor();
+					glBegin(GL_LINES);
+					glVertex2f(_left+4*width/7, _top-height/4);
+					glVertex2f(_left+4*width/7, _bottom+height/4);
+					glVertex2f(_left+2*width/5, _top-height/2);
+					glVertex2f(_left+4*width/5, _top-height/2);
+					glEnd();
+				}
 				break;
 				
-			// AND object : int1 and bool1 have no specified meanings
+			// AND object : bool1 is true iff the gate is visible
+			//              int1 has no specified meanings
 			case AND:
-				GLred3.glColor();
-				glBegin(GL_POLYGON);
-				glVertex2f(_left, _bottom);
-				glVertex2f(_left, _top);
-				glVertex2f(_left+width/2, _top);
-				glVertex2f(_right, _bottom + 2*height/3);
-				glVertex2f(_right, _bottom + 1*height/3);
-				glVertex2f(_left+width/2, _bottom);
-				glEnd();
-				// Draw the dot
-				GLblack3.glColor();
-				glRectf(_left+2*width/5, _bottom+2*height/5, _left+3*width/5, _bottom+3*height/5);
-				glEnd();
+				if(_bool1)
+				{
+					GLred3.glColor();
+					glBegin(GL_POLYGON);
+					glVertex2f(_left, _bottom);
+					glVertex2f(_left, _top);
+					glVertex2f(_left+width/2, _top);
+					glVertex2f(_right, _bottom + 2*height/3);
+					glVertex2f(_right, _bottom + 1*height/3);
+					glVertex2f(_left+width/2, _bottom);
+					glEnd();
+					// Draw the dot
+					GLblack3.glColor();
+					glRectf(_left+2*width/5, _bottom+2*height/5, _left+3*width/5, _bottom+3*height/5);
+					glEnd();
+				}
 				break;
 				
 			// CIRCUIT object : int1 indicates the charge of the circuit
-			//					bool1 has no specified meanings
+			//					bool1 is true iff the circuit powers a door
 			case CIRCUIT:
 				switch(_int1)
 				{
@@ -291,6 +316,103 @@ namespace Sewers
 				glVertex2f(_left, _top);
 				glVertex2f(_right, _top);
 				glEnd();
+				break;
+				
+			// TABLE object : bool1 means the table is visible
+			//				  int1 has no specified meaning
+			case TABLE:
+				if(_bool1)
+				{
+					GLcolor3(0.2, 0.1, 0.0).glColor();
+					glRectf(_left, _bottom + height/8, _right, _top);
+					// Legs
+					glRectf(_left + width/10, _bottom, _left + width/4, _bottom + height/8);
+					glRectf(_right - width/4, _bottom, _right - width/10, _bottom + height/8);
+					// Panel
+					GLyellow3.glColor();
+					glRectf(_left + width/8, _bottom + height/3, _left + width/3, _top - height/4);
+					// Table lines
+					GLblack3.glColor();
+					glBegin(GL_LINES);
+					glVertex2f(_left + width/8, _top - height/3);
+					glVertex2f(_left + width/3, _top - height/3);
+					glVertex2f(_left + 2*width/11, _top - height/4);
+					glVertex2f(_left + 2*width/11, _bottom + height/3);
+					glVertex2f(_left + 3*width/11, _top - height/4);
+					glVertex2f(_left + 3*width/11, _bottom + height/3);
+					// Outline
+					glVertex2f(_right, _top);
+					glVertex2f(_right, _bottom + height/8);
+					glVertex2f(_left, _bottom + height/8);
+					glVertex2f(_right, _bottom + height/8);
+					glEnd();
+				}
+				break;
+				
+			// GATE_DISPLAY object : int1 is the number of gates on the screen
+			//						 bool1 has no specified meanings
+			case GATE_DISPLAY:
+				GLyellow3.glColor();
+				glRectf(_left, _bottom, _right, _top);
+				break;
+				
+			// TABLE_DISPLAY object : int1 and bool1 have no specified meanings
+			case TABLE_DISPLAY:
+				GLyellow3.glColor();
+				glRectf(_left, _bottom, _right, _top);
+				break;
+				
+			// GATE_BOX object : bool1 is true iff the gate box is visible
+			//					 int1 has no specified meaning
+			case GATE_BOX:
+				if(_bool1)
+				{
+					GLred3.glColor();
+					glRecti(_left, _bottom, _right, _top);
+					// Outline
+					glBegin(GL_LINE_LOOP);
+					GLblack3.glColor();
+					glVertex2i(_left, _bottom);
+					glVertex2i(_right, _bottom);
+					glVertex2i(_right, _top);
+					glVertex2i(_left, _top);
+					glEnd();
+					// G
+					glBegin(GL_LINE_STRIP);
+					GLyellow3.glColor();
+					glVertex2i(_right - width/4, _top - height/3);
+					glVertex2i(_right - width/3, _top - height/4);
+					glVertex2i(_left + width/3, _top - height/4);
+					glVertex2i(_left + width/4, _top - height/3);
+					glVertex2i(_left + width/4, _bottom + height/3);
+					glVertex2i(_left + width/3, _bottom + height/5);
+					glVertex2i(_right - width/3, _bottom + height/5);
+					glVertex2i(_right - width/4, _bottom + height/3);
+					glVertex2i(_right - width/2, _bottom + height/2);
+					glEnd();
+				}
+				break;
+				
+			// SWITCH_BUTTON object : bool1 and int1 have no specified meanings
+			case SWITCH_BUTTON:
+				GLcolor3(0.2, 0.0, 0.0).glColor();
+				glRectf(_left, _bottom, _right, _top);
+				GLred3.glColor();
+				glRectf(_left + width/4, _bottom + height/4, _right - width/4, _top - height/4);
+				break;
+				
+			// BUTTON_DISPLAY object : bool1 and int1 have no specified meanings
+			case BUTTON_DISPLAY:
+				GLyellow3.glColor();
+				glRectf(_left, _bottom, _right, _top);
+				// Draw button
+				GLcolor3(0.2, 0.0, 0.0).glColor();
+				glRectf(_left + width/2 - SWITCH_BUTTON_WIDTH/2, _bottom + height/2 - SWITCH_BUTTON_HEIGHT/2,
+						_left + width/2 + SWITCH_BUTTON_WIDTH/2, _bottom + height/2 + SWITCH_BUTTON_HEIGHT/2);
+				GLred3.glColor();
+				glRectf(_left + width/2 - SWITCH_BUTTON_WIDTH/4, _bottom + height/2 - SWITCH_BUTTON_HEIGHT/4,
+						_left + width/2 + SWITCH_BUTTON_WIDTH/4, _bottom + height/2 + SWITCH_BUTTON_HEIGHT/4);
+				break;
 		}
 	}
 }

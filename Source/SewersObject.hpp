@@ -7,6 +7,7 @@
  *  Collection of methods for drawing objects within the Sewers game.
  */
 #include "gltypes.1.h"
+#include "constants.hpp"
 
 using namespace GLTYPES;
 
@@ -32,6 +33,7 @@ namespace Sewers
 			void set_pos(GLint l, GLint r, GLint b, GLint t) { _left = l; _right = r; _bottom = b; _top = t; }
 			void move(int x_factor, int y_factor) { _left += x_factor; _right += x_factor; _bottom += y_factor; _top += y_factor; }
 			void change_int(int i) { _int1 = i; }
+			void set_bool(bool b) { _bool1 = b; }
 			void toggle() { _bool1 = !_bool1; }
 			// Member functions
 			void draw();
