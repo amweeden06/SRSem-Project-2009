@@ -242,7 +242,7 @@ namespace Sewers
 			}
 			
 			// See if the avatar is touching the computer
-			//if(intersecting(_avatar, _computer) && _computer.is_on())
+			if(intersecting(_avatar, _computer) && _computer.is_on())
 				print_truth_table();
 			
 			draw();
