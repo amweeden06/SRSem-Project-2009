@@ -1,0 +1,26 @@
+Heuristic approach - evaluating the usability of the game.
+
+1.  Provide consistent responses to user's actions - the structure of the game is simple -- if the player comes across a control panel, the gate screen appears and the player chooses a gate to place on the panel.
+
+2.  Allow customization of video and audio settings, difficulty, and game speed - For this implementation, difficulty will be kept constant.  There may be room for video and audio customization.  Game speed is only player movement speed, so this can be customizable as well.
+
+3.  Provide predictable behavior for comptuer-controlled units - n/a
+
+4.  Provide unobstructive views appropriate for the user's current actions - The rooms are displayed in bird's eye view.  The gate screen never obstructs any important information in the room (i.e. the circuit paths, the door, the player, or other control panels.
+
+5.  Allow users to skip non-playable or frequently repeated content - n/a
+
+6.  Provide intuitive and customizable input mappings - wasd for movement, perhaps with options to change to ijkl or the arrow keys.  Maybe also a mouse interface.
+
+7.  Provide controls that are easy to manage, and that have an appropriate level of sensitivity and responsiveness - movement speed can be adjustable.
+
+8.  Provide users with information on game status - Number the rooms, provide textual explanations of all the gates.
+
+9.  Provide instructions, training, and help - in-game user's manual - explanation of gates and game mechanics. I will want to test how often people use this manual and how helpful it is.
+
+10. Provide visual representations that are easy to interpret and that minimize the need for micromanagement - the game visuals are very simple; things that are not walls and the floor are important.  Doors always look the same, circuits are either blue or green, gates always look the same, the player will always be facing the direction it is moving.
+
+
+I will include this heuristic study in the games evaluation; players will be asked to evaluate the game based on these criteria.
+
+The evaluation itself can also be evaluated.
