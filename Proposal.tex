@@ -1,0 +1,168 @@
+%&pdflatex						% Used with Flashmode (automatic preview update)
+\documentclass[11pt]{article}	% I usually use amsart or article
+\usepackage[margin=1in]{geometry}	% Page margins
+\geometry{letterpaper}				% Paper size
+%\geometry{landscape}                		% Activate for landscape printing
+%\usepackage[parfill]{parskip}			% Begin paragraphs with an empty line not indent
+\usepackage{graphicx}				% Handle images
+\usepackage{natbib}					% Natural sciences bibliographic style
+\usepackage{hyperref}				% Add navigable URLs
+\usepackage{setspace}				% Allow for double spacing
+%\usepackage{times}				% Use Times for the base font
+%\usepackage{listings}
+
+\title{Project Proposal}	% Paper title
+\author{Aaron Weeden}					% Author or no author (comment out)
+\date{October 21, 2009}						% Today's date, a given date, or no date (comment out)
+
+\begin{document}
+\maketitle							% Create title heading on first page
+\thispagestyle{empty}				% Suppress page number on first page
+% \pagestyle{empty}					% Suppress page number and header on other pages
+
+\doublespacing						% Start double spacing
+
+\section*{Background}
+
+As computers have become faster, more available, and more adept at modeling phenomena of the natural world, the field of educational computer game design has steadily grown and evolved.  To this end, scholars have explored what design strategies and philosophies are fundamental to the development of good educational software.  Despite the wide amount of research that has been written on the merits and design strategies of such software, there exists no comprehensive summary of such research.  In addition, there has yet to be a game created that explicitly draws from a wide range of the many different theories and strategies found in this research.  I propose to create both the comprehensive summary and game that I have just described.
+
+The summary of the field of educational computer game research will manifest itself as an academic paper.  I will research the design strategies, goals, and commentaries of those who have studied and/or made educational computer games.  I will also consider the postulations of researchers who have approached educational video games form a purely theoretical standpoint.  I will investigate what is known about the educational merits of using digital games.  I will also look at specific games that have been deemed successful.  For this summary I will find both old and recent sources of information, which will help me construct a timeline of the evolution of educational computer game design theory.  Through this summary, I will attempt to find descriptions of the ideally effective educational video game and how it can best be constructed.
+
+Concurrently with the summary, I will develop a game that embodies the theoretical research on this topic.  The game will manifest itself as a simple lesson to teach a specific topic in computer architecture, but it will assimilate the findings of the research I complete for the paper.  In order to interface between the paper and the game, I will do periodic integrations of the theories obtained during research into the game.  In other words, as I develop the game incrementally and in parallel with the paper, I will consider ways in which to include the strategies learned from the research for the paper.  The game will thus serve as an implementation of the research summary.
+
+Finally, I will evaluate the effectiveness of the game via the methods of evaluation encountered during research.  I will evaluate the learning outcomes from the game for a test group of Earlham College students.  I will then synthesize the results of this evaluation based on the frameworks for doing so found in the research.
+
+
+\section*{Project decomposition}
+
+In order to guide my work on this project, I will employ framework described below.  The task of the project will be broken into subtasks, each of which interface with the others.
+
+
+\subsection*{Paper}
+
+The paper will begin with a discussion of the history of educational computer games.  A particular emphasis will be placed on the evolution of the theories behind educational computer game design.  The first games that were developed with educational intent will be considered.  The first scholarly papers on the subject will also be considered to understand the frameworks upon which the study of educational computer games is based.  Based on these points of departure, the paper will explore the evolution of educational game design theory over time.  Events and developments that shaped and changed the course of this discipline will be paid particular attention.
+
+In the course of this research, the particular strategies that game designers employ to create effective games will also be investigated.  Any strategies that researchers and game designers consider to be helpful, effective, and indispensable will be explored, as well as those that are considered to be ineffective and unhelpful.  The end goal is to have a comprehensive summary of the field of educational computer game research with input from my own experiences in developing the game I propose.
+
+Given this framework, the list of tasks is as follows:
+
+
+
+Methods for Evaluating Educational Computer Games
+
+
+Oct/22 ( 1 hour total ) Get sources
+
+Oct/23-26 ( 1 hour per day, 4 hours total ) Read sources
+
+Oct/27-30 ( 1 hour per day, 4 hours total ) Write
+
+
+The Beginnings of Educational Computer Game Design
+
+
+Oct/31 ( 1 hour total )  Get sources
+
+Nov/1-4 ( 1 hour per day, 4 hours total )  Read sources
+
+Nov/5-8 ( 1 hour per day, 4 hours total )  Write
+
+
+The History of Educational Computer Game Design
+
+
+Nov/9 ( 1 hour total ) Get sources
+
+Nov/10-12 ( 1 hour per day, 3 hours total ) Read sources
+
+
+Begin SC09 conference in Portland
+
+
+Nov/13-16 ( 30 min per day, 2 hours total ) Read sources
+
+Nov/17-18 ( 30 min per day, 1 hour total ) Write
+
+
+End of conference in Portland
+
+
+Nov/19-21 ( 2 hour per day, 6 hours total ) Write
+
+
+The Current Theories of Educational Computer Game Design
+
+
+Nov/22 ( 2 hour total ) Get sources, Read sources
+
+Nov/23 ( 2 hours total) Read sources
+
+Nov/24-26 ( 2 hours per day, 6 hours total ) Write
+
+
+My own experience based on development of proposed game
+
+
+Nov/27-Nov/29 ( 2 hour per day, 6 hours total ) Write
+
+
+Revisions
+
+
+Nov/30-Dec/14
+
+\subsection*{Software}
+
+The educational goal of the game I propose is to teach a specific aspect of a typical computer architecture to the user.  The scenario of the game is a city in which various parts of the city form metaphorical representations of the computer architecture.  In this particular game scenario, the player will find him/herself in the sewers of the city, representing some of the fundamentally lowest levels of the computer architecture.  The player of the game will be given an avatar that is controlled by mouse clicks or keyboard.  The avatar interacts with numerous other characters to complete tasks.  The player moves around in the city, completing tasks in different sectors of the city.  Thus, the game will be a puzzle game, with perhaps some components of a role-playing game, such as character creation.  The game will also be similar to an adventure game, as the goal of the game is to progress through a series of scenarios and challenges.
+
+In the sewer scenario, the player's objectives will be presented as follows.  The player is to navigate the tunnels of the underground by charging the correct circuits to the gates that block the player's path.  The underlying lesson taught here is boolean logic and gates.  Charging circuits is done at control panels on the wall, at each of which is drawn a schematic of the tunnel system in the common graphical form for logical circuits.  In order to better attach real-world meaning to the exercise, the names of the gates will keep their names in computer science, AND, OR, NOT, NAND, NOR, and XOR.  The player completes the exercise by navigating through increasingly more complex circuits, attempting to open the gates that block them by sending a "1" value through the gate.
+
+The game will be structured in terms of the various scenarios similar to the one described above.  The end goal of a full game would be for the player to have as complete an understanding as possible of a typical computer architecture.  For the portion I intend to complete this term, the player's goal will be to successfully traverse the sewers of the city.  The teaching goal is that the player will feel comfortable recognizing and exploring boolean logic.
+
+The tools that will be employed to make the game will be an adventure game engine, a graphics engine, and original recorded sounds, with perhaps an original soundtrack.  The graphics engine will be the GIMP, GNU's image manipulation application.  The GIMP will be used to create all of the graphical models of the game.  For the section of the game I intend to complete by the end of the term, the models that will need to be created are one for the player( with possible variations to allow customizable avatars ), and environment models for the sewer and gates.  The user interface, including menus, will be implemented in the game engine.
+
+The game will be developed incrementally.  First the lessons will be developed and the specific circuits will be sketched.  Sketches will also be developed for the avatar model, environment, and user interface.  A finite state diagram will also be produced, representing game states and game progression.  This will include all possible inputs from the user.  Thus, a graphical representation of the game will have been produced.  Given this graphical representation, the game will be implemented starting with avatar movement, followed by interaction with the control panels and gates.  The implementation of the user interface can be developed concurrently.  Also concurrently, the graphical game models will be implemented with the GIMP.  The next step is to interface the game engine with the GIMP models.  Once this interface is set, it can be used to debug and test the next phase, which is the implementation of the specific game progression as per the finite state diagram.  The implementation will be tested incrementally until there is a finished product that is ready for user testing.  Additional scenarios can also be developed in the future by following this framework.
+
+Given the framework described above, the list of tasks is as follows:
+
+Oct/22 ( 20 minutes total ) - Sketch circuit diagrams and models of avatar, environment, and user interface
+
+Oct/23 ( 1 hour total ) - Produce finite state diagram
+
+Oct/24-25 ( 1 hour per day, 2 hours total ) - Obtain a suitable game engine and GIMP
+
+Oct/26 ( 1 hour total ) - Implement avatar movement in the game engine
+
+Oct/27-28 ( 1 hour per day, 2 hours total ) - Implement user interface in GIMP
+
+Oct/29-Nov/1 ( 1 hour per day, 4 hours total ) - Implement graphical game models in GIMP
+
+Nov/2 ( 1 hour total ) - Interface game engine with GIMP models
+
+Nov/3-6 ( 1 hour per day, 4 hours total ) - Implement user interaction with control panels and gates in game engine
+
+Nov/7-12 ( 1 hour per day, 6 hours total ) - Implement remainder of game (incrementally)
+
+Nov/19-Dec/14 ( Time may vary ) - Testing / Revisions
+
+
+\subsection*{Testing}
+
+To test the game, I will employ the help of Earlham College students.  The students will spend time playing the game in a lab, attempting to complete the scenario.  To evaluate the effectiveness of the game on students, the students will complete pre-tests and post-tests at the beginning and end of the testing session, respectively.  These tests will evaluate the familiarity the students possess with respect to boolean logic and circuits.  Tests will also be given a week after the in-lab test to evaluate retention of the material.  The structures of these tests will be influenced by the specific material covered in the game in addition to any evaluative strategies that I come across in the course of researching for the paper.
+
+The time frame for testing is as follows:
+
+Nov/15 - Testing lab
+
+Nov/26 - Send out follow-up test
+
+Nov/27-28 - Collect and synthesize results
+
+\subsection*{Summary}
+
+In summary, the project will be laid out according to this Gannt diagram:
+\begin{figure}[htb!]
+\includegraphics{ProposalGannt.eps}
+\end{figure}
+
+\end{document}  
