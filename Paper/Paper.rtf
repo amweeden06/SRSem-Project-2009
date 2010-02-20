@@ -1,0 +1,87 @@
+{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf330
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww9020\viewh8380\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 The player is given control of an avatar who is controlled using the keyboard.\
+\
+<< City as metaphor >>\
+Tanenbaum\
+\
+Storyline\
+\
+The player takes the role of Bitty, a "bit" within the world of Computer City.  Bitty has been placed underground by its superiors to collect blueprints of the sewers.  Because the city is as a metaphor for the computer architecture hierarchy, the sewers represent the digital logic level, the lowest on Tanenbaum's hierarchy \{/citep Tanenbaum\}.  In order to collect all of the blueprints, which are manifested as truth tables, Bitty must solve puzzles to open doors and traverse the sewer.\
+\
+Gameplay\
+\
+The game is broken up into rooms, each of which has a puzzle that must be solved in order to open the room's door.  In some rooms, the puzzle involves running the correct charge into a circuit of gates in order to power the door with the correct charge.  In other rooms, the puzzle is to place gates on the ground in order build the circuit that will produce the desired output given an input.  \
+\
+
+\b Image -- A room in Computer City:  Sewers
+\b0 \
+\
+In some rooms, the player must assemble a gate out of other gates in order to open the door.  In this case a gate assembler screen appears when the player walks next to the assembler object.\
+\
+
+\b Image -- Gate assembler screen
+\b0 \
+\
+In some rooms, the player must enter the correct blueprint of the room into a computer in the room.  These blueprints are written as truth tables.\
+\
+
+\b Image -- The player enters a truth table into the computer
+\b0 \
+\
+The player has control of Bitty's movements via the keyboard.  When Bitty moves next to certain objects in the environment, a yellow screen may appear, at which point the player can click on items in the screen to produce different results.  For example, when the player walks next to a "switch button," a button appears in the bottom left corner of the screen.  If the player click on the button, the charge of the switch next to the button will be flipped.\
+\
+The game is broken into XX rooms, and it is completed when the player passes through the last door in room XX.\
+\
+In addition to the main game screen, the player is also provided with a text-based terminal to receive information.  When game events happen, the player is notified via this terminal.  Also, when the player presses the help key, a description of the current game situation appears on the terminal.  The player can use this to learn more about objects in the room.\
+\
+
+\b Image -- Text based terminal informing the player [about an inverter]
+\b0 \
+\
+Evaluation\
+\
+There are numerous methods that can be employed to evaluate the effectiveness of an educational video game.  Pinelle, Wong, and Stach provide a heuristic approach with a set of criteria for evaluating a game's effectiveness \{/citep Pinelle\}.\
+\
+The heuristic approach\
+\
+The heuristic evaluation of Pinelle, Wong, and Stach takes twelve criteria into account.  Computer City:  Sewers is evaluated based on each of these criteria.\
+The first criterion of the heuristic evaluation is that the game provides consistent responses to the user's actions.  In Computer City:  Sewers, this criterion is achieved via the simplicity of the game.  The player always moves in the same directions.  Objects have the same basic functionality each time they are used, and they interact in consistent ways.  For example, switch buttons always flip the values of switches, which change the values of their corresponding circuits.\
+The second criterion of the evaluation is that the user is able to customize game settings.  In Computer City:  Sewers, the player has the option of changing the buttons used for walking and the player walking speed.  These settings are changed by pressing a key on the keyboard, followed by entering the new settings on the terminal.\
+The third criterion is to provide predictable behavior for computer-controlled characters.  There are none of these in Computer City:  Sewers.\
+The fourth criterion is to provide unobtrusive views appropriate to the user's current actions.  In Computer City:  Sewers, the rooms are shown via a bird's eye view, so the player is able to see the entire range of possible places to move.  Whenever a screen comes up within the main screen, it does not obstruct the relevant part of the main screen.  For example, if a gate screen comes up it does not obstruct the relevant part of the circuit.\
+The fifth criterion is to allow the player to skip non-playable content, such as cut-scenes.  There is no non-playable content in Computer City:  Sewers.\
+The sixth criterion is to provide intuitive and customizable input mappings.  In Computer City:  Sewers, the default movement buttons are 'w', 'a', 's', and 'd', which correspond to their directions relative to each other on the keyboard.  This may be unintuitive for some, however, so there is also the option to change these buttons.\
+The seventh criterion is to provide controls that have an appropriate level of sensitivity and responsiveness.  In Computer City:  Sewers, the movement speed has been optimized to allow the user to move at a rate that is both realistic for human walking speed and reasonable for walking from one end of the room to the other.  Again, if these controls are not desirable, the user has the option to change them.\
+The eighth criterion is to provide users with information on game status.  In Computer City:  Sewers, the text-based terminal serves this role.  Any important game events are reported to this terminal, and any additional information desired by the user can be obtained via the help button, which also provides a summary of the number of rooms completed, number left, and number of blueprints written out of the total.\
+The ninth criterion is to provide instructions, training, and help.  Computer City:  Sewers comes with a README that provides a tutorial of game mechanics and game object descriptions.  This README can be referenced if the player desires additional help beyond the in-game help terminal.\
+Finally, the tenth criterion is that the visual representations of the game should be easy to interpret.  In Computer City:  Sewers, the visuals are simple.  The floor is gray, the walls are black, the doors are green, the gates are red, menu screens are yellow, and circuits are blue or green depending on their charges.  Thus, the graphics are simplified such that the importance of objects is indicated by their color distinctions.\
+\
+The Delphi method\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 Eric Zhi Feng Liu and Chun Hung Lin use a set of evaluative criteria developed by a Delphi technique, wherein a group of educational game developers, educational psychologists, teachers, and students are repeatedly given questionnaires about what criteria are important for evaluating a game.  The answers are then read by everyone who answered a questionnaire.  The questionnaire is then re-administered based on this analysis, repeating until a consensus is reached.  Forty-two experts were given the questionnaire based on analyzing 192 games, and forty-three indicators were produced, broken into five categories:  game information, multimedia, interface design and structure, content, and feedback.  Given these evaluators, Computer City:  Sewers can be evaluated.\
+Game information deals with the documentation of the game.  The game should provide descriptions of hardware and software requirements, a description of the target audience and the lessons that are to be taught.  Computer City:  Sewers contains documentation of all of these in its README.\
+The multimedia evaluator considers whether the game uses picture, animations, and sound to relate to the content of the game and increase the interest of users.  Computer City:  Sewers uses pictures for gates and truth tables that match the [STANDARD?].  The game's graphical appeal is meant be in its simplicity; the avatar is meant to be cute and simple, and the objects are simple representations of digital logic devices.  Animation is used only in the avatar's walking graphics.  Computer City:  Sewers does not currently use sound effects, but it could conceivably use ones that correspond to important game events, such as doors opening and picking up items.  The game also provides text-based explanations of game events, but these are kept short and simple to allow the graphics to be the primary experience of the player.\
+Interface design and structure involves the clarity and ease of use of the interface.  The game should be ordered in a reasonable way, provide an easy-to-understand screen, and show a clear presentation of information.  Computer City:  Sewers provides a simple 8-button interface to navigate the game.  The player uses four buttons to move, and there are buttons to display help, settings, and game statistics, as well as a mouse button to interact with certain objects.  The player is able to obtain game help and information at any time by pressing one of these buttons.  The screen is kept simple by providing a bird's eye view where only the relevant objects are defined.  Important information is communicated via the accompanying text-based terminal, and this information is kept simple, concise, and consistent.  The interface is also able to be changed and customized via the settings menu.\
+The content evaluator checks wether the learning content matches the game's story-line and goal structure.  Computer City:  Sewers uses graphics that correspond to the [STANDARD] for representation of gates.  The user's goals in the game are directly linked to the learning content, as the player must correctly choose inputs, construct gates, or fill out truth tables to advance in the game.  The player is able to interact more closely with the content by controlling the in-game avatar.\
+Finally, feedback regards the game's response to player actions.  The game should provide timely, easy to understand feedback.  In Computer City:  Sewers, the player receives feedback during each important game event via the text-based terminal.  The player can also request additional feedback at any time via the help button.  The current status of the game can also be obtained via the statistics menu.  Because a terminal is used to provide feedback, the player is also able to browse back through the feedback history.  The game also allows saving and loading of current progress, and the game feedback is editable based on the instructions in the README.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+\cf0 \
+The Level Up approach\
+\
+In "Level Up: A Frame work for the Design and Evaluation of \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 Educational Games," Michael Eagle advocates the use of statistical techniques and data mining to evaluate the effectiveness of an educational video game \{\\citep Eagle\}.  Computer City:  Sewers does not currently use such data collection, but it could conceivably in the future.\
+One of the measurements in Eagle's procedure is amount of time spent on a given puzzle.  This would involve implementing a timer into Computer City:  Sewers that begins when the user enters a room and ends when the user is able to open the room's door.  As Eagle describes, the amount of time the user spends in a given room can be a good indicator of how well the user grasps an understanding of the problem in that particular room.  The trend of timings over the course of the game can also be studied to determine the overall understanding of the game and its underlying lessons.\
+Eagle also considers the number of attempts for a given puzzle as a datum.  Fewer attempts can indicate a better understanding of the puzzle.  For Computer City:  Sewers, this data is best collected in the rooms in which the player must place gates on the ground and the rooms in which the player must fill out truth tables.  In these rooms, the game can count the number of gates mistakenly placed or the number of incorrect values entered into the truth table.\
+As Eagle shows, doing the evaluation on a puzzle-by-puzzle basis can also shed light on the best ordering of puzzles to use within the game.  The player should encounter puzzles in such a way that he/she is consistently challenged, but also such that the player feels confident in his/her knowledge.  Such an arrangement of puzzles can be better achieved through the analysis of data from different arrangements of the puzzles.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+\cf0 Future work\
+\
+}
