@@ -1,0 +1,1 @@
+The "truth tables" in "Computer City: Sewers" are encountered as tables in the furniture sense, upon which a control panel is used to manipulate circuits in the room.  As the player adjusts values in the truth table, he/she observes changes to the circuit passing through the room.

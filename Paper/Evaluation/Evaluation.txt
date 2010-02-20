@@ -1,0 +1,19 @@
+Games are usually evaluated via a handful of methods.
+
+How would I categorize the things that can be evaluated?
+
+__Learning outcomes__
+Live testers play the games to determine their playability.
+Pre-tests and post-tests are often used, as in [LevelUp] and [ExperimentalEagle].
+These pre-tests look to establish the experience and demographics of the testers [LevelUp and ExperimentalEagle].
+Post-tests determine what the player has retained.
+
+As [LevelUp] recommends, evaluation can also include keeping track of how much time a problem takes and how many tries the user needs to complete the problem.
+This type of raw data can be graphed in order to analyze the speed and accuracy with with players complete the game [LevelUp].
+
+The game can be divided by difficulty, and players can play subsets of the game and then other subsets [LevelUp].
+This can help determine how to space and pace problems in the game.
+Problems may not take as long to complete if other problems are encountered first, for example.
+
+__Useability__
+[Heuristic] provides a set of heuristics that can be used to evaluate the useability of a game.
