@@ -65,7 +65,7 @@ namespace Sewers
 		// Switches must specify their initial output value
 		int output_value;
 		// Dummy variables to pass by reference to drawing prep function
-		int w, h;
+		int w = 0, h = 0;
 		
         // Open the file for loading
 		ifs.open(filename.c_str());
