@@ -95,7 +95,7 @@ namespace Sewers
 			else if(current_type == "BUTTON")
 			{
 				// The last switch added gets the button
-				_switches[_num_switches-1].give_button();
+				_switches[_num_switches-1].set_has_button(true);
 			}			
 			else 
 			{

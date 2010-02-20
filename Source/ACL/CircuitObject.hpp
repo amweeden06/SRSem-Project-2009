@@ -49,7 +49,7 @@ namespace Sewers
 		void set_input2(CircuitObject* i2) { _input2 = i2; }
 		void set_output(CircuitObject* o) { _output = o; }
 		void set_output_value(const int v) { _output_value = v; }
-		void give_button() { _has_button = true; }
+		void set_has_button(const bool b) { _has_button = b; }
         // METHODS
         void draw() const;
     private:
