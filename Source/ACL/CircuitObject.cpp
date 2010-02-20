@@ -16,6 +16,7 @@ namespace Sewers
 		set_input2(NULL);
 		set_output(NULL);
 		set_output_value(0);
+		set_has_button(false);
 	}
 	
 	CircuitObject::CircuitObject(const CircuitObject& o)
@@ -30,7 +31,7 @@ namespace Sewers
 		set_output(o.output());
 		set_output_value(o.output_value());
 		if(o.has_button())
-			give_button();
+			set_has_button(true);
 	}
 	
 	int CircuitObject::output_value() const

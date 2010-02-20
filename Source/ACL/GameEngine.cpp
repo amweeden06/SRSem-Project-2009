@@ -95,7 +95,7 @@ namespace Sewers
 			else if(current_type == "BUTTON")
 			{
 				// The last switch added gets the button
-				_switches[_num_switches-1].give_button();
+				_switches[_num_switches-1].set_has_button(true);
 			}			
 			else 
 			{
@@ -242,7 +242,7 @@ namespace Sewers
 			}
 			
 			// See if the avatar is touching the computer
-			//if(intersecting(_avatar, _computer) && _computer.is_on())
+			if(intersecting(_avatar, _computer) && _computer.is_on())
 				print_truth_table();
 			
 			draw();
