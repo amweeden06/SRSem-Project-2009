@@ -63,9 +63,9 @@ namespace Sewers
 		// The type of the current object being loaded from the file
 		string current_type = "";
 		// Switches must specify their initial output value
-		int output_value;
+		int output_value = 0;
 		// Dummy variables to pass by reference to drawing prep function
-		int w, h;
+		int w = 0, h = 0;
 		
         // Open the file for loading
 		ifs.open(filename.c_str());
@@ -268,7 +268,7 @@ namespace Sewers
 		print_truth_table_result(*(_exit.input1()), letter);
 		cerr << endl;
 		
-		int row_answer;
+		int row_answer = 0;
 		
 		for(size_t i = 0; i < pow(2.0,(double)num_switches()); ++i)
 		{
