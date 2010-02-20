@@ -1,84 +1,48 @@
-# This sample Makefile allows you to make an OpenGL application
-#   whose source is exactly one .c , .cpp or .cc file.
+# Computer City:  Sewers
+# Makefile for use on the ACLs
 #
-#
-# To use this Makefile, you type:
-#
-#        make xxxx
-#
-# where
-#       xxxx.c or xxxx.cpp is the name of the file you wish to compile 
-#       
-# A binary named xxxx will be produced
-#
-# Additional sources for the make can passed as the value of SRCS on 
-#  the command line:
-#      make SRCS="yyyy.o zzzz.o" xxxx
-#
-# Proper location of libraries depends on the ENV variable OSTYPE
-# To insure this is picked up, you should export OSTYPE prior to running make
-#                  
-
-GLTYPES = gltypes.1
-
-EXPENDABLES = main.o Display.o Wall.o Player.o MenuBar.o MenuButton.o
+EXPENDABLES = Avatar.o CircuitObject.o Computer.o Driver.o Entrance.o Exit.o GameEngine.o GameScreen.o gltypes.1.o Object.o
 EXECUTABLES = Sewers
-CFLAGS = -Wall -ggdb
 
-CC = gcc 
-
+CFLAGS = -Wall -ggdb --pedantic
 CPP = g++
+LDLIBS = -lglui -lX11 -lGL -lGLU -lglut -lXmu -lXi -lm
 
-CPPFLAGS = $(CFLAGS)
+MAKE_EXPENDABLE = g++ $(CFLAGS) -c
+MAKE_EXECUTABLE = g++ $(CFLAGS) $(LDLIBS) $(EXPENDABLES) -o
 
-# default
-ifndef OSTYPE
-OSTYPE = linux-gnu
-endif
-#
+Sewers: $(EXPENDABLES)
+	$(MAKE_EXECUTABLE) Sewers
 
+Avatar.o: Avatar.cpp Avatar.hpp Object.hpp
+	$(MAKE_EXPENDABLE) Avatar.cpp
 
-# OSX
-ifeq ($(findstring darwin,$(OSTYPE)), darwin)
-INCLUDES = -I/sw/include -I/usr/X11R6/include 
-LDLIBS = -lglui -L/sw/lib -L/usr/X11R6/lib -lX11 -lGL -lGLU -lglut -lXmu -lm 
-endif
-#
+CircuitObject.o: CircuitObject.cpp CircuitObject.hpp Object.hpp
+	$(MAKE_EXPENDABLE) CircuitObject.cpp
 
-# FreeBSD
-ifeq ($(findstring freebsd,$(OSTYPE)), freebsd)
-INCLUDES = -I/usr/X11R6/include 
-LDLIBS = -lglui -L/usr/X11R6/lib -lX11 -lGL -lGLU -lglut -lXmu -lm 
-endif
-#
+Computer.o: Computer.cpp Computer.hpp CircuitObject.hpp
+	$(MAKE_EXPENDABLE) Computer.cpp
 
-# linux
-ifeq ($(findstring linux,$(OSTYPE)), linux)
-INCLUDES =  
-LDLIBS = -lglui -lX11 -lGL -lGLU -lglut -lXmu -lXi -lm 
-endif
-#
+Driver.o: Driver.cpp GameEngine.hpp
+	$(MAKE_EXPENDABLE) Driver.cpp
 
-Sewers: main.o Display.o Player.o Wall.o MenuBar.o MenuButton.o $(GLTYPES).h $(GLTYPES).o
-	g++ $(CPPFLAGS) $(LDLIBS) $(GLTYPES).o main.o Display.o Player.o Wall.o MenuBar.o MenuButton.o -o Sewers
+Entrance.o: Entrance.cpp Entrance.hpp Object.hpp
+	$(MAKE_EXPENDABLE) Entrance.cpp
 
-main.o: main.cpp Display.hpp $(GLTYPES).h $(GLTYPES).o
-	g++ $(CPPFLAGS) $(INCLUDES) -c main.cpp
+Exit.o: Exit.cpp Exit.hpp CircuitObject.hpp
+	$(MAKE_EXPENDABLE) Exit.cpp
 
-Display.o: Display.cpp Display.hpp Player.hpp Wall.hpp MenuBar.hpp $(GLTYPES).h $(GLTYPES).o
-	g++ $(CPPFLAGS) $(INCLUDES) -c Display.cpp
+GameEngine.o: GameEngine.cpp GameEngine.hpp
+	$(MAKE_EXPENDABLE) GameEngine.cpp
 
-Player.o: Player.cpp Player.hpp component.h $(GLTYPES).h $(GLTYPES).o
-	g++ $(CPPFLAGS) $(INCLUDES) -c Player.cpp
+GameScreen.o: GameScreen.cpp GameScreen.hpp
+	$(MAKE_EXPENDABLE) GameScreen.cpp
 
-Wall.o: Wall.cpp component.h $(GLTYPES).h $(GLTYPES).o
-	g++ $(CPPFLAGS) $(INCLUDES) -c Wall.cpp
+gltypes.1.o: gltypes.1.cpp gltypes.1.h
+	$(MAKE_EXPENDABLE) gltypes.1.cpp
 
-MenuBar.o: MenuBar.cpp MenuBar.hpp MenuButton.hpp component.h $(GLTYPES).h $(GLTYPES).o
-	g++ $(CPPFLAGS) $(INCLUDES) -c MenuBar.cpp
-
-MenuButton.o: MenuButton.cpp MenuButton.hpp component.h $(GLTYPES).h $(GLTYPES).o
-	g++ $(CPPFLAGS) $(INCLUDES) -c MenuButton.cpp
+Object.o: Object.cpp Object.hpp
+	$(MAKE_EXPENDABLE) Object.cpp
 
 clean:
 	rm -f $(EXPENDABLES)
