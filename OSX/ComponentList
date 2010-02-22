@@ -1,0 +1,23 @@
+__Game__
+Player
+	Moved by keyboard (or mouse?)
+Floor_Tile
+Wall
+Control_Panel
+Door
+Book
+Message_Screen
+
+__Menu__
+Welcome_Screen
+Menu
+Menu_Button
+Dropdown_List
+Dropdown_Item
+
+__Control Panel__
+Gate_Screen
+Path
+Switch
+Gate
+	Types: NOT, AND, OR, NAND, NOR, XOR, XAND
