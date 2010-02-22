@@ -4,7 +4,7 @@
 EXPENDABLES = Avatar.o CircuitObject.o Computer.o Driver.o Entrance.o Exit.o GameEngine.o GameScreen.o gltypes.1.o Object.o
 EXECUTABLES = Sewers
 
-CFLAGS = -Wall -ggdb --pedantic
+CFLAGS = -Wall -ggdb --pedantic -DACL
 CPP = g++
 LDLIBS = -lglui -lX11 -lGL -lGLU -lglut -lXmu -lXi -lm
 

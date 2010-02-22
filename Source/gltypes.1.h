@@ -239,9 +239,11 @@
 #ifndef GLTYPES_H
 #define GLTYPES_H
 
-#include <X11/X.h>    // Basic X library
-#include <GL/gl.h>    // Basic Mesa OpenGL library
-#include <GL/glut.h>  // Mesa OpenGL utility toolkit
+#ifdef ACL
+#include "glconstants.ACL.hpp"
+#else
+#include "glconstants.OSX.hpp"
+#endif
 
 #include <cmath>    // For sqrt
 #include <vector>
