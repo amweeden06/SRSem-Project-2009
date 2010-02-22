@@ -240,9 +240,9 @@
 #define GLTYPES_H
 
 #ifdef ACL
-#include "glconstants.ACL.hpp"
+#include "glheaders.ACL.hpp"
 #else
-#include "glconstants.OSX.hpp"
+#include "glheaders.OSX.hpp"
 #endif
 
 #include <cmath>    // For sqrt
