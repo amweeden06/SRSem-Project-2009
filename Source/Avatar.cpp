@@ -102,7 +102,7 @@ namespace Sewers
 		}		
 	}
 	
-	ostream& operator << ( ostream& outs, const Avatar& a )
+	ostream& operator << (ostream& outs, const Avatar& a)
     {
         outs << a.type() << endl;
         outs << "\tleft: " << a.left() << endl;

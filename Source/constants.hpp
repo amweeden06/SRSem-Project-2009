@@ -9,6 +9,7 @@
 #include <iostream>
 #include <fstream>
 #include <cassert>
+#include <vector>
 #include "gltypes.1.h"
 
 using namespace std;

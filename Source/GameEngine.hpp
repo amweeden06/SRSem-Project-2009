@@ -5,7 +5,6 @@
 #include "Avatar.hpp"
 #include "Computer.hpp"
 #include "Entrance.hpp"
-#include "Exit.hpp"
 #include "GameScreen.hpp"
 #include "CircuitObject.hpp"
 
@@ -20,10 +19,12 @@ namespace Sewers
 		{
 		public:
 			// CONSTRUCTORS
-			GameEngine(string rooms_file = "Room1.sew");
+			GameEngine();
 			// ACCESSORS
 			size_t num_steps() const { return _num_steps; }
-			string rooms_file() const { return _rooms_file; }
+			size_t current_room_index() const { return _current_room_index; }
+			string current_room() const;
+			bool already_solved() const { return _already_solved; }
 			size_t num_switches() const { return _num_switches; }
 			size_t num_gates() const { return _num_gates; }
             unsigned char left_key() const { return _left_key; }
@@ -36,7 +37,8 @@ namespace Sewers
             unsigned char quit_key() const { return _quit_key; }
             // MUTATORS
 			void set_num_steps(const size_t num_steps) { _num_steps = num_steps; }
-			void set_rooms_file(const string rooms_file) { _rooms_file = rooms_file; }
+			void set_current_room_index(const size_t i);
+			void set_already_solved(const bool b) { _already_solved = b; }
             void set_left_key(const unsigned char key) { _left_key = key; }
             void set_right_key(const unsigned char key) { _right_key = key; }
             void set_down_key(const unsigned char key) { _down_key = key; }
@@ -47,7 +49,8 @@ namespace Sewers
             void set_quit_key(const unsigned char key) { _quit_key = key; }
 			// METHODS
 			void init_glut(int& argc, char** argv);
-			void load_circuit(const string filename);
+			void load_room_filenames(string rooms_file);
+			void load_circuit();
 			void save_game() const;
 			void load_game();
 			// GLUT WRAPPERS
@@ -58,8 +61,9 @@ namespace Sewers
 			// Data collection
 			size_t _num_steps; // Number of steps user has taken in this room
 			// Room information
-			int _current_room; // ID of the current room
-			string _rooms_file; // Filename of the rooms file
+			vector<string> _room_files;  // Ordered list of files from which to load circuits
+			size_t _current_room_index; // Index of the current room
+			bool _already_solved; // True if the avatar has just entered from the entrance of the next room
 			// Object List
 			Avatar _avatar;
 			Computer _computer;

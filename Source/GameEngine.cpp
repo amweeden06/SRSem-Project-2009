@@ -6,10 +6,10 @@
 
 namespace Sewers
 {
-	GameEngine::GameEngine(string rooms_file)
+	GameEngine::GameEngine()
 	{	
 		set_num_steps(0);
-		set_rooms_file(rooms_file);
+		set_already_solved(false);
 		
 		_num_switches = _num_gates = 0;
 		
@@ -43,6 +43,23 @@ namespace Sewers
         set_quit_key('q');
 	}
 	
+	// PRECONDITION: The current room index is not out of bounds
+	// POSTCONDITION: The filename at the current room index has been returned
+	string GameEngine::current_room() const
+	{
+		assert(current_room_index() < _room_files.size());
+		return _room_files[current_room_index()];
+	}
+	
+	// PRECONDITION: i is not an out-of-bounds index
+	// POSTCONDITION: The new current room is that at index i of the room
+	//                 files vector
+	void GameEngine::set_current_room_index(size_t i)
+	{
+		assert(i < _room_files.size());
+		_current_room_index = i;
+	}
+	
     // PRECONDITION: argc and argv have not been modified since main() was
     //                called
     // POSTCONDITION: The GLUT window has been set up for drawing
@@ -56,12 +73,44 @@ namespace Sewers
         glClearColor(0.0, 0.0, 0.0, 0.0);
         gluOrtho2D(0, WINDOW_WIDTH, 0, WINDOW_HEIGHT); 
     }
-
-    // PRECONDITIONS: none
-    // POSTCONDITION: The circuit of the room has been loaded from `filename'
-	void GameEngine::load_circuit(string filename)
+	
+	// PRECONDITIONS: rooms_file is an existing file
+	// POSTCONDITIONS: The filenames for each of the rooms have been stored (each
+	//  whitespace separated string in the file is considered a filename).  Order
+	//  matters here, so files earlier in the rooms_file will be added first
+	void GameEngine::load_room_filenames(string rooms_file)
 	{
-		// Used for to make insertion easy, via the >> operator
+		// Used to make insertion easy, via the >> operator
+		ifstream ifs;
+		// The next filename being loaded
+		string current_filename = "";
+		
+		// Open the file for loading
+		ifs.open(rooms_file.c_str());
+		// Check that the file opened properly, exit on failure
+        if(!ifs)
+        {
+            cerr << "SEWERS:  Fatal error loading rooms file " << rooms_file << endl;
+			cerr << "Could not open file" << endl;
+            exit(EXIT_FAILURE);
+        }
+		
+		// Load filenames and add them to the list
+		while(ifs >> current_filename)
+		{
+			_room_files.push_back(current_filename);
+		}
+		
+		// Set the first filename in the rooms_file as the current room
+		set_current_room_index(0);
+	}
+
+    // PRECONDITIONS: There is a file to load
+    // POSTCONDITION: The circuit of the current room has been loaded and the
+	//  avatar has been reset to its original position
+	void GameEngine::load_circuit()
+	{
+		// Used to make insertion easy, via the >> operator
 		ifstream ifs;
 		// The type of the current object being loaded from the file
 		string current_type = "";
@@ -69,13 +118,38 @@ namespace Sewers
 		int output_value = 0;
 		// Dummy variables to pass by reference to drawing prep function
 		int w = 0, h = 0;
+		// If the avatar is entering from the right, we want to load the _solution_
+		//  to the room.  This is specified in the file, the following variable
+		//  indicates we have reached that point in the file.
+		bool checking_solution = false;
+		
+		// Clear the last room
+		_exit.set_input1(NULL);
+		_num_switches = 0;
+		_num_gates = 0;
+		// Reset avatar position
+		if(already_solved())
+			_avatar.set_left(WINDOW_WIDTH);
+		else
+		{
+			if(current_room_index() == 0)
+				_avatar.set_left(AVATAR_LEFT);
+			else
+				_avatar.set_left(0 - AVATAR_WIDTH);
+		}
+		// Set entrance as either ladder (first room) or doorway
+		if(current_room_index() == 0)
+			_entrance.set_as_ladder();
+		else
+			_entrance.set_as_door();
+		
 		
         // Open the file for loading
-		ifs.open(filename.c_str());
+		ifs.open(current_room().c_str());
 		// Check that the file opened properly, exit on failure
         if(!ifs)
         {
-            cerr << "Fatal error loading room file " << filename << endl;
+            cerr << "Fatal error loading room file " << current_room() << endl;
 			cerr << "Could not open file" << endl;
             exit(EXIT_FAILURE);
         }
@@ -83,33 +157,38 @@ namespace Sewers
 		// Load circuit object
 		while(ifs >> current_type)
 		{		
-			if(current_type == "SWITCH")
+			if(current_type == "SOLUTION")
+				checking_solution = true;
+			else if((already_solved() && checking_solution) || (!already_solved() && !checking_solution))
 			{
-				// Import the output value
-				ifs >> output_value;
-				// Add to this room's list of switches
-				_switches[_num_switches++] = (CircuitObject(current_type));
-				_switches[num_switches()-1].set_width(SWITCH_WIDTH);
-				_switches[num_switches()-1].set_height(SWITCH_HEIGHT);
-				_switches[num_switches()-1].set_output_value(output_value);
-				// Connect the object to the rest of the circuit
-				connect_object(_switches[num_switches()-1]);
+				if(current_type == "SWITCH")
+				{
+					// Import the output value
+					ifs >> output_value;
+					// Add to this room's list of switches
+					_switches[_num_switches++] = (CircuitObject(current_type));
+					_switches[num_switches()-1].set_width(SWITCH_WIDTH);
+					_switches[num_switches()-1].set_height(SWITCH_HEIGHT);
+					_switches[num_switches()-1].set_output_value(output_value);
+					// Connect the object to the rest of the circuit
+					connect_object(_switches[num_switches()-1]);
+				}
+				else if(current_type == "BUTTON")
+				{
+					// The last switch added gets the button
+					_switches[num_switches()-1].set_has_button(true);
+				}			
+				else 
+				{
+					// Add to this room's list of gates
+					_gates[_num_gates++] = (CircuitObject(current_type));
+					// Update the gate in the room's list
+					_gates[num_gates()-1].set_width(GATE_WIDTH);
+					_gates[num_gates()-1].set_height(GATE_HEIGHT);
+					// Connect the object to the rest of the circuit
+					connect_object(_gates[num_gates()-1]);
+				}			
 			}
-			else if(current_type == "BUTTON")
-			{
-				// The last switch added gets the button
-				_switches[num_switches()-1].set_has_button(true);
-			}			
-			else 
-			{
-				// Add to this room's list of gates
-				_gates[_num_gates++] = (CircuitObject(current_type));
-				// Update the gate in the room's list
-				_gates[num_gates()-1].set_width(GATE_WIDTH);
-				_gates[num_gates()-1].set_height(GATE_HEIGHT);
-				// Connect the object to the rest of the circuit
-				connect_object(_gates[num_gates()-1]);
-			}			
 		}
 
 		// Set up circuit for drawing
@@ -245,15 +324,15 @@ namespace Sewers
 		{
 			_gates[i].draw();
 		}
-		
-        // Ladder
-        _entrance.draw();
-		
+				
         // Gate box
         //_gate_box.draw();
 		
         // Avatar
         _avatar.draw();
+		
+		// Entrance
+		_entrance.draw();
 		
         // Exit
 		_exit.draw();
@@ -287,11 +366,31 @@ namespace Sewers
         if(key == left_key())
         {
             attempt_avatar_move("LEFT");
+			// If the avatar has left the room via the exit, load the next room
+			if(_avatar.right() <= 0)
+			{
+				set_current_room_index(current_room_index() - 1);
+				set_already_solved(true);
+				load_circuit();
+			}
 			draw();
         }
         else if(key == right_key())
         {
             attempt_avatar_move("RIGHT");
+			// If the avatar has left the room via the entrance, load the previous room
+			if(_avatar.left() >= WINDOW_WIDTH)
+			{
+				// Exit if player has completed all the rooms
+				if(current_room_index() == _room_files.size() - 1)
+				   exit(EXIT_SUCCESS);
+				else 
+				{
+					set_current_room_index(current_room_index() + 1);
+					set_already_solved(false);
+					load_circuit();
+				}
+			}
 			draw();
 		}
         else if(key == down_key())
@@ -313,10 +412,10 @@ namespace Sewers
 				if(intersecting(_avatar, _switches[i]) && _switches[i].has_button())
 				   {
 					   // Toggle the value of the switch
-					   if(_switches[0].output_value() == 0)
-						   _switches[0].set_output_value(1);
+					   if(_switches[i].output_value() == 0)
+						   _switches[i].set_output_value(1);
 					   else
-						   _switches[0].set_output_value(0);
+						   _switches[i].set_output_value(0);
 				   }
 			}
 			

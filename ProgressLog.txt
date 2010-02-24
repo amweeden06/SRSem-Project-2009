@@ -1,3 +1,10 @@
+Note that the progress of tasks and their resolutions should be followed in the wiki.
+
+_Spring Semester Log_
+2/24
+Bitty can now walk from room to room, without any errors so far!
+
+_Fall Semester Log_
 10/25
 
 Paper - Got sources for evaluating educational computer games.  There's a lot there!  

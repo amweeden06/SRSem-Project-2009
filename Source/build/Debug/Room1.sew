@@ -1,7 +1,5 @@
-         AND 
+SWITCH 1
 
-NOT                  NOT
+SOLUTION
 
-SWITCH 1 BUTTON      SWITCH 0
-
-
+SWITCH 1

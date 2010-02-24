@@ -203,7 +203,7 @@ namespace Sewers
 		}
     }	
 	
-    ostream& operator << ( ostream& outs, const CircuitObject& o )
+    ostream& operator << (ostream& outs, const CircuitObject& o)
     {
         outs << o.type() << endl;
         outs << "\tleft: " << o.left() << endl;

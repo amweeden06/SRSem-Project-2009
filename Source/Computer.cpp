@@ -43,7 +43,7 @@ namespace Sewers
 		glRectf(right() - width()/3, bottom() + height()/8, right() - width()/6, bottom() + height()/5);
 	}
 	
-	ostream& operator << ( ostream& outs, const Computer& c )
+	ostream& operator << (ostream& outs, const Computer& c)
     {
         outs << c.type() << endl;
         outs << "\tleft: " << c.left() << endl;

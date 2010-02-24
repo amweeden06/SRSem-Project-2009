@@ -58,9 +58,19 @@ namespace Sewers
 			glVertex2f(right(), bottom());
 			glEnd();
 		}
+		else 
+		{
+			// Draw the wall
+			WALL_COLOR.glColor();
+			glBegin(GL_POLYGON);
+			glVertex2f(left(), bottom());
+			glVertex2f(left(), top() - height()/2);
+			glVertex2f(right(), bottom());
+			glEnd();
+		}
 	}
 	
-	ostream& operator << ( ostream& outs, const Entrance& e )
+	ostream& operator << (ostream& outs, const Entrance& e)
     {
         outs << e.type() << endl;
         outs << "\tleft: " << e.left() << endl;

@@ -14,7 +14,8 @@ void wrap_key(unsigned char k, int x, int y) { g.key_click(k, x, y); }
 
 int main(int argc, char** argv) 
 {
-	g.load_circuit("Room1.sew");
+	g.load_room_filenames("rooms_file");
+	g.load_circuit();
 	g.init_glut(argc, argv);	
     glutDisplayFunc(wrap_display);
 	glutKeyboardFunc(wrap_key);
