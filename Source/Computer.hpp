@@ -23,6 +23,7 @@ namespace Sewers
         void set_exit(CircuitObject* e) { _exit = e; }
 		// METHODS
         void draw() const;
+		void help() const;
     private:
         CircuitObject* _exit;
     };

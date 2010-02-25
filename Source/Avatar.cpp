@@ -102,6 +102,12 @@ namespace Sewers
 		}		
 	}
 	
+	// PRECONDITIONS: none
+	// POSTCONDITION: Information about the object has been displayed to the user.
+	void Avatar::help() const
+	{
+	}	
+	
 	ostream& operator << (ostream& outs, const Avatar& a)
     {
         outs << a.type() << endl;

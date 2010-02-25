@@ -30,6 +30,12 @@ namespace Sewers
 	{
     }	
 	
+	// PRECONDITIONS: none
+	// POSTCONDITION: Information about the object has been displayed to the user.
+	void Object::help() const
+	{
+	}
+	
     ostream& operator << ( ostream& outs, const Object& o )
     {
         outs << o.type() << endl;
@@ -87,5 +93,16 @@ namespace Sewers
 				o1.left() >= o2.right() &&
 				o1.bottom() <= o2.bottom() &&
 				o1.top() >= o2.top()));
+	}
+	
+	// PRECONDITIONS: none
+	// POSTCONDITION: returns true if an object is within a movement factor
+	//  of another (this will usually only be used with avatar as one of the objects)
+	bool next_to(const Object& o1, const Object& o2)
+	{
+		return((o1.right() + MOVE_FACTOR >= o2.left()) ||
+			   (o1.bottom() - MOVE_FACTOR <= o2.top()) ||
+			   (o1.left() - MOVE_FACTOR <= o2.right()) ||
+			   (o1.top() + MOVE_FACTOR >= o2.bottom()));
 	}
 }

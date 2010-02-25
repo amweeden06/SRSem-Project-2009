@@ -24,6 +24,7 @@ namespace Sewers
 		void set_as_door() { _is_ladder = false; }
         // METHODS
         void draw() const;
+		void help() const;
     private:
         bool _is_ladder;
     };

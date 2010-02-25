@@ -34,6 +34,7 @@ namespace Sewers
 			unsigned char action_key() const { return _action_key; }
 			unsigned char save_key() const { return _save_key; }
 			unsigned char load_key() const { return _load_key; }
+			unsigned char help_key() const { return _help_key; }
             unsigned char quit_key() const { return _quit_key; }
             // MUTATORS
 			void set_num_steps(const size_t num_steps) { _num_steps = num_steps; }
@@ -46,6 +47,7 @@ namespace Sewers
 			void set_action_key(const unsigned char key) { _action_key = key; }
 			void set_save_key(const unsigned char key) { _save_key = key; }
 			void set_load_key(const unsigned char key) { _load_key = key; }
+			void set_help_key(const unsigned char key) { _help_key = key; }
             void set_quit_key(const unsigned char key) { _quit_key = key; }
 			// METHODS
 			void init_glut(int& argc, char** argv);
@@ -53,10 +55,11 @@ namespace Sewers
 			void load_circuit();
 			void save_game() const;
 			void load_game();
+			void print_truth_table() const;
+			void help() const;
 			// GLUT WRAPPERS
 			void draw() const;
             void key_click(const unsigned char key, const int x, const int y);
-			void print_truth_table() const;
 		private:
 			// Data collection
 			size_t _num_steps; // Number of steps user has taken in this room
@@ -77,7 +80,7 @@ namespace Sewers
 			GameScreen _computer_screen;
             // Keyboard event list
             unsigned char _left_key, _right_key, _down_key, _up_key;
-			unsigned char _action_key, _save_key, _load_key, _quit_key;
+			unsigned char _action_key, _save_key, _load_key, _help_key, _quit_key;
             // PRIVATE MEMBER FUNCTIONS
             void attempt_avatar_move(const string direction);
 			void connect_object(CircuitObject& input);

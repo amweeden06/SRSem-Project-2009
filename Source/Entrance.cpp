@@ -70,6 +70,12 @@ namespace Sewers
 		}
 	}
 	
+	// PRECONDITIONS: none
+	// POSTCONDITION: Information about the object has been displayed to the user.
+	void Entrance::help() const
+	{
+	}	
+	
 	ostream& operator << (ostream& outs, const Entrance& e)
     {
         outs << e.type() << endl;

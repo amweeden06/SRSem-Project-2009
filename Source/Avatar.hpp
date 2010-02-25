@@ -23,6 +23,7 @@ namespace Sewers
         void set_animation_frame(bool a) { _animation_frame = a; }
         // METHODS
         void draw() const;
+		void help() const;
     private:
         string _direction; // Direction the avatar is facing
         bool _animation_frame; // toggled to animate the avatar

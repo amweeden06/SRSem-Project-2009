@@ -203,6 +203,12 @@ namespace Sewers
 		}
     }	
 	
+	// PRECONDITIONS: none
+	// POSTCONDITION: Information about the object has been displayed to the user.
+	void CircuitObject::help() const
+	{
+	}
+	
     ostream& operator << (ostream& outs, const CircuitObject& o)
     {
         outs << o.type() << endl;

@@ -11,6 +11,7 @@ namespace Sewers
 {
 	/* Object -- parent class of all objects in the game
 	 *        -- contains information on drawing the object
+	 *        -- also contains help function, which describes the object
 	 */
 	class Object
 	{
@@ -34,6 +35,7 @@ namespace Sewers
         void set_height(const GLint height) { _height = height; }
         // METHODS
         void draw() const;
+		void help() const;
     private:
         string _type;  // For identification
         GLint _left, _bottom, _width, _height;  // Drawing coordinates
@@ -41,6 +43,7 @@ namespace Sewers
 
     ostream& operator << (ostream&, const Object&);
 	bool intersecting(const Object&, const Object&);
+	bool next_to(const Object&, const Object&);
 }
 
 #endif

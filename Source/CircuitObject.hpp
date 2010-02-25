@@ -52,6 +52,7 @@ namespace Sewers
 		void set_has_button(const bool b) { _has_button = b; }
         // METHODS
         void draw() const;
+		void help() const;
     private:
 		CircuitObject* _input1;
 		CircuitObject* _input2;

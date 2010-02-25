@@ -40,6 +40,7 @@ namespace Sewers
 		set_action_key('f');
 		set_save_key('i');
 		set_load_key('u');
+		set_help_key('h');
         set_quit_key('q');
 	}
 	
@@ -278,6 +279,56 @@ namespace Sewers
 			}
 		}
 	}
+	
+	// PRECONDITIONS: none
+	// POSTCONITIONS: Truth table for the current room has been drawn, with
+	//                 prompts for the user at each row
+	void GameEngine::print_truth_table() const
+	{
+		// Each switch is assigned a unique letter.
+		// P is often the standard choice for the initial letter.
+		char letter = 'P';
+		// For each row in the table, we will be prompting the user to
+		//  input the correct answer for that row
+		int row_answer = 0;
+		
+		// Print the column headings.  We want a column
+		//  for each switch in the circuit.
+		for(size_t i = 0; i < num_switches(); ++i)
+		{
+			cerr << letter << "\t";
+			// Set the letter of the next switch
+			letter++;
+		}
+		
+		// Print the final column heading.  This is the boolean
+		//  description of the current circuit.
+		// Again, the initial letter assignment is "P"
+		letter = 'P';
+		print_truth_table_result(*(_exit.input1()), letter);
+		cerr << endl;
+		
+		// There will be 2^n rows, where n is the number of switches
+		//  in the circuit.
+		for(size_t i = 0; i < pow(2.0,(double)num_switches()); ++i)
+		{
+			// This section is to ensure that we have all combinations of
+			//  switches
+			for(int j = num_switches() - 1; j >= 0; --j)
+			{
+				cerr << (int)(i / pow(2.0,(double)j)) % 2 << "\t";
+			}
+			cin >> row_answer;
+			cerr << endl;
+		}		
+	}
+	
+	// PRECONDITIONS: none
+	// POSTCONDITION: If the avatar is next to an object, display
+	//  information about that object
+	void GameEngine::help() const
+	{
+	}
 
     // PRECONDITIONS: none
     // POSTCONDITION: All of the objects of the room have been drawn to the
@@ -436,56 +487,17 @@ namespace Sewers
 			load_game();
 			draw();
 		}
+		else if(key == help_key())
+		{
+			help();
+		}
         else if(key == quit_key())
         {
             exit(EXIT_SUCCESS);
         }
     }
 	
-	// PRECONDITIONS: none
-	// POSTCONITIONS: Truth table for the current room has been drawn, with
-	//                 prompts for the user at each row
-	void GameEngine::print_truth_table() const
-	{
-		// Each switch is assigned a unique letter.
-		// P is often the standard choice for the initial letter.
-		char letter = 'P';
-		// For each row in the table, we will be prompting the user to
-		//  input the correct answer for that row
-		int row_answer = 0;
-		
-		// Print the column headings.  We want a column
-		//  for each switch in the circuit.
-		for(size_t i = 0; i < num_switches(); ++i)
-		{
-			cerr << letter << "\t";
-			// Set the letter of the next switch
-			letter++;
-		}
-		
-		// Print the final column heading.  This is the boolean
-		//  description of the current circuit.
-		// Again, the initial letter assignment is "P"
-		letter = 'P';
-		print_truth_table_result(*(_exit.input1()), letter);
-		cerr << endl;
-		
-		// There will be 2^n rows, where n is the number of switches
-		//  in the circuit.
-		for(size_t i = 0; i < pow(2.0,(double)num_switches()); ++i)
-		{
-			// This section is to ensure that we have all combinations of
-			//  switches
-			for(int j = num_switches() - 1; j >= 0; --j)
-			{
-				cerr << (int)(i / pow(2.0,(double)j)) % 2 << "\t";
-			}
-			cin >> row_answer;
-			cerr << endl;
-		}		
-	}
-
-    // PRECONDITIONS: None
+	// PRECONDITIONS: None
     // POSTCONDITION: The avatar is facing `direction' and has been animated.
     //                If the move is a valid one, the avatar will also move in
     //                the indicated direction

@@ -43,6 +43,12 @@ namespace Sewers
 		glRectf(right() - width()/3, bottom() + height()/8, right() - width()/6, bottom() + height()/5);
 	}
 	
+	// PRECONDITIONS: none
+	// POSTCONDITION: Information about the object has been displayed to the user.
+	void Computer::help() const
+	{
+	}	
+	
 	ostream& operator << (ostream& outs, const Computer& c)
     {
         outs << c.type() << endl;
