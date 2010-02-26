@@ -328,6 +328,22 @@ namespace Sewers
 	//  information about that object
 	void GameEngine::help() const
 	{
+		if(intersecting(_avatar, _computer))
+		   _computer.help();
+		
+		if(next_to(_avatar, _entrance))
+			_entrance.help();
+		
+		if(next_to(_avatar, _exit))
+			_exit.help();
+		
+		for(size_t i = 0; i < num_switches(); ++i)
+			if(intersecting(_avatar, _switches[i]))
+				_switches[i].help();
+		
+		for(size_t i = 0; i < num_gates(); ++i)
+			if(intersecting(_avatar, _gates[i]))
+				_gates[i].help();
 	}
 
     // PRECONDITIONS: none

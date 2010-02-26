@@ -46,53 +46,15 @@ namespace Sewers
         return outs;
     }
 	
+	// PRECONDITIONS: none
+	// POSTCONDITION: returns true if an object is intersecting a
+	//  another (this will usually only be used with avatar as one of the objects)
 	bool intersecting(const Object& o1, const Object& o2)
 	{
-		// Top left corner
-		return((o1.left() >= o2.left() &&
-				o1.left() <= o2.right() &&
-				o1.top() <= o2.top() &&
-				o1.top() >= o2.bottom()) ||
-			   // Top right corner
-			   (o1.right() >= o2.left() &&
-				o1.right() <= o2.right() &&
-				o1.top() <= o2.top() &&
-				o1.top() >= o2.bottom()) ||
-			   // Bottom left corner
-			   (o1.left() >= o2.left() &&
-				o1.left() <= o2.right() &&
-				o1.bottom() <= o2.top() &&
-				o1.bottom() >= o2.bottom()) ||
-			   // Bottom right corner
-			   (o1.right() >= o2.left() &&
-				o1.right() <= o2.right() &&
-				o1.bottom() <= o2.top() &&
-				o1.bottom() >= o2.bottom()) ||
-			   // Left edge
-			   (o1.left() >= o2.left() &&
-				o1.left() <= o2.right() &&
-				o1.bottom() <= o2.bottom() &&
-				o1.top() >= o2.top()) ||	
-			   // Right edge
-			   (o1.right() >= o2.left() &&
-				o1.right() <= o2.right() &&
-				o1.bottom() <= o2.bottom() &&
-				o1.top() >= o2.top()) ||			   
-			   // Bottom edge
-			   (o1.left() <= o2.left() &&
-				o1.right() >= o2.right() &&
-				o1.bottom() <= o2.top() &&
-				o1.bottom() >= o2.bottom()) ||
-			   // Top edge
-			   (o1.left() >= o2.left() &&
-				o1.left() <= o2.right() &&
-				o1.top() <= o2.top() &&
-				o1.top() >= o2.bottom()) ||
-			   // Superimposed
-			   (o1.left() <= o2.left() &&
-				o1.left() >= o2.right() &&
-				o1.bottom() <= o2.bottom() &&
-				o1.top() >= o2.top()));
+		return ((o1.left() <= o2.right()) &&
+				(o1.right() >= o2.left()) &&
+				(o1.top() >= o2.bottom()) &&
+				(o1.bottom() <= o2.top()));
 	}
 	
 	// PRECONDITIONS: none
@@ -100,9 +62,9 @@ namespace Sewers
 	//  of another (this will usually only be used with avatar as one of the objects)
 	bool next_to(const Object& o1, const Object& o2)
 	{
-		return((o1.right() + MOVE_FACTOR >= o2.left()) ||
-			   (o1.bottom() - MOVE_FACTOR <= o2.top()) ||
-			   (o1.left() - MOVE_FACTOR <= o2.right()) ||
+		return((o1.left() - MOVE_FACTOR <= o2.right()) &&
+			   (o1.right() + MOVE_FACTOR >= o2.left()) &&
+			   (o1.bottom() - MOVE_FACTOR <= o2.top()) &&
 			   (o1.top() + MOVE_FACTOR >= o2.bottom()));
 	}
 }
