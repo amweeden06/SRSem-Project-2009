@@ -33,7 +33,7 @@ namespace Sewers
 		_computer_screen.set_width(COMPUTER_SCREEN_WIDTH);
 		_computer_screen.set_height(COMPUTER_SCREEN_HEIGHT);
 		
-        set_left_key('a');
+		set_left_key('a');
         set_right_key('d');
         set_down_key('s');
         set_up_key('w');
@@ -172,7 +172,7 @@ namespace Sewers
 					_switches[num_switches()-1].set_height(SWITCH_HEIGHT);
 					_switches[num_switches()-1].set_output_value(output_value);
 					// Connect the object to the rest of the circuit
-					connect_object(_switches[num_switches()-1]);
+					_connect_object(_switches[num_switches()-1]);
 				}
 				else if(current_type == "BUTTON")
 				{
@@ -187,13 +187,14 @@ namespace Sewers
 					_gates[num_gates()-1].set_width(GATE_WIDTH);
 					_gates[num_gates()-1].set_height(GATE_HEIGHT);
 					// Connect the object to the rest of the circuit
-					connect_object(_gates[num_gates()-1]);
+					_connect_object(_gates[num_gates()-1]);
 				}			
 			}
 		}
 
 		// Set up circuit for drawing
-		prepare_circuit_drawing(*(_exit.input1()), 0, 0, w, h);
+		_set_circuit_obj_coords();
+		//_prepare_circuit_drawing(*(_exit.input1()), 0, 0, w, h);
 	}
 	
 	// PRECONDITIONS: None
@@ -305,7 +306,7 @@ namespace Sewers
 		//  description of the current circuit.
 		// Again, the initial letter assignment is "P"
 		letter = 'P';
-		print_truth_table_result(*(_exit.input1()), letter);
+		_print_truth_table_result(*(_exit.input1()), letter);
 		cerr << endl;
 		
 		// There will be 2^n rows, where n is the number of switches
@@ -377,7 +378,7 @@ namespace Sewers
 		// Circuit
 		for(size_t i = 0; i < num_switches(); ++i)
 		{
-			draw_circuit(_switches[i]);
+			_draw_circuit(_switches[i]);
 		}
 		
 		// Switches
@@ -432,7 +433,7 @@ namespace Sewers
     {
         if(key == left_key())
         {
-            attempt_avatar_move("LEFT");
+            _attempt_avatar_move("LEFT");
 			// If the avatar has left the room via the exit, load the next room
 			if(_avatar.right() <= 0)
 			{
@@ -444,7 +445,7 @@ namespace Sewers
         }
         else if(key == right_key())
         {
-            attempt_avatar_move("RIGHT");
+            _attempt_avatar_move("RIGHT");
 			// If the avatar has left the room via the entrance, load the previous room
 			if(_avatar.left() >= WINDOW_WIDTH)
 			{
@@ -462,12 +463,12 @@ namespace Sewers
 		}
         else if(key == down_key())
         {
-            attempt_avatar_move("DOWN");
+            _attempt_avatar_move("DOWN");
 			draw();
 		}
         else if(key == up_key())
         {
-            attempt_avatar_move("UP");
+            _attempt_avatar_move("UP");
 			draw();
 		}
 		else if(key == action_key())
@@ -517,7 +518,7 @@ namespace Sewers
     // POSTCONDITION: The avatar is facing `direction' and has been animated.
     //                If the move is a valid one, the avatar will also move in
     //                the indicated direction
-    void GameEngine::attempt_avatar_move(string direction)
+    void GameEngine::_attempt_avatar_move(string direction)
     {
 		// Animate the avatar
         _avatar.set_direction(direction);
@@ -563,7 +564,7 @@ namespace Sewers
 	}
 	
 	// Find an object to which we can connect the `input' object
-	void GameEngine::connect_object(CircuitObject& input)
+	void GameEngine::_connect_object(CircuitObject& input)
 	{
 		// Check the exit first to see if it needs an input.  If it does,
 		if(_exit.input1() == NULL)
@@ -608,44 +609,95 @@ namespace Sewers
 		}
 	}
 	
-	// Recursively set up the coordinates of the circuit objects for drawing, starting
-	//  at root_obj (which should be the exit's input object at first)
-	void GameEngine::prepare_circuit_drawing(CircuitObject& root_obj, int width, 
-											 int height, int& circuit_width, int& circuit_height)
+	// Set up the x (i.e. left()) and y (i.e. bottom()) coordinates for
+	//  each of the circuit objects
+	void GameEngine::_set_circuit_obj_coords()
 	{
-		++width;		
+		// This function uses the lengths of sub-circuits to determine object x values.
+		// It uses the number of switches to determine object y values.
+		// A sub-circuit is a path from a switch to the exit.
+		// The x values of the objects in a sub-circuit are spaced evenly over the width
+		//  of the sub-circuit, and the y values of the objects are spaced evenly over
+		//  the height of the floor.
 		
-		if(root_obj.input2() != NULL)
-		{
-			++circuit_height;
-			prepare_circuit_drawing(*(root_obj.input2()), width, height-1, 
-									circuit_width, circuit_height);
-		}
+		// A count of the number of objects for the current sub-circuit
+		size_t sc_width = 0;
+		// x and y value for the middle of an object
+		GLint x_value = 0;
+		GLint y_value = 0;
+		// x and y value for the left and bottom of the object
+		GLint left = 0;
+		GLint bottom = 0;
+		// The spaces between the x values of objects and the y values of objects,
+		//  spaced evenly over the floor
+		GLint x_spacing_amount = 0;
+		GLint y_spacing_amount = 0;
+		// The current object in question
+		CircuitObject* current_obj = NULL;
 		
-		if(root_obj.input1() != NULL)
-		{
-			if(root_obj.input2() == NULL)
-				prepare_circuit_drawing(*(root_obj.input1()), width, height, 
-										circuit_width, circuit_height);
-			else
-				prepare_circuit_drawing(*(root_obj.input1()), width, height+1, 
-										circuit_width, circuit_height);
+		// Divide the floor height into equal chunks
+		y_spacing_amount = FLOOR_HEIGHT/(num_switches()+1);
+				
+		for(size_t i = 0; i <= num_switches(); ++i)
+		{			
+			// Calculate `sc_width' by counting number of objects along the circuit
+			current_obj = &(_switches[i]);
+			sc_width = 0;
+			while(current_obj->output() != NULL)
+			{
+				current_obj = current_obj->output();
+				++sc_width;
+			}
+			
+			// Divide the floor width into equal chunks
+			x_spacing_amount = FLOOR_WIDTH/(sc_width+1);
+			
+			// Assign x and y values, separated by a certain spacing
+			current_obj = &(_switches[i]);
+			x_value = WALL_WIDTH;
+			y_value = WALL_HEIGHT + (i+1) * y_spacing_amount;
+			while(current_obj->output() != NULL)
+			{
+				x_value += x_spacing_amount;
+				
+				// Determine `left' and `bottom' based on the current object's
+				//  width and height
+				if(current_obj->type() == "SWITCH")
+				{
+					left = x_value - SWITCH_WIDTH/2;
+					bottom = y_value - SWITCH_HEIGHT/2;
+				}
+				else
+				{
+					// Note: for now this only catches gates
+					left = x_value - GATE_WIDTH/2;
+					bottom = y_value - GATE_WIDTH/2;
+				}
+
+				// Only give the object an x value if it doesn't already has one
+				if(current_obj->left() == 0)
+				{
+					current_obj->set_left(left);
+				}
+				
+				// Only give the object a y value if it doesn't already has one
+				if(current_obj->bottom() == 0)
+				{
+					// Make a slight adjustment if the object takes 2 inputs
+					if(current_obj->input2() != NULL)
+					{
+						bottom += y_spacing_amount/2;
+					}					
+					current_obj->set_bottom(bottom);
+				}
+				
+				current_obj = current_obj->output();
+			}
 		}
-		else
-		{
-			// We have reached the switch.  Update the total circuit width if necessary
-			if(width > circuit_width)
-				circuit_width = width;
-			circuit_height++;
-		}
-		
-		// Determine left and bottom coordinates and set them
-		root_obj.set_left(FLOOR_LEFT + FLOOR_WIDTH - width*(FLOOR_WIDTH/(circuit_width+1)));
-		root_obj.set_bottom(FLOOR_BOTTOM + FLOOR_HEIGHT/2 + height*(FLOOR_HEIGHT)/(circuit_height+1));		
 	}
-	
+		
 	// Draws the wires connecting objects in the circuit
-	void GameEngine::draw_circuit(const CircuitObject& input_obj) const
+	void GameEngine::_draw_circuit(const CircuitObject& input_obj) const
 	{
 		CircuitObject* output_obj = input_obj.output();
 		
@@ -688,18 +740,18 @@ namespace Sewers
 		glEnd();
 		
 		if(output_obj->type() != "EXIT")
-			draw_circuit(*(output_obj));
+			_draw_circuit(*(output_obj));
 	}
 	
 	// PRECONDITIONS: none
 	// POSTCONDITION: Recursively prints out the circuit as it would be described in a
 	//                 truth table
-	void GameEngine::print_truth_table_result(const CircuitObject& root_obj, char& letter) const
+	void GameEngine::_print_truth_table_result(const CircuitObject& root_obj, char& letter) const
 	{
 		if(root_obj.input2() != NULL)
 		{
 			cerr << "(";
-			print_truth_table_result(*(root_obj.input2()), letter);
+			_print_truth_table_result(*(root_obj.input2()), letter);
 			cerr << ")";
 		}
 		
@@ -716,7 +768,7 @@ namespace Sewers
 		if(root_obj.input1() != NULL)
 		{
 			cerr << "(";
-			print_truth_table_result(*(root_obj.input1()),letter);
+			_print_truth_table_result(*(root_obj.input1()),letter);
 			cerr << ")";
 		}
 	}

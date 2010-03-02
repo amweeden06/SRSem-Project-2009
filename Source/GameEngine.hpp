@@ -82,10 +82,11 @@ namespace Sewers
             unsigned char _left_key, _right_key, _down_key, _up_key;
 			unsigned char _action_key, _save_key, _load_key, _help_key, _quit_key;
             // PRIVATE MEMBER FUNCTIONS
-            void attempt_avatar_move(const string direction);
-			void connect_object(CircuitObject& input);
-			void prepare_circuit_drawing(CircuitObject&, int, int, int&, int&);
-			void draw_circuit(const CircuitObject&) const;
-			void print_truth_table_result(const CircuitObject&, char&) const;
+            void _attempt_avatar_move(const string direction);
+			void _connect_object(CircuitObject& input);
+			void _set_circuit_obj_coords();
+			void _prepare_circuit_drawing(CircuitObject&, int, int, int&, int&);
+			void _draw_circuit(const CircuitObject&) const;
+			void _print_truth_table_result(const CircuitObject&, char&) const;
 		};
 }
