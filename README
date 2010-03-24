@@ -1,3 +1,6 @@
-Guide to directories:
-`Paper' contains notes I am taking on sources for the paper.
-`Source' contains source code for my development of the game.
+Educational video games are a method of teaching that utilizes the fun and immersive aspects of games to motivate students
+to learn and explore topics that might otherwise be considered opaque and uninteresting. There are a number of theories 
+and design strategies on the development of educational games, particularly in the realm of computer science. For this 
+project, I am developing a small puzzle game that implements many of these theories and design strategies to teach boolean 
+logic and gates. I will test the effectiveness of this game based on a play-testing session and surveys, as well as in-
+game data collection of such factors as time spent completing puzzles, number of attempts per puzzle, and so on.
