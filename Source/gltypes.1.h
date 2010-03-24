@@ -239,11 +239,8 @@
 #ifndef GLTYPES_H
 #define GLTYPES_H
 
-#ifdef ACL
-#include "glheaders.ACL.hpp"
-#else
+#include <X11/X.h>    // Basic X library
 #include "glheaders.OSX.hpp"
-#endif
 
 #include <cmath>    // For sqrt
 #include <vector>

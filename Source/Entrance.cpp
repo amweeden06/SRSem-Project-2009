@@ -38,24 +38,24 @@ namespace Sewers
 			LADDER_COLOR.glColor();
 			glBegin(GL_POLYGON);
 			// Top Rung 
-			glVertex2f(left(), bottom() + 3*height()/5);
-			glVertex2f(left(), top());
-			glVertex2f(left() + width()/5, top() - height()/5);
-			glVertex2f(left() + width()/5, bottom() + 2*height()/5);
+			glVertex2i(left(), bottom() + 3*height()/5);
+			glVertex2i(left(), top());
+			glVertex2i(left() + width()/5, top() - height()/5);
+			glVertex2i(left() + width()/5, bottom() + 2*height()/5);
 			glEnd();
 			glBegin(GL_POLYGON);
 			// Middle Rung
-			glVertex2f(left() + 2*width()/5, bottom() + height()/3);
-			glVertex2f(left() + 2*width()/5, top() - height()/4);
-			glVertex2f(left() + 3*width()/5, top() - 2*height()/5);
-			glVertex2f(left() + 3*width()/5, bottom() + height()/5);
+			glVertex2i(left() + 2*width()/5, bottom() + height()/3);
+			glVertex2i(left() + 2*width()/5, top() - height()/4);
+			glVertex2i(left() + 3*width()/5, top() - 2*height()/5);
+			glVertex2i(left() + 3*width()/5, bottom() + height()/5);
 			glEnd();
 			glBegin(GL_POLYGON);
 			// Bottom Rung
-			glVertex2f(left() + 4*width()/5, bottom() + height()/5);
-			glVertex2f(left() + 4*width()/5, bottom() + 3*height()/5);
-			glVertex2f(right(), top() - 3*height()/5);
-			glVertex2f(right(), bottom());
+			glVertex2i(left() + 4*width()/5, bottom() + height()/5);
+			glVertex2i(left() + 4*width()/5, bottom() + 3*height()/5);
+			glVertex2i(right(), top() - 3*height()/5);
+			glVertex2i(right(), bottom());
 			glEnd();
 		}
 		else 
@@ -63,9 +63,9 @@ namespace Sewers
 			// Draw the wall
 			WALL_COLOR.glColor();
 			glBegin(GL_POLYGON);
-			glVertex2f(left(), bottom());
-			glVertex2f(left(), top() - height()/2);
-			glVertex2f(right(), bottom());
+			glVertex2i(left(), bottom());
+			glVertex2i(left(), top() - height()/2);
+			glVertex2i(right(), bottom());
 			glEnd();
 		}
 	}

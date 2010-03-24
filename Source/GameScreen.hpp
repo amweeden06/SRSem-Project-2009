@@ -13,7 +13,7 @@ namespace Sewers
 	{
 	public:
 		// CONSTRUCTORS
-		GameScreen(const string type = "");
+		GameScreen(string type = "");
 		GameScreen(const GameScreen&);
 		// ACCESSORS
         // MUTATORS

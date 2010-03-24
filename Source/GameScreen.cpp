@@ -34,40 +34,11 @@ namespace Sewers
 		{
             // Draw button
             GLcolor3(0.2, 0.0, 0.0).glColor();
-            glRectf(left() + width()/2 - BUTTON_WIDTH/2, bottom() + height()/2 - BUTTON_HEIGHT/2,
+            glRectf(left() + width()/2 - width()/2, bottom() + height()/2 - BUTTON_HEIGHT/2,
                     left() + width()/2 + BUTTON_WIDTH/2, bottom() + height()/2 + BUTTON_HEIGHT/2);
             GLred3.glColor();
             glRectf(left() + width()/2 - BUTTON_WIDTH/4, bottom() + height()/2 - BUTTON_HEIGHT/4,
                     left() + width()/2 + BUTTON_WIDTH/4, bottom() + height()/2 + BUTTON_HEIGHT/4);			
-		}
-		else if(type() == "COMPUTER_SCREEN")
-		{
-			GLint computer_left = left() + width()/2 - COMPUTER_WIDTH/2;
-			GLint computer_right = computer_left + COMPUTER_WIDTH;
-			GLint computer_bottom = bottom() + height()/2 - COMPUTER_HEIGHT/2;
-			GLint computer_top = computer_bottom + COMPUTER_HEIGHT;
-			
-			// Draw computer
-			GLcolor3(0.4,0.4,0.4).glColor();
-			glRectf(computer_left, computer_bottom, 
-					computer_right, computer_top);
-			// Screen
-			GLgreen3.glColor();
-			glRectf(computer_left + COMPUTER_WIDTH/6, 
-					computer_bottom + COMPUTER_HEIGHT/3, 
-					computer_right - COMPUTER_WIDTH/6, 
-					computer_top - COMPUTER_HEIGHT/6);
-			// Buttons
-			GLred3.glColor();
-			glRectf(computer_left + COMPUTER_WIDTH/6, 
-					computer_bottom + COMPUTER_HEIGHT/8, 
-					computer_left + COMPUTER_WIDTH/3, 
-					computer_bottom + COMPUTER_HEIGHT/5);
-			GLyellow3.glColor();
-			glRectf(computer_right - COMPUTER_WIDTH/3, 
-					computer_bottom + COMPUTER_HEIGHT/8, 
-					computer_right - COMPUTER_WIDTH/6, 
-					computer_bottom + COMPUTER_HEIGHT/5);			
 		}
     }	
 	

@@ -5,7 +5,10 @@
 #include "Object.hpp"
 
 namespace Sewers
-{
+{	
+	/* Drawing colors */
+	const GLcolor3 LADDER_COLOR = GLwhite3;
+	
 	/* Entrance -- in-game object
 	 *          -- appears on the left side of the screen
 	 *          -- either a ladder (first room) or an

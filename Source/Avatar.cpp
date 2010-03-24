@@ -6,16 +6,17 @@
 
 namespace Sewers
 {
-	Avatar::Avatar()
+	Avatar::Avatar(string type)
 	{
-		set_type("AVATAR");
-		set_left(AVATAR_LEFT);
-		set_bottom(AVATAR_BOTTOM);
-		set_width(AVATAR_WIDTH);
-		set_height(AVATAR_HEIGHT);
+		set_type(type);
+		set_left(0);
+		set_bottom(0);
+		set_width(0);
+		set_height(0);
 		
+		set_dialogue("I am an avatar, but I'm not from Pandora.");
 		set_direction("RIGHT");
-		set_animation_frame(false);
+		set_animation_frame(false);		
 	}
 	
 	Avatar::Avatar(const Avatar& a)
@@ -26,6 +27,7 @@ namespace Sewers
 		set_width(a.width());
 		set_height(a.height());
 		
+		set_dialogue(a.dialogue());
 		set_direction(a.direction());
 		set_animation_frame(a.animation_frame());
 	}	
@@ -60,7 +62,13 @@ namespace Sewers
 		}
 		
 		// Set head color
-		AVATAR_HEAD_COLOR.glColor();
+		if(type() == "BITTY")
+			BITTY_HEAD_COLOR.glColor();
+		else if(type() == "LOGICIAN")
+			LOGICIAN_HEAD_COLOR.glColor();
+		else
+			AVATAR_HEAD_COLOR.glColor();
+
 		// Draw head
 		glRectf(left(), bottom() + height()/2, right(), top());
 		
@@ -73,7 +81,13 @@ namespace Sewers
 			glRectf(left() + 2*width()/3, top() - 3*height()/8, right() - width()/8, top() - height()/4);
 		
 		// Draw torso
-		AVATAR_TORSO_COLOR.glColor();
+		if(type() == "BITTY")
+			BITTY_TORSO_COLOR.glColor();
+		else if(type() == "LOGICIAN")
+			LOGICIAN_TORSO_COLOR.glColor();
+		else
+			AVATAR_TORSO_COLOR.glColor();
+
 		glRectf(left(),  bottom() + height()/6, right(), top() - height()/2);
 		
 		// Draw shoes

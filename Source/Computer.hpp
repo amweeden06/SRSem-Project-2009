@@ -7,8 +7,7 @@
 namespace Sewers
 {
 	/* Computer -- in-game object
-	 *          -- turns on if the room's exit is open
-	 *          -- allows the player to enter a truth table
+	 *			-- functions to draw, and display information about the object
 	 */
 	class Computer : public Object
 	{
@@ -17,15 +16,11 @@ namespace Sewers
 		Computer();
 		Computer(const Computer&);
         // ACCESSORS
-		CircuitObject* exit() const { return _exit; }
-		bool is_on() const { return _exit->is_open(); }
         // MUTATORS
-        void set_exit(CircuitObject* e) { _exit = e; }
 		// METHODS
         void draw() const;
 		void help() const;
     private:
-        CircuitObject* _exit;
     };
 	
     ostream& operator << (ostream&, const Computer&);

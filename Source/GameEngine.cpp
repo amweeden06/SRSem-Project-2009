@@ -9,39 +9,56 @@ namespace Sewers
 	GameEngine::GameEngine()
 	{	
 		set_num_steps(0);
+		set_blueprints_collected(0);
 		set_already_solved(false);
 		
-		_num_switches = _num_gates = 0;
+		// Initialize solutions array
+		for(size_t i = 0; i <= MAX_NUM_SOLUTIONS; ++i)
+		{
+			_solutions[i] = "";
+		}
+		
+		_avatar.set_type("BITTY");
 		
 		_exit.set_type("EXIT");
 		_exit.set_left(EXIT_LEFT);
 		_exit.set_bottom(EXIT_BOTTOM);
 		_exit.set_width(EXIT_WIDTH);
 		_exit.set_height(EXIT_HEIGHT);
-		
-		_computer.set_exit(&_exit);
-		
-		_button_screen.set_type("BUTTON_SCREEN");
-		_button_screen.set_left(BUTTON_SCREEN_LEFT);
-		_button_screen.set_bottom(BUTTON_SCREEN_BOTTOM);
-		_button_screen.set_width(BUTTON_SCREEN_WIDTH);
-		_button_screen.set_height(BUTTON_SCREEN_HEIGHT);
-		
-		_computer_screen.set_type("COMPUTER_SCREEN");
-		_computer_screen.set_left(COMPUTER_SCREEN_LEFT);
-		_computer_screen.set_bottom(COMPUTER_SCREEN_BOTTOM);
-		_computer_screen.set_width(COMPUTER_SCREEN_WIDTH);
-		_computer_screen.set_height(COMPUTER_SCREEN_HEIGHT);
-		
+						
 		set_left_key('a');
         set_right_key('d');
         set_down_key('s');
         set_up_key('w');
 		set_action_key('f');
+		set_stats_key('g');
+		set_options_key('o');
 		set_save_key('i');
 		set_load_key('u');
 		set_help_key('h');
         set_quit_key('q');
+	}
+	
+	// PRECONDITIONS: none
+	// POSTCONDITION: Returns the number of switches in the current circuit
+	size_t GameEngine::num_switches() const
+	{
+		size_t i;
+		for(i = 0; i <= MAX_NUM_SWITCHES && _switches[i].type() != ""; ++i)
+		{
+		}
+		return i;
+	}
+	
+	// PRECONDITIONS: none
+	// POSTCONDITION: Returns the number of gates in the current circuit
+	size_t GameEngine::num_gates() const
+	{
+		size_t i;
+		for(i = 0; i <= MAX_NUM_GATES && _switches[i].type() != ""; ++i)
+		{
+		}
+		return i;
 	}
 	
 	// PRECONDITION: The current room index is not out of bounds
@@ -111,14 +128,15 @@ namespace Sewers
 	//  avatar has been reset to its original position
 	void GameEngine::load_circuit()
 	{
+		// Make sure the gates and switches arrays aren't full
+		assert(num_gates() < MAX_NUM_GATES);
+		assert(num_switches() < MAX_NUM_SWITCHES);
 		// Used to make insertion easy, via the >> operator
 		ifstream ifs;
 		// The type of the current object being loaded from the file
 		string current_type = "";
 		// Switches must specify their initial output value
 		int output_value = 0;
-		// Dummy variables to pass by reference to drawing prep function
-		int w = 0, h = 0;
 		// If the avatar is entering from the right, we want to load the _solution_
 		//  to the room.  This is specified in the file, the following variable
 		//  indicates we have reached that point in the file.
@@ -126,8 +144,6 @@ namespace Sewers
 		
 		// Clear the last room
 		_exit.set_input1(NULL);
-		_num_switches = 0;
-		_num_gates = 0;
 		// Reset avatar position
 		if(already_solved())
 			_avatar.set_left(WINDOW_WIDTH);
@@ -164,10 +180,18 @@ namespace Sewers
 			{
 				if(current_type == "SWITCH")
 				{
+					// Make sure the switches array isn't full
+					if(num_switches() == MAX_NUM_SWITCHES)
+					{
+						cerr << "Fatal error loading room file " << current_room() << endl;
+						cerr << "Too many switches, cannot have more than ";
+						cerr << MAX_NUM_SWITCHES << " switches." << endl;
+						exit(EXIT_FAILURE);
+					}
 					// Import the output value
 					ifs >> output_value;
 					// Add to this room's list of switches
-					_switches[_num_switches++] = (CircuitObject(current_type));
+					_switches[num_switches()] = (CircuitObject(current_type));
 					_switches[num_switches()-1].set_width(SWITCH_WIDTH);
 					_switches[num_switches()-1].set_height(SWITCH_HEIGHT);
 					_switches[num_switches()-1].set_output_value(output_value);
@@ -181,8 +205,16 @@ namespace Sewers
 				}			
 				else 
 				{
+					// Make sure the gates array isn't full
+					if(num_gates() == MAX_NUM_GATES)
+					{
+						cerr << "Fatal error loading room file " << current_room() << endl;
+						cerr << "Too many gates, cannot have more than ";
+						cerr << MAX_NUM_GATES << " gates." << endl;
+						exit(EXIT_FAILURE);
+					}
 					// Add to this room's list of gates
-					_gates[_num_gates++] = (CircuitObject(current_type));
+					_gates[num_gates()] = (CircuitObject(current_type));
 					// Update the gate in the room's list
 					_gates[num_gates()-1].set_width(GATE_WIDTH);
 					_gates[num_gates()-1].set_height(GATE_HEIGHT);
@@ -194,7 +226,9 @@ namespace Sewers
 
 		// Set up circuit for drawing
 		_set_circuit_obj_coords();
-		//_prepare_circuit_drawing(*(_exit.input1()), 0, 0, w, h);
+		
+		// Determine solutions for the room
+		_determine_solutions();
 	}
 	
 	// PRECONDITIONS: None
@@ -284,7 +318,7 @@ namespace Sewers
 	// PRECONDITIONS: none
 	// POSTCONITIONS: Truth table for the current room has been drawn, with
 	//                 prompts for the user at each row
-	void GameEngine::print_truth_table() const
+	/*void GameEngine::print_truth_table() const
 	{
 		// Each switch is assigned a unique letter.
 		// P is often the standard choice for the initial letter.
@@ -322,7 +356,7 @@ namespace Sewers
 			cin >> row_answer;
 			cerr << endl;
 		}		
-	}
+	}*/
 	
 	// PRECONDITIONS: none
 	// POSTCONDITION: If the avatar is next to an object, display
@@ -345,6 +379,124 @@ namespace Sewers
 		for(size_t i = 0; i < num_gates(); ++i)
 			if(intersecting(_avatar, _gates[i]))
 				_gates[i].help();
+	}
+	
+	// PRECONDITIONS: none
+	// POSTCONDITION: Print the player's current game statistics
+	void GameEngine::print_stats() const
+	{
+		cerr << endl;
+		cerr << "STATISTICS" << endl;
+		cerr << "----------" << endl;
+		cerr << "Rooms completed: " << current_room_index() << "/" << num_rooms() << endl;
+		cerr << "Blueprints collected: " << blueprints_collected() << "/" << num_rooms() << endl;
+	}
+	
+	// PRECONDITIONS: none
+	// POSTCONDITION: Prompts the user for the key to change and its newly assigned value
+	void GameEngine::change_key()
+	{
+		unsigned char old_key;
+		unsigned char new_key;
+		bool valid_key = false;
+		
+		// Print out the list of keys
+		cerr << endl;
+		cerr << "KEY LISTING:" << endl;
+		cerr << left_key() << " - move left" << endl;
+		cerr << right_key() << " - move right" << endl;
+		cerr << down_key() << " - move down" << endl;
+		cerr << up_key() << " - move up" << endl;
+		cerr << action_key() << " - action button" << endl;
+		cerr << help_key() << " - help" << endl;
+		cerr << stats_key() << " - print statistics" << endl;
+		cerr << options_key() << " - change key commands" << endl;
+		cerr << save_key() << " - save game" << endl;
+		cerr << load_key() << " - load game" << endl;
+		cerr << quit_key() << " - quit" << endl;
+		cerr << endl;
+		
+		// Get the key to be changed
+		cerr << "Please enter the key to change: ";
+		
+		while(!valid_key)
+		{
+			cin >> old_key;
+		
+			// Check to make sure key is valid
+			if(old_key != left_key() && old_key != right_key() && old_key != down_key() &&
+			   old_key != up_key() && old_key != action_key() && old_key != help_key() &&
+			   old_key != stats_key() && old_key != options_key() && old_key != save_key() &&
+			   old_key != load_key() && old_key != quit_key())
+			{
+				cerr << "That key is not currently assigned.  Please choose another: ";
+			}
+			else
+			{
+				valid_key = true;
+			}
+		}
+		
+		valid_key = false;
+		
+		// Get the new key value
+		cerr << "Please enter the new key: ";
+		
+		while(!valid_key)
+		{
+			cin >> new_key;
+		
+			// Check to make sure that key isn't already in use
+			if((new_key == left_key() || new_key == right_key() || new_key == down_key() ||
+			   new_key == up_key() || new_key == action_key() || new_key == help_key() ||
+			   new_key == stats_key() || new_key == options_key() || new_key == save_key() ||
+			   new_key == load_key() || new_key == quit_key()) && (new_key != old_key))
+			{
+				cerr << "That key is already in use.  Please choose another: ";
+			}
+			else
+			{
+				valid_key = true;
+			}
+		}
+		
+		cerr << "New key: " << new_key << endl;
+		
+		// Set the new key
+		if(old_key == left_key())
+			set_left_key(new_key);
+		else if(old_key == right_key())
+			set_right_key(new_key);
+		else if(old_key == down_key())
+			set_down_key(new_key);
+		else if(old_key == up_key())
+			set_up_key(new_key);
+		else if(old_key == action_key())
+			set_action_key(new_key);
+		else if(old_key == help_key())
+			set_help_key(new_key);
+		else if(old_key == stats_key())
+			set_stats_key(new_key);
+		else if(old_key == options_key())
+			set_options_key(new_key);
+		else if(old_key == save_key())
+			set_save_key(new_key);
+		else if(old_key == load_key())
+			set_load_key(new_key);
+		else if(old_key == quit_key())
+			set_quit_key(new_key);
+	}
+	
+	// PRECONDITIONS: none
+	// POSTCONDITION: The solutions of the room have been listed to the user
+	void GameEngine::list_solutions() const
+	{
+		size_t i = 0;
+		for(i = 0; _solutions[i] != ""; ++i)
+		{
+			cerr << _solutions[i] << endl;
+		}
+		cerr << "There are " << i << " solutions" << endl;
 	}
 
     // PRECONDITIONS: none
@@ -421,7 +573,7 @@ namespace Sewers
         //    _pause_screen.draw();
 		
         // Computer screen, if needed
-       if(intersecting(_avatar, _computer) && _computer.is_on())
+       if(intersecting(_avatar, _computer))
             _computer_screen.draw();
 		
 		glFlush();
@@ -489,8 +641,8 @@ namespace Sewers
 			
 			// Display the truth table if the player is touching the computer
 			//  and it is on
-			if(intersecting(_avatar, _computer) && _computer.is_on())
-				print_truth_table();
+			if(intersecting(_avatar, _computer))
+				list_solutions();
 			
 			draw();
 		}		
@@ -507,6 +659,14 @@ namespace Sewers
 		else if(key == help_key())
 		{
 			help();
+		}
+		else if(key == stats_key())
+		{
+			print_stats();
+		}
+		else if(key == options_key())
+		{
+			change_key();
 		}
         else if(key == quit_key())
         {
@@ -583,17 +743,17 @@ namespace Sewers
 			while(!found_obj && i < num_gates())
 			{
 				// If we find one,
-				if(_gates[i].input1() == NULL)
+				if((_gates[i].input2() == NULL) && (_gates[i].type() != "NOT"))
+				{
+					_gates[i].set_input2(&input);
+					input.set_output(&(_gates[i]));
+					found_obj = true;
+				}
+				else if(_gates[i].input1() == NULL)
 				{
 					// Update the input field of the gate,
 					_gates[i].set_input1(&input);
 					// And change the input object's output field
-					input.set_output(&(_gates[i]));
-					found_obj = true;
-				}
-				else if((_gates[i].input2() == NULL) && (_gates[i].type() != "NOT"))
-				{
-					_gates[i].set_input2(&input);
 					input.set_output(&(_gates[i]));
 					found_obj = true;
 				}
@@ -614,7 +774,6 @@ namespace Sewers
 	void GameEngine::_set_circuit_obj_coords()
 	{
 		// This function uses the lengths of sub-circuits to determine object x values.
-		// It uses the number of switches to determine object y values.
 		// A sub-circuit is a path from a switch to the exit.
 		// The x values of the objects in a sub-circuit are spaced evenly over the width
 		//  of the sub-circuit, and the y values of the objects are spaced evenly over
@@ -639,7 +798,7 @@ namespace Sewers
 		y_spacing_amount = FLOOR_HEIGHT/(num_switches()+1);
 				
 		for(size_t i = 0; i <= num_switches(); ++i)
-		{			
+		{		
 			// Calculate `sc_width' by counting number of objects along the circuit
 			current_obj = &(_switches[i]);
 			sc_width = 0;
@@ -667,9 +826,9 @@ namespace Sewers
 					left = x_value - SWITCH_WIDTH/2;
 					bottom = y_value - SWITCH_HEIGHT/2;
 				}
+				// Note: for now `else' only catches gates
 				else
 				{
-					// Note: for now this only catches gates
 					left = x_value - GATE_WIDTH/2;
 					bottom = y_value - GATE_WIDTH/2;
 				}
@@ -694,6 +853,14 @@ namespace Sewers
 				current_obj = current_obj->output();
 			}
 		}
+	}
+	
+	// PRECONDITIONS: none
+	// POSTCONDITION: The solutions array has been populated with the solutions
+	//                 for the given room
+	void GameEngine::_determine_solutions() const
+	{
+		cerr << "_determine_solutions() was called but is just a stub." << endl;
 	}
 		
 	// Draws the wires connecting objects in the circuit
@@ -746,7 +913,7 @@ namespace Sewers
 	// PRECONDITIONS: none
 	// POSTCONDITION: Recursively prints out the circuit as it would be described in a
 	//                 truth table
-	void GameEngine::_print_truth_table_result(const CircuitObject& root_obj, char& letter) const
+	/*void GameEngine::_print_truth_table_result(const CircuitObject& root_obj, char& letter) const
 	{
 		if(root_obj.input2() != NULL)
 		{
@@ -771,5 +938,5 @@ namespace Sewers
 			_print_truth_table_result(*(root_obj.input1()),letter);
 			cerr << ")";
 		}
-	}
+	}*/
 }
