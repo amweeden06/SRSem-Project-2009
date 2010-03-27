@@ -1,7 +1,7 @@
 TSewers
 v7
 r0
-t291393335.127613
+t291389348.457031
 cCheck dependencies
 cCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/main.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/main.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 cCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/DrawingObject.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/DrawingObject.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
@@ -14,6 +14,8 @@ cCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Floor.o "/Cl
 cCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Bit.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Bit.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 cCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Switch.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Switch.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 cCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Row.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Row.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/HudButtons.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/HudButtons.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Room.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Room.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 cLd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/Sewers" normal i386
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Avatar.cpp
@@ -425,20 +427,20 @@ t1266537841
 s17928
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Avatar.cpp
-c000000004BAE1797000000000000090D
-t1269700503
+c000000004BAD0C87000000000000090D
+t1269632135
 s2317
 i"Avatar.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Avatar.hpp
-c000000004BAE17970000000000000357
-t1269700503
+c000000004BAD0A220000000000000357
+t1269631522
 s855
 i"DrawingObject.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Bit.cpp
-c000000004BAE1797000000000000012C
-t1269700503
+c000000004BAD0C43000000000000012C
+t1269632067
 s300
 i"Bit.hpp"
 
@@ -448,14 +450,14 @@ t1269630447
 s132
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Bit.hpp
-c000000004BAE179700000000000000FA
-t1269700503
+c000000004BADFEDF00000000000000FA
+t1269694175
 s250
 i"DrawingObject.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Button.cpp
-c000000004BAE1797000000000000013B
-t1269700503
+c000000004BAD0C36000000000000013B
+t1269632054
 s315
 i"Button.hpp"
 
@@ -465,8 +467,8 @@ t1269618692
 s135
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Button.hpp
-c000000004BAE179700000000000000FD
-t1269700503
+c000000004BAD04A000000000000000FD
+t1269630112
 s253
 i"DrawingObject.hpp"
 i"Avatar.hpp"
@@ -524,14 +526,14 @@ s1057
 i"Doorway.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/DrawingObject.cpp
-c000000004BAE17970000000000000663
-t1269700503
+c000000004BAD0C700000000000000663
+t1269632112
 s1635
 i"DrawingObject.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/DrawingObject.hpp
-c000000004BAE17970000000000000522
-t1269700503
+c000000004BAD04310000000000000522
+t1269630001
 s1314
 i"globals.hpp"
 
@@ -565,8 +567,8 @@ s909
 i"CircuitObject.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Floor.cpp
-c000000004BAE179700000000000001A5
-t1269700503
+c000000004BAD0C6A00000000000001A5
+t1269632106
 s421
 i"Floor.hpp"
 
@@ -576,8 +578,8 @@ t1269627903
 s134
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Floor.hpp
-c000000004BAE17970000000000000106
-t1269700503
+c000000004BADFEE30000000000000106
+t1269694179
 s262
 i"DrawingObject.hpp"
 
@@ -715,7 +717,7 @@ N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Room.cpp
 c000000004BAE0822000000000000023F
 t1269696546
 s575
-i"Room.hpp"
+i"Room.h"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Room.h
 c000000004BAE056F0000000000000085
@@ -723,11 +725,10 @@ t1269695855
 s133
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Room.hpp
-c000000004BAE07D200000000000003F4
-t1269696466
-s1012
-i"DrawingObject.hpp"
-i"Floor.hpp"
+c000000004B9F8CD00000000000000174
+t1268747472
+s372
+i"Shape.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/RoomTester.cpp
 c000000004B9D30A400000000000009C6
@@ -737,8 +738,8 @@ i"Room.hpp"
 i"CircuitObject.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Row.cpp
-c000000004BAE1797000000000000052A
-t1269700503
+c000000004BADFE35000000000000052A
+t1269694005
 s1322
 i"Row.hpp"
 
@@ -748,15 +749,15 @@ t1269646850
 s225
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Row.hpp
-c000000004BAE1797000000000000052D
-t1269700503
+c000000004BADFEA9000000000000052D
+t1269694121
 s1325
 i"DrawingObject.hpp"
 i"Bit.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Sandbox.cpp
-c000000004BAE17970000000000000903
-t1269700503
+c000000004BADFE840000000000000903
+t1269694084
 s2307
 i"Button.hpp"
 i"Switch.hpp"
@@ -785,8 +786,8 @@ s514
 i"Object.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Switch.cpp
-c000000004BAE179700000000000005D2
-t1269700503
+c000000004BAD144600000000000005D2
+t1269634118
 s1490
 i"Switch.hpp"
 
@@ -796,8 +797,8 @@ t1269631576
 s135
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Switch.hpp
-c000000004BAE1797000000000000056D
-t1269700503
+c000000004BAD46F8000000000000056D
+t1269647096
 s1389
 i"DrawingObject.hpp"
 
@@ -819,25 +820,25 @@ s398
 i"Object.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Tester.cpp
-c000000004BAE17970000000000000181
-t1269700503
+c000000004BAA3BDC0000000000000181
+t1269447644
 s385
 i"CircuitObject.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/Sewers
-t1269700503
-s83820
+t1269696548
+s97712
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Avatar.o
-t1269700503
+t1269696187
 s68328
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Bit.o
-t1269700503
+t1269696188
 s57172
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Button.o
-t1269700503
+t1269696188
 s57744
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/CircuitObject.o
@@ -861,7 +862,7 @@ t2
 s0
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/DrawingObject.o
-t1269700503
+t1269696187
 s68764
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Driver.o
@@ -877,7 +878,7 @@ t1266980748
 s106172
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Floor.o
-t1269700503
+t1269696188
 s59696
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/GameEngine.o
@@ -925,17 +926,17 @@ t1268592805
 s115016
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Row.o
-t1269700503
-s88504
+t1269696189
+s89340
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Sandbox.o
-t1269700503
+t1269696188
 s92984
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Sewers.LinkFileList
-c000000004BAE179700000000000005A3
-t1269700503
-s1443
+c000000004BAE06BB00000000000006AB
+t1269696187
+s1707
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/SewersObject.o
 t2
@@ -946,7 +947,7 @@ t1268747050
 s98068
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Switch.o
-t1269700503
+t1269696189
 s84172
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Table.o
@@ -954,15 +955,15 @@ t1268747037
 s95532
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Tester.o
-t1269700503
+t1269447644
 s1240
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/gltypes.1.o
-t1269700503
+t1269447644
 s110096
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/main.o
-t1269700503
+t1269447644
 s1236
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/constants.hpp
@@ -984,28 +985,28 @@ i<GL/gl.h>
 i<GL/glut.h>
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/glheaders.OSX.hpp
-c000000004BAE1797000000000000002E
-t1269700503
+c000000004BAA3BDC000000000000002E
+t1269447644
 s46
 i<GLUT/glut.h>
 i<OpenGL/gl.h>
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/globals.hpp
-c000000004BAE17970000000000000290
-t1269700503
+c000000004BAE06680000000000000290
+t1269696104
 s656
 i<iostream>
 i"gltypes.1.h"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/gltypes.1.cpp
-c000000004BAE17970000000000002041
-t1269700503
+c000000004BAA3BDC0000000000002041
+t1269447644
 s8257
 i"gltypes.1.h"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/gltypes.1.h
-c000000004BAE1797000000000000B569
-t1269700503
+c000000004BAA3BDC000000000000B569
+t1269447644
 s46441
 i<X11/X.h>
 i"glheaders.OSX.hpp"
@@ -1015,8 +1016,8 @@ i<cassert>
 i<iostream>
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/main.cpp
-c000000004BAE1797000000000000021A
-t1269700503
+c000000004BAA3BDC000000000000021A
+t1269447644
 s538
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Switch.cpp
@@ -1195,7 +1196,7 @@ s0
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies291393335#291393335#0(0"0(0#1#0"7947009927035180032#0"0#
+lSLF07#2@18"Check dependencies291389348#291389348#0(0"0(0#1#0"4300885448#0"0#
 
 CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Avatar.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Avatar.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 s288232361.057354

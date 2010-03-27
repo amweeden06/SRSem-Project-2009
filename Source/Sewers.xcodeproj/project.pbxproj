@@ -12,6 +12,8 @@
 		931A70C2114E774800F17A33 /* Tester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 931A70C1114E774800F17A33 /* Tester.cpp */; };
 		933F3B3B1116057B004062C4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 933F3B181116057B004062C4 /* main.cpp */; };
 		933F3B461116057B004062C4 /* DrawingObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 933F3B2F1116057B004062C4 /* DrawingObject.cpp */; };
+		9368494E115E3B3100328A1F /* HudButtons.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9368494D115E3B3100328A1F /* HudButtons.cpp */; };
+		93684957115E3CEF00328A1F /* Room.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93684956115E3CEF00328A1F /* Room.cpp */; };
 		938748BA115D337F008B6CB0 /* Floor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 938748B9115D337F008B6CB0 /* Floor.cpp */; };
 		93874993115D3D6F008B6CB0 /* Bit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93874992115D3D6F008B6CB0 /* Bit.cpp */; };
 		938749D6115D41D9008B6CB0 /* Switch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 938749D5115D41D9008B6CB0 /* Switch.cpp */; };
@@ -45,6 +47,10 @@
 		933F3B2F1116057B004062C4 /* DrawingObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DrawingObject.cpp; sourceTree = "<group>"; };
 		933F3B301116057B004062C4 /* DrawingObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DrawingObject.hpp; sourceTree = "<group>"; };
 		935FBBF11143EFFC00D3E3EE /* glheaders.OSX.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = glheaders.OSX.hpp; sourceTree = "<group>"; };
+		9368494C115E3B3100328A1F /* HudButtons.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HudButtons.hpp; sourceTree = "<group>"; };
+		9368494D115E3B3100328A1F /* HudButtons.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HudButtons.cpp; sourceTree = "<group>"; };
+		93684955115E3CEF00328A1F /* Room.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Room.hpp; sourceTree = "<group>"; };
+		93684956115E3CEF00328A1F /* Room.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Room.cpp; sourceTree = "<group>"; };
 		938748B8115D337F008B6CB0 /* Floor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Floor.hpp; sourceTree = "<group>"; };
 		938748B9115D337F008B6CB0 /* Floor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Floor.cpp; sourceTree = "<group>"; };
 		93874991115D3D6F008B6CB0 /* Bit.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Bit.hpp; sourceTree = "<group>"; };
@@ -80,21 +86,25 @@
 		08FB7794FE84155DC02AAC07 /* Sewers */ = {
 			isa = PBXGroup;
 			children = (
-				933F3B301116057B004062C4 /* DrawingObject.hpp */,
-				933F3B2F1116057B004062C4 /* DrawingObject.cpp */,
-				938748B8115D337F008B6CB0 /* Floor.hpp */,
-				938748B9115D337F008B6CB0 /* Floor.cpp */,
+				93CCCE891125CA9C00946784 /* Avatar.hpp */,
+				93CCCE5E1125CA7400946784 /* Avatar.cpp */,
 				93874991115D3D6F008B6CB0 /* Bit.hpp */,
 				93874992115D3D6F008B6CB0 /* Bit.cpp */,
 				93910A3F115D0F8400FDE06E /* Button.hpp */,
 				93910A40115D0F8400FDE06E /* Button.cpp */,
-				93CCCE891125CA9C00946784 /* Avatar.hpp */,
-				93CCCE5E1125CA7400946784 /* Avatar.cpp */,
+				933F3B301116057B004062C4 /* DrawingObject.hpp */,
+				933F3B2F1116057B004062C4 /* DrawingObject.cpp */,
+				938748B8115D337F008B6CB0 /* Floor.hpp */,
+				938748B9115D337F008B6CB0 /* Floor.cpp */,
 				935FBBF11143EFFC00D3E3EE /* glheaders.OSX.hpp */,
 				933F3B171116057B004062C4 /* globals.hpp */,
 				93E020AF1146EC5800191B06 /* gltypes.1.h */,
 				93E020B41146EC6500191B06 /* gltypes.1.cpp */,
+				9368494C115E3B3100328A1F /* HudButtons.hpp */,
+				9368494D115E3B3100328A1F /* HudButtons.cpp */,
 				933F3B181116057B004062C4 /* main.cpp */,
+				93684955115E3CEF00328A1F /* Room.hpp */,
+				93684956115E3CEF00328A1F /* Room.cpp */,
 				93AD6A17115D7D7100C675B3 /* Row.hpp */,
 				93AD6A18115D7D7100C675B3 /* Row.cpp */,
 				930BAA2F114D3F3E000942A8 /* Sandbox.cpp */,
@@ -179,6 +189,8 @@
 				93874993115D3D6F008B6CB0 /* Bit.cpp in Sources */,
 				938749D6115D41D9008B6CB0 /* Switch.cpp in Sources */,
 				93AD6A19115D7D7100C675B3 /* Row.cpp in Sources */,
+				9368494E115E3B3100328A1F /* HudButtons.cpp in Sources */,
+				93684957115E3CEF00328A1F /* Room.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
