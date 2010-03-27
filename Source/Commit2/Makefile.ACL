@@ -1,0 +1,55 @@
+# Computer City:  Sewers
+# Makefile for use on the ACLs
+#
+EXPENDABLES = Avatar.o CircuitObject.o Computer.o Driver.o Entrance.o Exit.o GameEngine.o GameScreen.o gltypes.1.o Object.o
+EXECUTABLES = Sewers
+
+CFLAGS = -Wall -ggdb --pedantic -DACL
+CPP = g++
+LDLIBS = -lglui -lX11 -lGL -lGLU -lglut -lXmu -lXi -lm
+
+MAKE_EXPENDABLE = g++ $(CFLAGS) -c
+MAKE_EXECUTABLE = g++ $(CFLAGS) $(LDLIBS) $(EXPENDABLES) -o
+
+Sewers: $(EXPENDABLES)
+	$(MAKE_EXECUTABLE) Sewers
+
+Avatar.o: Avatar.cpp Avatar.hpp Object.hpp
+	$(MAKE_EXPENDABLE) Avatar.cpp
+
+CircuitObject.o: CircuitObject.cpp CircuitObject.hpp Object.hpp
+	$(MAKE_EXPENDABLE) CircuitObject.cpp
+
+Computer.o: Computer.cpp Computer.hpp CircuitObject.hpp
+	$(MAKE_EXPENDABLE) Computer.cpp
+
+Driver.o: Driver.cpp GameEngine.hpp
+	$(MAKE_EXPENDABLE) Driver.cpp
+
+Entrance.o: Entrance.cpp Entrance.hpp Object.hpp
+	$(MAKE_EXPENDABLE) Entrance.cpp
+
+Exit.o: Exit.cpp Exit.hpp CircuitObject.hpp
+	$(MAKE_EXPENDABLE) Exit.cpp
+
+GameEngine.o: GameEngine.cpp GameEngine.hpp
+	$(MAKE_EXPENDABLE) GameEngine.cpp
+
+GameScreen.o: GameScreen.cpp GameScreen.hpp
+	$(MAKE_EXPENDABLE) GameScreen.cpp
+
+gltypes.1.o: gltypes.1.cpp gltypes.1.h
+	$(MAKE_EXPENDABLE) gltypes.1.cpp
+
+Object.o: Object.cpp Object.hpp
+	$(MAKE_EXPENDABLE) Object.cpp
+
+clean:
+	rm -f $(EXPENDABLES)
+
+distclean:
+	rm -f $(EXPENDABLES) $(EXECUTABLES)
+
+all:
+	rm -f $(EXPENDABLES) $(EXECUTABLES)
+	@make $(EXECUTABLES)
