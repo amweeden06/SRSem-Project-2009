@@ -13,7 +13,7 @@ namespace Sewers
 		static const int MAX_NUM_COLUMNS = MAX_NUM_GATE_INPUTS + 1;
 		/* ACCESSORS */
 		int num_columns() const;
-		Bit columns(int index) const;
+		Bit columns(size_t index) const;
 		/* FUNCTIONS */
 		int add_column(Bit);
         int draw() const;

@@ -17,13 +17,13 @@ namespace Sewers
 		return MAX_NUM_COLUMNS;
 	}
 	
-	/* FUNCTION: columns(int index)
+	/* FUNCTION: columns(size_t index)
 	 * PRECONDITIONS: index is less than num_columns()
 	 * POSTCONDITIONS: none
 	 * RETURN VALUE: the bit at position index if the precondition was met, a default Bit
 	 *  otherwise
 	 */
-	Bit Row::columns(int index) const
+	Bit Row::columns(size_t index) const
 	{
 		if(index < num_columns())
 			return _columns[index];

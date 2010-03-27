@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		8DD76F6A0486A84900D96B5E /* Sewers.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* Sewers.1 */; };
 		930BAA30114D3F3E000942A8 /* Sandbox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 930BAA2F114D3F3E000942A8 /* Sandbox.cpp */; };
+		930E08E0115E528500ABAAE5 /* Connection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 930E08DF115E528500ABAAE5 /* Connection.cpp */; };
+		930E08EE115E53C900ABAAE5 /* TruthTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 930E08ED115E53C900ABAAE5 /* TruthTable.cpp */; };
 		931A70C2114E774800F17A33 /* Tester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 931A70C1114E774800F17A33 /* Tester.cpp */; };
-		933F3B3B1116057B004062C4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 933F3B181116057B004062C4 /* main.cpp */; };
 		933F3B461116057B004062C4 /* DrawingObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 933F3B2F1116057B004062C4 /* DrawingObject.cpp */; };
 		9368494E115E3B3100328A1F /* HudButtons.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9368494D115E3B3100328A1F /* HudButtons.cpp */; };
 		93684957115E3CEF00328A1F /* Room.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93684956115E3CEF00328A1F /* Room.cpp */; };
@@ -41,9 +42,12 @@
 /* Begin PBXFileReference section */
 		8DD76F6C0486A84900D96B5E /* Sewers */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Sewers; sourceTree = BUILT_PRODUCTS_DIR; };
 		930BAA2F114D3F3E000942A8 /* Sandbox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sandbox.cpp; sourceTree = "<group>"; };
+		930E08DE115E528500ABAAE5 /* Connection.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Connection.hpp; sourceTree = "<group>"; };
+		930E08DF115E528500ABAAE5 /* Connection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Connection.cpp; sourceTree = "<group>"; };
+		930E08EC115E53C900ABAAE5 /* TruthTable.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TruthTable.hpp; sourceTree = "<group>"; };
+		930E08ED115E53C900ABAAE5 /* TruthTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TruthTable.cpp; sourceTree = "<group>"; };
 		931A70C1114E774800F17A33 /* Tester.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tester.cpp; sourceTree = "<group>"; };
 		933F3B171116057B004062C4 /* globals.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = globals.hpp; sourceTree = "<group>"; };
-		933F3B181116057B004062C4 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		933F3B2F1116057B004062C4 /* DrawingObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DrawingObject.cpp; sourceTree = "<group>"; };
 		933F3B301116057B004062C4 /* DrawingObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DrawingObject.hpp; sourceTree = "<group>"; };
 		935FBBF11143EFFC00D3E3EE /* glheaders.OSX.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = glheaders.OSX.hpp; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 				93874992115D3D6F008B6CB0 /* Bit.cpp */,
 				93910A3F115D0F8400FDE06E /* Button.hpp */,
 				93910A40115D0F8400FDE06E /* Button.cpp */,
+				930E08DE115E528500ABAAE5 /* Connection.hpp */,
+				930E08DF115E528500ABAAE5 /* Connection.cpp */,
 				933F3B301116057B004062C4 /* DrawingObject.hpp */,
 				933F3B2F1116057B004062C4 /* DrawingObject.cpp */,
 				938748B8115D337F008B6CB0 /* Floor.hpp */,
@@ -102,7 +108,6 @@
 				93E020B41146EC6500191B06 /* gltypes.1.cpp */,
 				9368494C115E3B3100328A1F /* HudButtons.hpp */,
 				9368494D115E3B3100328A1F /* HudButtons.cpp */,
-				933F3B181116057B004062C4 /* main.cpp */,
 				93684955115E3CEF00328A1F /* Room.hpp */,
 				93684956115E3CEF00328A1F /* Room.cpp */,
 				93AD6A17115D7D7100C675B3 /* Row.hpp */,
@@ -111,6 +116,8 @@
 				938749D4115D41D9008B6CB0 /* Switch.hpp */,
 				938749D5115D41D9008B6CB0 /* Switch.cpp */,
 				931A70C1114E774800F17A33 /* Tester.cpp */,
+				930E08EC115E53C900ABAAE5 /* TruthTable.hpp */,
+				930E08ED115E53C900ABAAE5 /* TruthTable.cpp */,
 				93FBB18710951250001A2885 /* GLUT.framework */,
 				93FBB17510951247001A2885 /* OpenGL.framework */,
 				C6859E8C029090F304C91782 /* Documentation */,
@@ -178,7 +185,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				933F3B3B1116057B004062C4 /* main.cpp in Sources */,
 				933F3B461116057B004062C4 /* DrawingObject.cpp in Sources */,
 				93CCCE5F1125CA7400946784 /* Avatar.cpp in Sources */,
 				93E020B51146EC6500191B06 /* gltypes.1.cpp in Sources */,
@@ -191,6 +197,8 @@
 				93AD6A19115D7D7100C675B3 /* Row.cpp in Sources */,
 				9368494E115E3B3100328A1F /* HudButtons.cpp in Sources */,
 				93684957115E3CEF00328A1F /* Room.cpp in Sources */,
+				930E08E0115E528500ABAAE5 /* Connection.cpp in Sources */,
+				930E08EE115E53C900ABAAE5 /* TruthTable.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

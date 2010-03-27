@@ -24,13 +24,13 @@ namespace Sewers
 		return MAX_NUM_OUTPUTS;
 	}
 	
-	/* FUNCTION: outputs(int index)
+	/* FUNCTION: outputs(size_t index)
 	 * PRECONDITIONS: index is less than num_inputs()
 	 * POSTCONDITIONS: none
 	 * RETURN VALUE: the output object at position index if the precondition was met, 
 	 *  NULL otherwise
 	 */
-	DrawingObject* Switch::outputs(int index) const
+	DrawingObject* Switch::outputs(size_t index) const
 	{
 		if(index < num_outputs())
 			return _outputs[index];

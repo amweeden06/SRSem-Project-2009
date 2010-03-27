@@ -14,7 +14,7 @@ namespace Sewers
 		Switch();
 		/* ACCESSORS */
 		int num_outputs() const;
-		DrawingObject* outputs(int index) const;
+		DrawingObject* outputs(size_t index) const;
 		/* FUNCTIONS */
 		int add_output(DrawingObject*);
         int draw() const;

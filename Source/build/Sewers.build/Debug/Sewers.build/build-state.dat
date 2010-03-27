@@ -1,9 +1,8 @@
 TSewers
 v7
 r0
-t291389348.457031
+t291397169.065883
 cCheck dependencies
-cCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/main.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/main.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 cCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/DrawingObject.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/DrawingObject.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 cCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Avatar.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Avatar.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 cCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/gltypes.1.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/gltypes.1.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
@@ -16,6 +15,8 @@ cCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Switch.o "/C
 cCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Row.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Row.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 cCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/HudButtons.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/HudButtons.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 cCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Room.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Room.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Connection.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Connection.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/TruthTable.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/TruthTable.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 cLd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/Sewers" normal i386
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Avatar.cpp
@@ -427,20 +428,20 @@ t1266537841
 s17928
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Avatar.cpp
-c000000004BAD0C87000000000000090D
-t1269632135
+c000000004BAE1A3B000000000000090D
+t1269701179
 s2317
 i"Avatar.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Avatar.hpp
-c000000004BAD0A220000000000000357
-t1269631522
+c000000004BAE1A3B0000000000000357
+t1269701179
 s855
 i"DrawingObject.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Bit.cpp
-c000000004BAD0C43000000000000012C
-t1269632067
+c000000004BAE1A3B000000000000012C
+t1269701179
 s300
 i"Bit.hpp"
 
@@ -450,14 +451,14 @@ t1269630447
 s132
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Bit.hpp
-c000000004BADFEDF00000000000000FA
-t1269694175
+c000000004BAE1A3B00000000000000FA
+t1269701179
 s250
 i"DrawingObject.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Button.cpp
-c000000004BAD0C36000000000000013B
-t1269632054
+c000000004BAE1A3B000000000000013B
+t1269701179
 s315
 i"Button.hpp"
 
@@ -467,8 +468,8 @@ t1269618692
 s135
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Button.hpp
-c000000004BAD04A000000000000000FD
-t1269630112
+c000000004BAE1A3B00000000000000FD
+t1269701179
 s253
 i"DrawingObject.hpp"
 i"Avatar.hpp"
@@ -502,6 +503,23 @@ t1267971348
 s539
 i"CircuitObject.hpp"
 
+N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Connection.cpp
+c000000004BAE1B410000000000000143
+t1269701441
+s323
+i"Connection.hpp"
+
+N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Connection.h
+c000000004BAE1B05000000000000008B
+t1269701381
+s139
+
+N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Connection.hpp
+c000000004BAE1BDF000000000000022D
+t1269701599
+s557
+i"DrawingObject.hpp"
+
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Door.cpp
 c000000004BAA3BDC000000000000043B
 t1269447644
@@ -526,14 +544,14 @@ s1057
 i"Doorway.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/DrawingObject.cpp
-c000000004BAD0C700000000000000663
-t1269632112
+c000000004BAE1A3B0000000000000663
+t1269701179
 s1635
 i"DrawingObject.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/DrawingObject.hpp
-c000000004BAD04310000000000000522
-t1269630001
+c000000004BAE1A3B0000000000000522
+t1269701179
 s1314
 i"globals.hpp"
 
@@ -567,8 +585,8 @@ s909
 i"CircuitObject.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Floor.cpp
-c000000004BAD0C6A00000000000001A5
-t1269632106
+c000000004BAE1A3B00000000000001A5
+t1269701179
 s421
 i"Floor.hpp"
 
@@ -578,8 +596,8 @@ t1269627903
 s134
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Floor.hpp
-c000000004BADFEE30000000000000106
-t1269694179
+c000000004BAE1A3B0000000000000106
+t1269701179
 s262
 i"DrawingObject.hpp"
 
@@ -612,14 +630,14 @@ s532
 i"Object.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Gate.cpp
-c000000004BAC12950000000000000196
-t1269568149
-s406
-i"Gate.hpp"
+c000000004BAE1C310000000000000137
+t1269701681
+s311
+i"Gate.h"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Gate.h
-c000000004BAC11A10000000000000085
-t1269567905
+c000000004BAE1C040000000000000085
+t1269701636
 s133
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Gate.hpp
@@ -629,8 +647,8 @@ s489
 i"DrawingObject.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/HudButtons.cpp
-c000000004BAE050B0000000000000265
-t1269695755
+c000000004BAE1A3B0000000000000265
+t1269701179
 s613
 i"HudButtons.hpp"
 
@@ -640,8 +658,8 @@ t1269695409
 s139
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/HudButtons.hpp
-c000000004BAE05230000000000000274
-t1269695779
+c000000004BAE1A3B0000000000000274
+t1269701179
 s628
 i"DrawingObject.hpp"
 i"Button.hpp"
@@ -714,10 +732,10 @@ t2
 s0
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Room.cpp
-c000000004BAE0822000000000000023F
-t1269696546
+c000000004BAE1A3B000000000000023F
+t1269701179
 s575
-i"Room.h"
+i"Room.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Room.h
 c000000004BAE056F0000000000000085
@@ -725,10 +743,11 @@ t1269695855
 s133
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Room.hpp
-c000000004B9F8CD00000000000000174
-t1268747472
-s372
-i"Shape.hpp"
+c000000004BAE1A3B00000000000003F4
+t1269701179
+s1012
+i"DrawingObject.hpp"
+i"Floor.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/RoomTester.cpp
 c000000004B9D30A400000000000009C6
@@ -738,9 +757,9 @@ i"Room.hpp"
 i"CircuitObject.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Row.cpp
-c000000004BADFE35000000000000052A
-t1269694005
-s1322
+c000000004BAE268C0000000000000530
+t1269704332
+s1328
 i"Row.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Row.h
@@ -749,15 +768,15 @@ t1269646850
 s225
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Row.hpp
-c000000004BADFEA9000000000000052D
-t1269694121
-s1325
+c000000004BAE268C0000000000000530
+t1269704332
+s1328
 i"DrawingObject.hpp"
 i"Bit.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Sandbox.cpp
-c000000004BADFE840000000000000903
-t1269694084
+c000000004BAE1A3B0000000000000903
+t1269701179
 s2307
 i"Button.hpp"
 i"Switch.hpp"
@@ -786,9 +805,9 @@ s514
 i"Object.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Switch.cpp
-c000000004BAD144600000000000005D2
-t1269634118
-s1490
+c000000004BAE247C00000000000005D8
+t1269703804
+s1496
 i"Switch.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Switch.h
@@ -797,9 +816,9 @@ t1269631576
 s135
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Switch.hpp
-c000000004BAD46F8000000000000056D
-t1269647096
-s1389
+c000000004BAE268C0000000000000570
+t1269704332
+s1392
 i"DrawingObject.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Table.cpp
@@ -820,26 +839,37 @@ s398
 i"Object.hpp"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Tester.cpp
-c000000004BAA3BDC0000000000000181
-t1269447644
+c000000004BAE1A3C0000000000000181
+t1269701180
 s385
 i"CircuitObject.hpp"
 
+N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/TruthTable.cpp
+c000000004BAE26AF000000000000094D
+t1269704367
+s2381
+i"TruthTable.h"
+
+N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/TruthTable.h
+c000000004BAE1C49000000000000008B
+t1269701705
+s139
+
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/Sewers
-t1269696548
-s97712
+t1269704369
+s111736
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Avatar.o
-t1269696187
-s68328
+t1269702406
+s68392
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Bit.o
-t1269696188
-s57172
+t1269702407
+s57232
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Button.o
-t1269696188
-s57744
+t1269702407
+s57808
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/CircuitObject.o
 t1268749278
@@ -853,6 +883,10 @@ N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.bu
 t2
 s0
 
+N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Connection.o
+t1269702409
+s57688
+
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Door.o
 t1269568155
 s96388
@@ -862,8 +896,8 @@ t2
 s0
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/DrawingObject.o
-t1269696187
-s68764
+t1269702406
+s68828
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Driver.o
 t1268586057
@@ -878,8 +912,8 @@ t1266980748
 s106172
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Floor.o
-t1269696188
-s59696
+t1269702407
+s59756
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/GameEngine.o
 t1268693134
@@ -890,12 +924,12 @@ t2
 s0
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Gate.o
-t1269630004
+t1269701180
 s90916
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/HudButtons.o
-t1269696190
-s64772
+t1269702408
+s64836
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Letter.o
 t1268747050
@@ -918,25 +952,25 @@ t2
 s0
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Room.o
-t1269696546
-s64568
+t1269702408
+s64632
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/RoomTester.o
 t1268592805
 s115016
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Row.o
-t1269696189
-s89340
+t1269704334
+s89400
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Sandbox.o
-t1269696188
-s92984
+t1269704333
+s93040
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Sewers.LinkFileList
-c000000004BAE06BB00000000000006AB
-t1269696187
-s1707
+c000000004BAE1CDA0000000000000738
+t1269701850
+s1848
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/SewersObject.o
 t2
@@ -947,24 +981,28 @@ t1268747050
 s98068
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Switch.o
-t1269696189
-s84172
+t1269704333
+s84236
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Table.o
 t1268747037
 s95532
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Tester.o
-t1269447644
+t1269701180
 s1240
 
+N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/TruthTable.o
+t1269704369
+s97152
+
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/gltypes.1.o
-t1269447644
+t1269701180
 s110096
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/main.o
-t1269447644
-s1236
+t2
+s0
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/constants.hpp
 c000000004B9EB66F00000000000013CF
@@ -985,28 +1023,28 @@ i<GL/gl.h>
 i<GL/glut.h>
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/glheaders.OSX.hpp
-c000000004BAA3BDC000000000000002E
-t1269447644
+c000000004BAE1A3C000000000000002E
+t1269701180
 s46
 i<GLUT/glut.h>
 i<OpenGL/gl.h>
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/globals.hpp
-c000000004BAE06680000000000000290
-t1269696104
-s656
+c000000004BAE1EFB000000000000030A
+t1269702395
+s778
 i<iostream>
 i"gltypes.1.h"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/gltypes.1.cpp
-c000000004BAA3BDC0000000000002041
-t1269447644
+c000000004BAE1A3C0000000000002041
+t1269701180
 s8257
 i"gltypes.1.h"
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/gltypes.1.h
-c000000004BAA3BDC000000000000B569
-t1269447644
+c000000004BAE1A3C000000000000B569
+t1269701180
 s46441
 i<X11/X.h>
 i"glheaders.OSX.hpp"
@@ -1016,9 +1054,9 @@ i<cassert>
 i<iostream>
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/main.cpp
-c000000004BAA3BDC000000000000021A
-t1269447644
-s538
+c00000000000000000000000000000000
+t2
+s0
 
 N/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Switch.cpp
 c000000004B7CD8D90000000000000AA4
@@ -1196,7 +1234,7 @@ s0
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies291389348#291389348#0(0"0(0#1#0"4300885448#0"0#
+lSLF07#2@18"Check dependencies291397168#291397168#0(0"0(0#1#0"4300885448#0"0#
 
 CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Avatar.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Avatar.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 s288232361.057354
@@ -1215,8 +1253,8 @@ CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Avatar.o "/C
 r0
 
 CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Avatar.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Avatar.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
-s291388987.132507
-e291388987.752873
+s291395205.704692
+e291395206.443295
 r1
 xCompileC
 xbuild/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Avatar.o
@@ -1225,11 +1263,11 @@ xnormal
 xi386
 xc++
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@82"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Avatar.cpp291388987#291388987#0(0"0(0#0#74"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Avatar.cpp4300885448#1615"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Avatar.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Avatar.o"0#
+lSLF07#2@82"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Avatar.cpp291395205#291395206#0(0"0(0#0#74"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Avatar.cpp4300885448#1615"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Avatar.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Avatar.o"0#
 
 CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Bit.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Bit.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
-s291388988.358483
-e291388988.937218
+s291395207.090234
+e291395207.717224
 r1
 xCompileC
 xbuild/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Bit.o
@@ -1238,11 +1276,11 @@ xnormal
 xi386
 xc++
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@79"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Bit.cpp291388988#291388988#0(0"0(0#0#71"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Bit.cpp4300885448#1609"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Bit.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Bit.o"0#
+lSLF07#2@79"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Bit.cpp291395207#291395207#0(0"0(0#0#71"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Bit.cpp4300885448#1609"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Bit.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Bit.o"0#
 
 CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Button.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Button.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
-s291388987.753096
-e291388988.317543
+s291395206.443510
+e291395207.031055
 r1
 xCompileC
 xbuild/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Button.o
@@ -1251,7 +1289,7 @@ xnormal
 xi386
 xc++
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@82"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Button.cpp291388987#291388988#0(0"0(0#0#74"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Button.cpp4300885448#1615"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Button.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Button.o"0#
+lSLF07#2@82"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Button.cpp291395206#291395207#0(0"0(0#0#74"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Button.cpp4300885448#1615"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Button.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Button.o"0#
 
 CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/CircuitObject.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/CircuitObject.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 s288230643.803137
@@ -1378,6 +1416,19 @@ xc++
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@79"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Connection.cpp288056393#288056394#0(0"0(0#0#71"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Connection.cpp4300885448#1546"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Connection.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Connection.o"0#
 
+CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Connection.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Connection.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+s291395208.916445
+e291395209.434007
+r1
+xCompileC
+xbuild/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Connection.o
+x/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Connection.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@86"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Connection.cpp291395208#291395209#0(0"0(0#0#78"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Connection.cpp4300885448#1623"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Connection.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Connection.o"0#
+
 CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Door.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Door.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 s291260954.698832
 e291260955.346044
@@ -1410,8 +1461,8 @@ o/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Doorway.cpp:36:
 lSLF07#2@83"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Doorway.cpp291311332#291311332#0(641"In file included from /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Doorway.cpp:6:/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Doorway.hpp:18: error: ISO C++ forbids declaration of 'DrawingObject' with no type/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Doorway.cpp: In member function 'void Sewers::Doorway::draw() const':/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Doorway.cpp:33: error: 'is_open' was not declared in this scope/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Doorway.cpp:36: error: 'DOOR_COLOR' was not declared in this scope3(4@59"ISO C++ forbids declaration of 'DrawingObject' with no type291311332#101#147#2(7@97"In file included from /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Doorway.cpp291311332#18446744073709551615#0#0(6@75"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Doorway.cpp291311274#6#0#6#0#0"0(13@138"ISO C++ forbids declaration of 'DrawingObject' with no type in /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Doorway.hpp291311332#18446744073709551615#0#0(6@75"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Doorway.hpp291311331#18#0#18#0#0"0(6@75"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Doorway.hpp291311331#18#0#18#0#47"ISO C++ forbids declaration of '*' with no type0(4@40"'is_open' was not declared in this scope291311332#382#128#0(6@75"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Doorway.cpp291311274#33#0#33#0#34"'*' was not declared in this scope0(4@43"'DOOR_COLOR' was not declared in this scope291311332#510#131#0(6@75"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Doorway.cpp291311274#36#0#36#0#34"'*' was not declared in this scope0(0#0#75"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Doorway.cpp4300885448#1617"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Doorway.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Doorway.o"1#
 
 CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/DrawingObject.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/DrawingObject.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
-s291388987.131409
-e291388987.726274
+s291395205.701652
+e291395206.388802
 r1
 xCompileC
 xbuild/Sewers.build/Debug/Sewers.build/Objects-normal/i386/DrawingObject.o
@@ -1420,7 +1471,7 @@ xnormal
 xi386
 xc++
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@89"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/DrawingObject.cpp291388987#291388987#0(0"0(0#0#81"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/DrawingObject.cpp4300885448#1629"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/DrawingObject.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/DrawingObject.o"0#
+lSLF07#2@89"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/DrawingObject.cpp291395205#291395206#0(0"0(0#0#81"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/DrawingObject.cpp4300885448#1629"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/DrawingObject.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/DrawingObject.o"0#
 
 CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Driver.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Driver.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 s288418451.883502
@@ -1510,8 +1561,8 @@ xcom.apple.compilers.gcc.4_2
 lSLF07#2@80"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Exit.cpp288673547#288673548#0(0"0(0#0#72"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Exit.cpp4300885448#1611"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Exit.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Exit.o"0#
 
 CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Floor.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Floor.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
-s291388988.317637
-e291388988.887979
+s291395207.031149
+e291395207.683101
 r1
 xCompileC
 xbuild/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Floor.o
@@ -1520,7 +1571,7 @@ xnormal
 xi386
 xc++
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@81"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Floor.cpp291388988#291388988#0(0"0(0#0#73"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Floor.cpp4300885448#1613"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Floor.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Floor.o"0#
+lSLF07#2@81"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Floor.cpp291395207#291395207#0(0"0(0#0#73"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Floor.cpp4300885448#1613"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Floor.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Floor.o"0#
 
 CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/GameEngine.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/GameEngine.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 s288418878.268419
@@ -1615,8 +1666,8 @@ xcom.apple.compilers.gcc.4_2
 lSLF07#2@80"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Gate.cpp291322803#291322804#0(0"0(0#0#72"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Gate.cpp4300885448#1611"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Gate.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Gate.o"0#
 
 CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/HudButtons.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/HudButtons.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
-s291388989.486664
-e291388990.028241
+s291395208.283500
+e291395208.916281
 r1
 xCompileC
 xbuild/Sewers.build/Debug/Sewers.build/Objects-normal/i386/HudButtons.o
@@ -1625,7 +1676,7 @@ xnormal
 xi386
 xc++
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@86"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/HudButtons.cpp291388989#291388990#0(0"0(0#0#78"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/HudButtons.cpp4300885448#1623"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/HudButtons.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/HudButtons.o"0#
+lSLF07#2@86"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/HudButtons.cpp291395208#291395208#0(0"0(0#0#78"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/HudButtons.cpp4300885448#1623"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/HudButtons.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/HudButtons.o"0#
 
 CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Inverter.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Inverter.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 s287696213.137999
@@ -1803,8 +1854,8 @@ oi686-apple-darwin10-gcc-4.2.1: no input files
 lSLF07#2@89"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/OldGameEngine.cpp288649387#288649387#0(330"i686-apple-darwin10-gcc-4.2.1: /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/OldGameEngine.cpp: No such file or directoryi686-apple-darwin10-gcc-4.2.1: warning: '-x c++' after last input file has no effecti686-apple-darwin10-gcc-4.2.1: no input filesCommand /Developer/usr/bin/gcc-4.2 failed with exit code 11(4@58"Command /Developer/usr/bin/gcc-4.2 failed with exit code 1288649387#18446744073709551615#0#0(1@0"0(0#0#81"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/OldGameEngine.cpp4300885448#1629"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/OldGameEngine.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/OldGameEngine.o"1#
 
 CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Room.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Room.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
-s291389348.422759
-e291389348.424022
+s291395208.369016
+e291395208.979257
 r1
 xCompileC
 xbuild/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Room.o
@@ -1813,7 +1864,7 @@ xnormal
 xi386
 xc++
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@80"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Room.cpp291389348#291389348#0(0"0(0#0#72"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Room.cpp4300885448#1611"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Room.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Room.o"0#
+lSLF07#2@80"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Room.cpp291395208#291395208#0(0"0(0#0#72"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Room.cpp4300885448#1611"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Room.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Room.o"0#
 
 CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/RoomTester.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/RoomTester.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 s290285604.908400
@@ -1829,8 +1880,8 @@ xcom.apple.compilers.gcc.4_2
 lSLF07#2@86"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/RoomTester.cpp290285604#290285605#0(0"0(0#0#78"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/RoomTester.cpp4300885448#1623"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/RoomTester.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/RoomTester.o"0#
 
 CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Row.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Row.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
-s291388988.937314
-e291388989.551229
+s291397133.945417
+e291397134.599728
 r1
 xCompileC
 xbuild/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Row.o
@@ -1839,11 +1890,11 @@ xnormal
 xi386
 xc++
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@79"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Row.cpp291388988#291388989#0(0"0(0#0#71"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Row.cpp4300885448#1609"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Row.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Row.o"0#
+lSLF07#2@79"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Row.cpp291397133#291397134#0(0"0(0#0#71"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Row.cpp4300885448#1609"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Row.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Row.o"0#
 
 CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Sandbox.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Sandbox.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
-s291388987.726469
-e291388988.358386
+s291397132.873811
+e291397133.972690
 r1
 xCompileC
 xbuild/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Sandbox.o
@@ -1852,7 +1903,7 @@ xnormal
 xi386
 xc++
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@83"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Sandbox.cpp291388987#291388988#0(0"0(0#0#75"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Sandbox.cpp4300885448#1617"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Sandbox.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Sandbox.o"0#
+lSLF07#2@83"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Sandbox.cpp291397132#291397133#0(0"0(0#0#75"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Sandbox.cpp4300885448#1617"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Sandbox.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Sandbox.o"0#
 
 CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/SewersObject.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/OSX/SewersObject.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 r0
@@ -1903,8 +1954,8 @@ CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Switch.o "/C
 r0
 
 CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Switch.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Switch.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
-s291388988.888650
-e291388989.486560
+s291397132.875183
+e291397133.945312
 r1
 xCompileC
 xbuild/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Switch.o
@@ -1913,7 +1964,7 @@ xnormal
 xi386
 xc++
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@82"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Switch.cpp291388988#291388989#0(0"0(0#0#74"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Switch.cpp4300885448#1615"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Switch.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Switch.o"0#
+lSLF07#2@82"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Switch.cpp291397132#291397133#0(0"0(0#0#74"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Switch.cpp4300885448#1615"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Switch.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Switch.o"0#
 
 CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Switch.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Switch.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 s288230642.456280
@@ -1954,6 +2005,19 @@ xc++
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@82"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Tester.cpp291065853#291065853#0(0"0(0#0#74"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Tester.cpp4300885448#1615"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/Tester.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Tester.o"0#
 
+CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/TruthTable.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/TruthTable.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+s291397168.474959
+e291397169.038082
+r1
+xCompileC
+xbuild/Sewers.build/Debug/Sewers.build/Objects-normal/i386/TruthTable.o
+x/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/TruthTable.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@86"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/TruthTable.cpp291397168#291397169#0(0"0(0#0#78"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/TruthTable.cpp4300885448#1623"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/TruthTable.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/TruthTable.o"0#
+
 CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/gltypes.1.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/OSX/gltypes.1.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 r0
 
@@ -1990,9 +2054,9 @@ oi686-apple-darwin10-gcc-4.2.1: no input files
 lSLF07#2@41"Compile /Users/Aaron/.Trash/gltypes.1.cpp289860684#289860684#0(282"i686-apple-darwin10-gcc-4.2.1: /Users/Aaron/.Trash/gltypes.1.cpp: No such file or directoryi686-apple-darwin10-gcc-4.2.1: warning: '-x c++' after last input file has no effecti686-apple-darwin10-gcc-4.2.1: no input filesCommand /Developer/usr/bin/gcc-4.2 failed with exit code 11(4@58"Command /Developer/usr/bin/gcc-4.2 failed with exit code 1289860684#18446744073709551615#0#0(1@0"0(0#0#33"/Users/Aaron/.Trash/gltypes.1.cpp4300885448#1575"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c /Users/Aaron/.Trash/gltypes.1.cpp -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/gltypes.1.o"1#
 
 CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/main.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/main.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
-s290381084.251821
-e290381084.295997
-r1
+s291394150.473487
+e291394150.548466
+r0
 xCompileC
 xbuild/Sewers.build/Debug/Sewers.build/Objects-normal/i386/main.o
 x/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/main.cpp
@@ -2000,7 +2064,10 @@ xnormal
 xi386
 xc++
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@80"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/main.cpp290381084#290381084#0(0"0(0#0#72"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/main.cpp4300885448#1611"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/main.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/main.o"0#
+oi686-apple-darwin10-gcc-4.2.1: /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/main.cpp: No such file or directory
+oi686-apple-darwin10-gcc-4.2.1: warning: '-x c++' after last input file has no effect
+oi686-apple-darwin10-gcc-4.2.1: no input files
+lSLF07#2@80"Compile /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/main.cpp291394150#291394150#0(321"i686-apple-darwin10-gcc-4.2.1: /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/main.cpp: No such file or directoryi686-apple-darwin10-gcc-4.2.1: warning: '-x c++' after last input file has no effecti686-apple-darwin10-gcc-4.2.1: no input filesCommand /Developer/usr/bin/gcc-4.2 failed with exit code 11(4@58"Command /Developer/usr/bin/gcc-4.2 failed with exit code 1291394150#18446744073709551615#0#0(1@0"0(0#0#72"/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/main.cpp29273861441847392#1611"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.5.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-generated-files.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-own-target-headers.hmap" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-all-target-headers.hmap" -iquote "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Sewers-project-headers.hmap" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/include" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources/i386" "-I/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/DerivedSources" -c "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/main.cpp" -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/main.o"1#
 
 CCompileC build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/main.o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/main.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
 s287693216.361593
@@ -2026,14 +2093,14 @@ xi386
 lSLF07#2@84"Link /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/OSX/build/Debug/Sewers288546194#288546195#0(0"0(0#0#0"7310597220861953024#644"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/OSX"    setenv MACOSX_DEPLOYMENT_TARGET 10.5    /Developer/usr/bin/g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.5.sdk "-L/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/OSX/build/Debug" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/OSX/build/Debug" -filelist "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/OSX/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Sewers.LinkFileList" -mmacosx-version-min=10.5 -framework OpenGL -framework GLUT -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/OSX/build/Debug/Sewers"0#
 
 CLd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/Sewers" normal i386
-s291389348.424094
-e291389348.456978
+s291397169.038176
+e291397169.065824
 r1
 xLd
 x/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/Sewers
 xnormal
 xi386
-lSLF07#2@87"Link /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/Sewers291389348#291389348#0(0"0(0#0#0"4300885448#659"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv MACOSX_DEPLOYMENT_TARGET 10.5    /Developer/usr/bin/g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.5.sdk "-L/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" -filelist "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Sewers.LinkFileList" -mmacosx-version-min=10.5 -framework OpenGL -framework GLUT -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/Sewers"0#
+lSLF07#2@87"Link /Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/Sewers291397169#291397169#0(0"0(0#0#0"4300885448#659"    cd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source"    setenv MACOSX_DEPLOYMENT_TARGET 10.5    /Developer/usr/bin/g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.5.sdk "-L/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" "-F/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug" -filelist "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Sewers.build/Debug/Sewers.build/Objects-normal/i386/Sewers.LinkFileList" -mmacosx-version-min=10.5 -framework OpenGL -framework GLUT -o "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/Source/build/Debug/Sewers"0#
 
 CLd "/Classes - Earlham/2009-2010/Spring/Computer City/Sewers/build/Debug/Sewers" normal i386
 s288418878.270698

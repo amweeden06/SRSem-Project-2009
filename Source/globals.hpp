@@ -22,9 +22,10 @@ namespace Sewers
 	const int FULL_ARRAY = -1;
 	
 	const int MAX_NUM_GATE_INPUTS = 2;
+	const int MAX_NUM_TT_ROWS = 8; // This should be pow(2,MAX_NUM_GATE_INPUTS), but can't use pow in a constant expression
 	const int MAX_NUM_HORIZONTAL_BLUEPRINT_GATES = 5;
 	const int MAX_NUM_VERTICAL_BLUEPRINT_GATES = 4;
 	const int MAX_NUM_BLUEPRINT_GATES = MAX_NUM_HORIZONTAL_BLUEPRINT_GATES * MAX_NUM_VERTICAL_BLUEPRINT_GATES;
-	const int MAX_NUM_BLUEPRINT_CONNECTIONS = MAX_NUM_BLUEPRINT_GATES * 2;
+	const int MAX_NUM_BLUEPRINT_CONNECTIONS = MAX_NUM_BLUEPRINT_GATES * 2;	
 }
 #endif
