@@ -1,22 +1,25 @@
-/*
- *  HudButtons.hpp
- *  Sewers
- *
- *  Created by Aaron Weeden on 3/23/10.
- *  Copyright 2010 Earlham College. All rights reserved.
- *
+/*  HudButtons.hpp
+ *  Part of the Sewers project
+ *     Aaron Weeden, Earlham College, 2009-2010
  */
 #include "DrawingObject.hpp"
+#include "Button.hpp"
 
 namespace Sewers
-{
+{		
 	class HudButtons : public DrawingObject
 	{
 	public:
-		DrawingObject quit_button() const { return _quit_button; }
-		void set_button(DrawingObject b) { _quit_button = b; }
-		void draw() const;
+		/* CONSTRUCTOR */
+		HudButtons();
+		/* ACCESSORS */
+		Button stats_button() const { return _stats_button; }
+		Button save_button() const { return _save_button; }
+		Button load_button() const { return _load_button; }
+		Button quit_button() const { return _quit_button; }
+		/* FUNCTIONS */
+        int draw() const;
 	private:
-		DrawingObject _quit_button;
-	};
+		Button _stats_button, _save_button, _load_button, _quit_button;
+    };
 }

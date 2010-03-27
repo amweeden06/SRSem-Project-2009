@@ -12,9 +12,12 @@
 		931A70C2114E774800F17A33 /* Tester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 931A70C1114E774800F17A33 /* Tester.cpp */; };
 		933F3B3B1116057B004062C4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 933F3B181116057B004062C4 /* main.cpp */; };
 		933F3B461116057B004062C4 /* DrawingObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 933F3B2F1116057B004062C4 /* DrawingObject.cpp */; };
-		93B84E6B114FC81600459609 /* Door.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93B84E6A114FC81600459609 /* Door.cpp */; };
+		938748BA115D337F008B6CB0 /* Floor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 938748B9115D337F008B6CB0 /* Floor.cpp */; };
+		93874993115D3D6F008B6CB0 /* Bit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93874992115D3D6F008B6CB0 /* Bit.cpp */; };
+		938749D6115D41D9008B6CB0 /* Switch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 938749D5115D41D9008B6CB0 /* Switch.cpp */; };
+		93910A41115D0F8400FDE06E /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93910A40115D0F8400FDE06E /* Button.cpp */; };
+		93AD6A19115D7D7100C675B3 /* Row.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93AD6A18115D7D7100C675B3 /* Row.cpp */; };
 		93CCCE5F1125CA7400946784 /* Avatar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93CCCE5E1125CA7400946784 /* Avatar.cpp */; };
-		93D4F1DE1159C06300D111F0 /* HudButtons.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93D4F1DD1159C06300D111F0 /* HudButtons.cpp */; };
 		93E020B51146EC6500191B06 /* gltypes.1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93E020B41146EC6500191B06 /* gltypes.1.cpp */; };
 		93FBB17610951247001A2885 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93FBB17510951247001A2885 /* OpenGL.framework */; };
 		93FBB18810951250001A2885 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93FBB18710951250001A2885 /* GLUT.framework */; };
@@ -42,12 +45,18 @@
 		933F3B2F1116057B004062C4 /* DrawingObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DrawingObject.cpp; sourceTree = "<group>"; };
 		933F3B301116057B004062C4 /* DrawingObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DrawingObject.hpp; sourceTree = "<group>"; };
 		935FBBF11143EFFC00D3E3EE /* glheaders.OSX.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = glheaders.OSX.hpp; sourceTree = "<group>"; };
-		93B84E69114FC81600459609 /* Door.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Door.hpp; sourceTree = "<group>"; };
-		93B84E6A114FC81600459609 /* Door.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Door.cpp; sourceTree = "<group>"; };
+		938748B8115D337F008B6CB0 /* Floor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Floor.hpp; sourceTree = "<group>"; };
+		938748B9115D337F008B6CB0 /* Floor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Floor.cpp; sourceTree = "<group>"; };
+		93874991115D3D6F008B6CB0 /* Bit.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Bit.hpp; sourceTree = "<group>"; };
+		93874992115D3D6F008B6CB0 /* Bit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bit.cpp; sourceTree = "<group>"; };
+		938749D4115D41D9008B6CB0 /* Switch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Switch.hpp; sourceTree = "<group>"; };
+		938749D5115D41D9008B6CB0 /* Switch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Switch.cpp; sourceTree = "<group>"; };
+		93910A3F115D0F8400FDE06E /* Button.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Button.hpp; sourceTree = "<group>"; };
+		93910A40115D0F8400FDE06E /* Button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Button.cpp; sourceTree = "<group>"; };
+		93AD6A17115D7D7100C675B3 /* Row.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Row.hpp; sourceTree = "<group>"; };
+		93AD6A18115D7D7100C675B3 /* Row.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Row.cpp; sourceTree = "<group>"; };
 		93CCCE5E1125CA7400946784 /* Avatar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Avatar.cpp; sourceTree = "<group>"; };
 		93CCCE891125CA9C00946784 /* Avatar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Avatar.hpp; sourceTree = "<group>"; };
-		93D4F1DC1159C06300D111F0 /* HudButtons.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HudButtons.hpp; sourceTree = "<group>"; };
-		93D4F1DD1159C06300D111F0 /* HudButtons.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HudButtons.cpp; sourceTree = "<group>"; };
 		93E020AF1146EC5800191B06 /* gltypes.1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gltypes.1.h; sourceTree = "<group>"; };
 		93E020B41146EC6500191B06 /* gltypes.1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gltypes.1.cpp; sourceTree = "<group>"; };
 		93FBB17510951247001A2885 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
@@ -71,21 +80,27 @@
 		08FB7794FE84155DC02AAC07 /* Sewers */ = {
 			isa = PBXGroup;
 			children = (
+				933F3B301116057B004062C4 /* DrawingObject.hpp */,
+				933F3B2F1116057B004062C4 /* DrawingObject.cpp */,
+				938748B8115D337F008B6CB0 /* Floor.hpp */,
+				938748B9115D337F008B6CB0 /* Floor.cpp */,
+				93874991115D3D6F008B6CB0 /* Bit.hpp */,
+				93874992115D3D6F008B6CB0 /* Bit.cpp */,
+				93910A3F115D0F8400FDE06E /* Button.hpp */,
+				93910A40115D0F8400FDE06E /* Button.cpp */,
+				93CCCE891125CA9C00946784 /* Avatar.hpp */,
+				93CCCE5E1125CA7400946784 /* Avatar.cpp */,
 				935FBBF11143EFFC00D3E3EE /* glheaders.OSX.hpp */,
-				93B84E69114FC81600459609 /* Door.hpp */,
-				93B84E6A114FC81600459609 /* Door.cpp */,
-				931A70C1114E774800F17A33 /* Tester.cpp */,
-				930BAA2F114D3F3E000942A8 /* Sandbox.cpp */,
-				93D4F1DC1159C06300D111F0 /* HudButtons.hpp */,
-				93D4F1DD1159C06300D111F0 /* HudButtons.cpp */,
 				933F3B171116057B004062C4 /* globals.hpp */,
 				93E020AF1146EC5800191B06 /* gltypes.1.h */,
 				93E020B41146EC6500191B06 /* gltypes.1.cpp */,
 				933F3B181116057B004062C4 /* main.cpp */,
-				933F3B301116057B004062C4 /* DrawingObject.hpp */,
-				933F3B2F1116057B004062C4 /* DrawingObject.cpp */,
-				93CCCE891125CA9C00946784 /* Avatar.hpp */,
-				93CCCE5E1125CA7400946784 /* Avatar.cpp */,
+				93AD6A17115D7D7100C675B3 /* Row.hpp */,
+				93AD6A18115D7D7100C675B3 /* Row.cpp */,
+				930BAA2F114D3F3E000942A8 /* Sandbox.cpp */,
+				938749D4115D41D9008B6CB0 /* Switch.hpp */,
+				938749D5115D41D9008B6CB0 /* Switch.cpp */,
+				931A70C1114E774800F17A33 /* Tester.cpp */,
 				93FBB18710951250001A2885 /* GLUT.framework */,
 				93FBB17510951247001A2885 /* OpenGL.framework */,
 				C6859E8C029090F304C91782 /* Documentation */,
@@ -159,8 +174,11 @@
 				93E020B51146EC6500191B06 /* gltypes.1.cpp in Sources */,
 				930BAA30114D3F3E000942A8 /* Sandbox.cpp in Sources */,
 				931A70C2114E774800F17A33 /* Tester.cpp in Sources */,
-				93B84E6B114FC81600459609 /* Door.cpp in Sources */,
-				93D4F1DE1159C06300D111F0 /* HudButtons.cpp in Sources */,
+				93910A41115D0F8400FDE06E /* Button.cpp in Sources */,
+				938748BA115D337F008B6CB0 /* Floor.cpp in Sources */,
+				93874993115D3D6F008B6CB0 /* Bit.cpp in Sources */,
+				938749D6115D41D9008B6CB0 /* Switch.cpp in Sources */,
+				93AD6A19115D7D7100C675B3 /* Row.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
