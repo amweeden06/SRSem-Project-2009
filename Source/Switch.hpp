@@ -11,7 +11,7 @@ namespace Sewers
 	public:
 		static const int MAX_NUM_OUTPUTS = MAX_NUM_BLUEPRINT_CONNECTIONS;
 		/* CONSTRUCTOR */
-		Switch();
+		Switch(string type = "SWITCH");
 		/* ACCESSORS */
 		int num_outputs() const;
 		DrawingObject* outputs(size_t index) const;
@@ -35,14 +35,12 @@ namespace Sewers
 			{
 				cerr << "ERROR:  Switch should have had " << i << " outputs but instead had ";
 				cerr << s.num_outputs() << "." << endl;
-				exit(EXIT_FAILURE);
 			}
 		
 			if(s.add_output(&d) == FULL_ARRAY)
 			{
 				cerr << "ERROR: Switch has " << s.num_outputs() << " outputs but it claims to have ";
 				cerr << "a full array, but a full array is " << s.MAX_NUM_OUTPUTS << "." << endl;
-				exit(EXIT_FAILURE);
 			}
 		}
 		
@@ -50,7 +48,6 @@ namespace Sewers
 		{
 			cerr << "ERROR: Switch has " << s.num_outputs() << " outputs but it claims to have ";
 			cerr << "a non-full array, but a full array is " << s.MAX_NUM_OUTPUTS << "." << endl;
-			exit(EXIT_FAILURE);			
 		}
 	}
 }

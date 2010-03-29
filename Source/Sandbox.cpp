@@ -7,8 +7,7 @@
  *
  */
 #include "Button.hpp"
-#include "Switch.hpp"
-#include "Row.hpp"
+#include "TruthTable.hpp"
 
 using namespace Sewers;
 
@@ -109,9 +108,11 @@ int main(int argc, char** argv)
 	glutInitWindowPosition(0, 0);
 	glutCreateWindow("Computer City:  Sewers");
 	gluOrtho2D(0, WINDOW_WIDTH, 0, WINDOW_HEIGHT);
-	
+
 	SwitchTest();
+	BitTest();
 	RowTest();
+	TruthTableTest();
 	
 	glutDisplayFunc(wrap_display);
 	glutKeyboardFunc(wrap_key);

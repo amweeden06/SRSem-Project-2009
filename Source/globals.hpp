@@ -20,6 +20,7 @@ namespace Sewers
 	/* ERROR VALUES */
 	const int SUCCESS = 0;
 	const int FULL_ARRAY = -1;
+	const int INDEX_OUT_OF_BOUNDS = -2;
 	
 	const int MAX_NUM_GATE_INPUTS = 2;
 	const int MAX_NUM_TT_ROWS = 8; // This should be pow(2,MAX_NUM_GATE_INPUTS), but can't use pow in a constant expression

@@ -3,8 +3,9 @@
 namespace Sewers
 {	
 	/* CONSTRUCTOR */
-	Switch::Switch()
+	Switch::Switch(string type)
 	{
+		set_type(type);
 		for(int i = 0; i < MAX_NUM_OUTPUTS; ++i)
 			_outputs[i] = NULL;
 	}

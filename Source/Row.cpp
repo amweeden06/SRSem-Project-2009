@@ -1,7 +1,7 @@
 #include "Row.hpp"
 
 namespace Sewers
-{		
+{			
 	/* FUNCTION: num_columns()
 	 * PRECONDITIONS: none
 	 * POSTCONDITIONS: none
@@ -31,6 +31,18 @@ namespace Sewers
 			return Bit();
 	}
 	
+	/* FUNCTION: clear()
+	 * PRECONDITIONS: none
+	 * POSTCONDITION: the row no longer contains any bits
+	 * POSSIBLE RETURN VALUES: SUCCESS
+	 */
+	int Row::clear()
+	{
+		for(int i = 0; i < num_columns(); ++i)
+			_columns[i] = Bit();
+		return SUCCESS;
+	}
+	
 	/* FUNCTION: add_column(Bit b)
 	 * PRECONDITIONS: the row does not already have the maximum number of columns
 	 * POSTCONDITION: b has been added to the array of bits
@@ -38,7 +50,7 @@ namespace Sewers
 	 */
 	int Row::add_column(Bit b)
 	{
-		if(num_columns() != MAX_NUM_COLUMNS)
+		if(num_columns() < MAX_NUM_COLUMNS)
 		{
 			_columns[num_columns()] = b;
 			return SUCCESS;
