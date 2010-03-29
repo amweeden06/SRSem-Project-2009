@@ -38,7 +38,7 @@ namespace Sewers
 	 */
 	int Row::clear()
 	{
-		for(int i = 0; i < num_columns(); ++i)
+		for(int i = 0; i < MAX_NUM_COLUMNS; ++i)
 			_columns[i] = Bit();
 		return SUCCESS;
 	}
@@ -61,7 +61,7 @@ namespace Sewers
 		
 	/* FUNCTION: draw()
 	 * PRECONDITIONS: none
-	 * POSTCONDITION: The object has been placed in the drawing queue, to be
+	 * POSTCONDITION: The row has been placed in the drawing queue, to be
 	 *                 drawn at the next glFlush()
 	 * RETURN VALUE: SUCCESS
 	 */

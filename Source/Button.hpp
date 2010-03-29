@@ -10,6 +10,10 @@ namespace Sewers
 	class Button : public DrawingObject
 	{
 	public:
+		/* CONSTRUCTOR */
+		Button();
+		/* FUNCTIONS */
         int draw() const;
+	private:
     };
 }

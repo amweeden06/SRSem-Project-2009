@@ -123,7 +123,7 @@ namespace Sewers
 		
 	/* FUNCTION: draw()
 	 * PRECONDITIONS: None
-	 * POSTCONDITION: The object has been placed in the drawing queue, to be
+	 * POSTCONDITION: The table has been placed in the drawing queue, to be
 	 *                 drawn at the next glFlush()
 	 * POSSIBLE RETURN VALUES: SUCCESS
 	 */

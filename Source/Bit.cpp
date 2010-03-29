@@ -11,11 +11,14 @@ namespace Sewers
 			set_type("1");
 		else
 			set_type("BIT");
+		
+		set_width(BIT_WIDTH);
+		set_height(BIT_HEIGHT);
 	}
 	
 	/* FUNCTION: draw()
 	 * PRECONDITIONS: None
-	 * POSTCONDITION: The object has been placed in the drawing queue, to be
+	 * POSTCONDITION: The bit has been placed in the drawing queue, to be
 	 *                 drawn at the next glFlush()
 	 * POSSIBLE RETURN VALUES: SUCCESS
 	 */

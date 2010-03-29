@@ -2,6 +2,9 @@
  *  Part of the Sewers project
  *     Aaron Weeden, Earlham College, 2009-2010
  */
+#ifndef ROOMOBJ
+#define ROOMOBJ
+
 #include "DrawingObject.hpp"
 #include "Floor.hpp"
 
@@ -32,3 +35,5 @@ namespace Sewers
 		Floor _main_floor, _left_doorway, _right_doorway, _bottom_doorway, _top_doorway;
     };
 }
+
+#endif

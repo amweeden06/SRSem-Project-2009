@@ -5,9 +5,16 @@
 
 namespace Sewers
 {	
+	/* CONSTRUCTOR */
+	Button::Button()
+	{
+		set_width(AVATAR_WIDTH);
+		set_height(AVATAR_HEIGHT);
+	}
+	
 	/* FUNCTION: draw()
 	 * PRECONDITIONS: None
-	 * POSTCONDITION: The object has been placed in the drawing queue, to be
+	 * POSTCONDITION: The button has been placed in the drawing queue, to be
 	 *                 drawn at the next glFlush()
 	 * POSSIBLE RETURN VALUES: SUCCESS
 	 */

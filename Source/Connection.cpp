@@ -5,9 +5,15 @@
 
 namespace Sewers
 {	
+	Connection::Connection()
+	{
+		set_width(CONNECTION_WIDTH);
+		set_height(CONNECTION_HEIGHT);
+	}
+	
 	/* FUNCTION: draw()
 	 * PRECONDITIONS: None
-	 * POSTCONDITION: The object has been placed in the drawing queue, to be
+	 * POSTCONDITION: The connection has been placed in the drawing queue, to be
 	 *                 drawn at the next glFlush()
 	 * POSSIBLE RETURN VALUES: SUCCESS
 	 */

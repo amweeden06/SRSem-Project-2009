@@ -6,6 +6,13 @@
 
 namespace Sewers
 {
+	/* CONSTRUCTOR */
+	Avatar::Avatar()
+	{
+		set_width(AVATAR_WIDTH);
+		set_height(AVATAR_HEIGHT);
+	}
+	
 	/* FUNCTION: draw()
 	 * PRECONDITIONS: None
 	 * POSTCONDITION: The avatar has been placed in the drawing queue, to be

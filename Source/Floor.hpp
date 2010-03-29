@@ -2,6 +2,9 @@
  *  Part of the Sewers project
  *     Aaron Weeden, Earlham College, 2009-2010
  */
+#ifndef FLOOROBJ
+#define FLOOROBJ
+
 #include "DrawingObject.hpp"
 
 namespace Sewers
@@ -13,3 +16,5 @@ namespace Sewers
         int draw(GLcolor3) const;
     };
 }
+
+#endif

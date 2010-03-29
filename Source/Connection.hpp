@@ -9,6 +9,8 @@ namespace Sewers
 	class Connection : public DrawingObject
 	{
 	public:
+		/* CONSTRUCTOR */
+		Connection();
 		/* ACCESSOR */
 		DrawingObject* input() const { return _input; }
 		DrawingObject* output() const { return _output; }

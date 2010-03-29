@@ -8,11 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		8DD76F6A0486A84900D96B5E /* Sewers.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* Sewers.1 */; };
-		930BAA30114D3F3E000942A8 /* Sandbox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 930BAA2F114D3F3E000942A8 /* Sandbox.cpp */; };
 		930E08E0115E528500ABAAE5 /* Connection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 930E08DF115E528500ABAAE5 /* Connection.cpp */; };
 		930E08EE115E53C900ABAAE5 /* TruthTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 930E08ED115E53C900ABAAE5 /* TruthTable.cpp */; };
 		931A70C2114E774800F17A33 /* Tester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 931A70C1114E774800F17A33 /* Tester.cpp */; };
 		933F3B461116057B004062C4 /* DrawingObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 933F3B2F1116057B004062C4 /* DrawingObject.cpp */; };
+		9352F5C31160ED810030513B /* Gate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9352F5C21160ED810030513B /* Gate.cpp */; };
+		9352F5CC1160EF110030513B /* Puzzle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9352F5CB1160EF110030513B /* Puzzle.cpp */; };
+		9352F5D11160EF860030513B /* HudPuzzle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9352F5D01160EF860030513B /* HudPuzzle.cpp */; };
+		9352F5D61160EFDD0030513B /* BlueprintScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9352F5D51160EFDD0030513B /* BlueprintScreen.cpp */; };
+		9352F6091160F1100030513B /* PuzzleRoom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9352F6081160F1100030513B /* PuzzleRoom.cpp */; };
+		9352F60E1160F1950030513B /* ManufacturersRoom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9352F60D1160F1950030513B /* ManufacturersRoom.cpp */; };
+		9352F62D1160F2660030513B /* Workbench.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9352F62C1160F2660030513B /* Workbench.cpp */; };
+		9352F6751160F3590030513B /* GameEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9352F6741160F3590030513B /* GameEngine.cpp */; };
+		9352F6D51160F9610030513B /* Hud.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9352F6D41160F9610030513B /* Hud.cpp */; };
 		9368494E115E3B3100328A1F /* HudButtons.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9368494D115E3B3100328A1F /* HudButtons.cpp */; };
 		93684957115E3CEF00328A1F /* Room.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93684956115E3CEF00328A1F /* Room.cpp */; };
 		938748BA115D337F008B6CB0 /* Floor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 938748B9115D337F008B6CB0 /* Floor.cpp */; };
@@ -41,7 +49,6 @@
 
 /* Begin PBXFileReference section */
 		8DD76F6C0486A84900D96B5E /* Sewers */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Sewers; sourceTree = BUILT_PRODUCTS_DIR; };
-		930BAA2F114D3F3E000942A8 /* Sandbox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sandbox.cpp; sourceTree = "<group>"; };
 		930E08DE115E528500ABAAE5 /* Connection.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Connection.hpp; sourceTree = "<group>"; };
 		930E08DF115E528500ABAAE5 /* Connection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Connection.cpp; sourceTree = "<group>"; };
 		930E08EC115E53C900ABAAE5 /* TruthTable.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TruthTable.hpp; sourceTree = "<group>"; };
@@ -50,6 +57,23 @@
 		933F3B171116057B004062C4 /* globals.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = globals.hpp; sourceTree = "<group>"; };
 		933F3B2F1116057B004062C4 /* DrawingObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DrawingObject.cpp; sourceTree = "<group>"; };
 		933F3B301116057B004062C4 /* DrawingObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DrawingObject.hpp; sourceTree = "<group>"; };
+		9352F5C11160ED810030513B /* Gate.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Gate.hpp; sourceTree = "<group>"; };
+		9352F5C21160ED810030513B /* Gate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gate.cpp; sourceTree = "<group>"; };
+		9352F5CA1160EF110030513B /* Puzzle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Puzzle.hpp; sourceTree = "<group>"; };
+		9352F5CB1160EF110030513B /* Puzzle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Puzzle.cpp; sourceTree = "<group>"; };
+		9352F5CF1160EF860030513B /* HudPuzzle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HudPuzzle.hpp; sourceTree = "<group>"; };
+		9352F5D01160EF860030513B /* HudPuzzle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HudPuzzle.cpp; sourceTree = "<group>"; };
+		9352F5D41160EFDD0030513B /* BlueprintScreen.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BlueprintScreen.hpp; sourceTree = "<group>"; };
+		9352F5D51160EFDD0030513B /* BlueprintScreen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlueprintScreen.cpp; sourceTree = "<group>"; };
+		9352F6071160F1100030513B /* PuzzleRoom.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PuzzleRoom.hpp; sourceTree = "<group>"; };
+		9352F6081160F1100030513B /* PuzzleRoom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PuzzleRoom.cpp; sourceTree = "<group>"; };
+		9352F60C1160F1950030513B /* ManufacturersRoom.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ManufacturersRoom.hpp; sourceTree = "<group>"; };
+		9352F60D1160F1950030513B /* ManufacturersRoom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ManufacturersRoom.cpp; sourceTree = "<group>"; };
+		9352F62B1160F2660030513B /* Workbench.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Workbench.hpp; sourceTree = "<group>"; };
+		9352F62C1160F2660030513B /* Workbench.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Workbench.cpp; sourceTree = "<group>"; };
+		9352F6741160F3590030513B /* GameEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameEngine.cpp; sourceTree = "<group>"; };
+		9352F6D31160F9610030513B /* Hud.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Hud.hpp; sourceTree = "<group>"; };
+		9352F6D41160F9610030513B /* Hud.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hud.cpp; sourceTree = "<group>"; };
 		935FBBF11143EFFC00D3E3EE /* glheaders.OSX.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = glheaders.OSX.hpp; sourceTree = "<group>"; };
 		9368494C115E3B3100328A1F /* HudButtons.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HudButtons.hpp; sourceTree = "<group>"; };
 		9368494D115E3B3100328A1F /* HudButtons.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HudButtons.cpp; sourceTree = "<group>"; };
@@ -94,6 +118,8 @@
 				93CCCE5E1125CA7400946784 /* Avatar.cpp */,
 				93874991115D3D6F008B6CB0 /* Bit.hpp */,
 				93874992115D3D6F008B6CB0 /* Bit.cpp */,
+				9352F5D41160EFDD0030513B /* BlueprintScreen.hpp */,
+				9352F5D51160EFDD0030513B /* BlueprintScreen.cpp */,
 				93910A3F115D0F8400FDE06E /* Button.hpp */,
 				93910A40115D0F8400FDE06E /* Button.cpp */,
 				930E08DE115E528500ABAAE5 /* Connection.hpp */,
@@ -102,22 +128,36 @@
 				933F3B2F1116057B004062C4 /* DrawingObject.cpp */,
 				938748B8115D337F008B6CB0 /* Floor.hpp */,
 				938748B9115D337F008B6CB0 /* Floor.cpp */,
+				9352F6741160F3590030513B /* GameEngine.cpp */,
+				9352F5C11160ED810030513B /* Gate.hpp */,
+				9352F5C21160ED810030513B /* Gate.cpp */,
+				9352F6D31160F9610030513B /* Hud.hpp */,
+				9352F6D41160F9610030513B /* Hud.cpp */,
 				935FBBF11143EFFC00D3E3EE /* glheaders.OSX.hpp */,
 				933F3B171116057B004062C4 /* globals.hpp */,
 				93E020AF1146EC5800191B06 /* gltypes.1.h */,
 				93E020B41146EC6500191B06 /* gltypes.1.cpp */,
 				9368494C115E3B3100328A1F /* HudButtons.hpp */,
 				9368494D115E3B3100328A1F /* HudButtons.cpp */,
+				9352F5CF1160EF860030513B /* HudPuzzle.hpp */,
+				9352F5D01160EF860030513B /* HudPuzzle.cpp */,
+				9352F60C1160F1950030513B /* ManufacturersRoom.hpp */,
+				9352F60D1160F1950030513B /* ManufacturersRoom.cpp */,
+				9352F5CA1160EF110030513B /* Puzzle.hpp */,
+				9352F5CB1160EF110030513B /* Puzzle.cpp */,
+				9352F6071160F1100030513B /* PuzzleRoom.hpp */,
+				9352F6081160F1100030513B /* PuzzleRoom.cpp */,
 				93684955115E3CEF00328A1F /* Room.hpp */,
 				93684956115E3CEF00328A1F /* Room.cpp */,
 				93AD6A17115D7D7100C675B3 /* Row.hpp */,
 				93AD6A18115D7D7100C675B3 /* Row.cpp */,
-				930BAA2F114D3F3E000942A8 /* Sandbox.cpp */,
 				938749D4115D41D9008B6CB0 /* Switch.hpp */,
 				938749D5115D41D9008B6CB0 /* Switch.cpp */,
 				931A70C1114E774800F17A33 /* Tester.cpp */,
 				930E08EC115E53C900ABAAE5 /* TruthTable.hpp */,
 				930E08ED115E53C900ABAAE5 /* TruthTable.cpp */,
+				9352F62B1160F2660030513B /* Workbench.hpp */,
+				9352F62C1160F2660030513B /* Workbench.cpp */,
 				93FBB18710951250001A2885 /* GLUT.framework */,
 				93FBB17510951247001A2885 /* OpenGL.framework */,
 				C6859E8C029090F304C91782 /* Documentation */,
@@ -188,7 +228,6 @@
 				933F3B461116057B004062C4 /* DrawingObject.cpp in Sources */,
 				93CCCE5F1125CA7400946784 /* Avatar.cpp in Sources */,
 				93E020B51146EC6500191B06 /* gltypes.1.cpp in Sources */,
-				930BAA30114D3F3E000942A8 /* Sandbox.cpp in Sources */,
 				931A70C2114E774800F17A33 /* Tester.cpp in Sources */,
 				93910A41115D0F8400FDE06E /* Button.cpp in Sources */,
 				938748BA115D337F008B6CB0 /* Floor.cpp in Sources */,
@@ -199,6 +238,15 @@
 				93684957115E3CEF00328A1F /* Room.cpp in Sources */,
 				930E08E0115E528500ABAAE5 /* Connection.cpp in Sources */,
 				930E08EE115E53C900ABAAE5 /* TruthTable.cpp in Sources */,
+				9352F5C31160ED810030513B /* Gate.cpp in Sources */,
+				9352F5CC1160EF110030513B /* Puzzle.cpp in Sources */,
+				9352F5D11160EF860030513B /* HudPuzzle.cpp in Sources */,
+				9352F5D61160EFDD0030513B /* BlueprintScreen.cpp in Sources */,
+				9352F6091160F1100030513B /* PuzzleRoom.cpp in Sources */,
+				9352F60E1160F1950030513B /* ManufacturersRoom.cpp in Sources */,
+				9352F62D1160F2660030513B /* Workbench.cpp in Sources */,
+				9352F6751160F3590030513B /* GameEngine.cpp in Sources */,
+				9352F6D51160F9610030513B /* Hud.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

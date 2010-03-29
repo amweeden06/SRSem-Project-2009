@@ -8,6 +8,9 @@ namespace Sewers
 		set_type(type);
 		for(int i = 0; i < MAX_NUM_OUTPUTS; ++i)
 			_outputs[i] = NULL;
+		
+		set_width(SWITCH_WIDTH);
+		set_height(SWITCH_HEIGHT);
 	}
 	
 	/* FUNCTION: num_inputs()
@@ -58,7 +61,7 @@ namespace Sewers
 	
 	/* FUNCTION: draw()
 	 * PRECONDITIONS: none
-	 * POSTCONDITION: The object has been placed in the drawing queue, to be
+	 * POSTCONDITION: The switch has been placed in the drawing queue, to be
 	 *                 drawn at the next glFlush()
 	 * RETURN VALUE: SUCCESS
 	 */

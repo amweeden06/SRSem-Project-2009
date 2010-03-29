@@ -2,6 +2,9 @@
  *  Part of the Sewers project
  *     Aaron Weeden, Earlham College, 2009-2010
  */
+#ifndef AVATAROBJ
+#define AVATAROBJ
+
 #include "DrawingObject.hpp"
 
 namespace Sewers
@@ -14,6 +17,8 @@ namespace Sewers
 	class Avatar : public DrawingObject
 	{		
 	public:
+		/* CONSTRUCTOR */
+		Avatar();
         /* ACCESSORS */
         string direction() const { return _direction; }
         bool animation_frame() const { return _animation_frame; }
@@ -27,3 +32,5 @@ namespace Sewers
 		bool _animation_frame; /* 2-frame animator */
     };
 }
+
+#endif
