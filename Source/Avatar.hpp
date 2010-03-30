@@ -10,7 +10,7 @@
 namespace Sewers
 {	
 	/* CONSTANTS FOR DRAWING */
-	const GLcolor3 HEAD_COLOR = GLblue3;
+	const GLcolor3 HEAD_COLOR = GLgreen3;
 	const GLcolor3 EYE_COLOR = GLblack3;
 	const GLcolor3 SHOE_COLOR = GLblack3;
 	

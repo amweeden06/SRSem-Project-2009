@@ -24,8 +24,16 @@ namespace Sewers
 		// Avatar's eye coordinates
 		GLint eye_l, eye_r, eye_b, eye_t;
 		// Avatar's shoe coordinates
-		GLint shoe_l = left() + width()/6, shoe_r = right() - width()/6, shoe_b = bottom(), shoe_t = bottom() + height()/6; // Both shoes together
-		GLint lshoe_l = left() + 2*width()/3, lshoe_r = right(), rshoe_l = left(), rshoe_r = left() + width()/3; // Individual shoes
+		// Individually
+		GLint shoe_l = left() + width()/6;
+		GLint shoe_r = right() - width()/6;
+		GLint shoe_b = bottom();
+		GLint shoe_t = bottom() + height()/6;
+		// Both shoes together
+		GLint lshoe_l = left() + 2*width()/3;
+		GLint lshoe_r = right();
+		GLint rshoe_l = left();
+		GLint rshoe_r = left() + width()/3;
 		if(direction() == "LEFT")
 		{
 			eye_l = left();

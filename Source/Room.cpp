@@ -23,6 +23,15 @@ namespace Sewers
 	 */
 	int Room::draw() const
 	{
+		_main_floor.draw(FLOOR_COLOR);
+		if(_left_neighbor != NULL)
+			_left_doorway.draw(FLOOR_COLOR);
+		if(_right_neighbor != NULL)
+			_right_doorway.draw(FLOOR_COLOR);
+		if(_bottom_neighbor != NULL)
+			_bottom_doorway.draw(FLOOR_COLOR);
+		if(_top_neighbor != NULL)
+			_top_doorway.draw(FLOOR_COLOR);
 		return SUCCESS;
     }	
 }

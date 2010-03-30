@@ -25,6 +25,8 @@ namespace Sewers
 		Floor right_doorway() const { return _right_doorway; }
 		Floor bottom_doorway() const { return _bottom_doorway; }
 		Floor top_doorway() const { return _top_doorway; }
+		/* MUTATORS */
+		void set_main_floor(Floor f) { _main_floor = f; }
 		/* FUNCTIONS */
         int draw() const;
 	private:
