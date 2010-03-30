@@ -13,6 +13,31 @@ namespace Sewers
 		_right_doorway.set_type("FLOOR");
 		_bottom_doorway.set_type("FLOOR");
 		_top_doorway.set_type("FLOOR");
+		
+		_main_floor.set_left(MAIN_FLOOR_LEFT);
+		_main_floor.set_bottom(MAIN_FLOOR_BOTTOM);
+		_main_floor.set_width(MAIN_FLOOR_WIDTH);
+		_main_floor.set_height(MAIN_FLOOR_HEIGHT);
+		
+		_left_doorway.set_left(LEFT_DOORWAY_LEFT);
+		_left_doorway.set_bottom(LEFT_DOORWAY_BOTTOM);
+		_left_doorway.set_width(LEFT_DOORWAY_WIDTH);
+		_left_doorway.set_height(LEFT_DOORWAY_HEIGHT);
+		
+		_right_doorway.set_left(RIGHT_DOORWAY_LEFT);
+		_right_doorway.set_bottom(RIGHT_DOORWAY_BOTTOM);
+		_right_doorway.set_width(RIGHT_DOORWAY_WIDTH);
+		_right_doorway.set_height(RIGHT_DOORWAY_HEIGHT);
+		
+		_bottom_doorway.set_left(BOTTOM_DOORWAY_LEFT);
+		_bottom_doorway.set_bottom(BOTTOM_DOORWAY_BOTTOM);
+		_bottom_doorway.set_width(BOTTOM_DOORWAY_WIDTH);
+		_bottom_doorway.set_height(BOTTOM_DOORWAY_HEIGHT);
+		
+		_top_doorway.set_left(TOP_DOORWAY_LEFT);
+		_top_doorway.set_bottom(TOP_DOORWAY_BOTTOM);
+		_top_doorway.set_width(TOP_DOORWAY_WIDTH);
+		_top_doorway.set_height(TOP_DOORWAY_HEIGHT);			
 	}
 	
 	/* FUNCTION: draw()

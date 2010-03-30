@@ -21,11 +21,6 @@ Hud HeadsUpDisplay;
 ManufacturersRoom Manufacturers_Room;
 PuzzleRoom Puzzle_Rooms[NUM_PUZZLES / PUZZLES_PER_ROOM];
 Puzzle Current_Puzzle;
-Floor Main_Floor;
-Floor Left_Doorway;
-Floor Right_Doorway;
-Floor Bottom_Doorway;
-Floor Top_Doorway;
 
 void move_bitty(string direction)
 {
@@ -57,18 +52,22 @@ void move_bitty(string direction)
 	GLint shoe_top_y = _proposed_location.bottom() + AVATAR_HEIGHT/6;
 	GLint shoe_bottom_y = _proposed_location.bottom();
 	
-	if(((Left_Doorway.contains(shoe_top_x_left,shoe_top_y) &&
-		 Left_Doorway.contains(shoe_bottom_x_left,shoe_bottom_y )) ||
-		(Right_Doorway.contains(shoe_top_x_right,shoe_top_y) &&
-		 Right_Doorway.contains(shoe_bottom_x_right,shoe_bottom_y)) ||
-		(Bottom_Doorway.contains(_proposed_location.left(),_proposed_location.bottom()) &&
-		 Bottom_Doorway.contains(_proposed_location.right(),_proposed_location.bottom())) ||
-		(Top_Doorway.contains(_proposed_location.left(),_proposed_location.top()) &&
-		 Top_Doorway.contains(_proposed_location.right(),_proposed_location.top())) ||
+	if(((*Current_Room).left_neighbor() != NULL && 
+		(*Current_Room).left_doorway().contains(shoe_top_x_left,shoe_top_y) &&
+		(*Current_Room).left_doorway().contains(shoe_bottom_x_left,shoe_bottom_y )) ||
+	   ((*Current_Room).right_neighbor() != NULL &&
+		(*Current_Room).right_doorway().contains(shoe_top_x_right,shoe_top_y) &&
+		(*Current_Room).right_doorway().contains(shoe_bottom_x_right,shoe_bottom_y)) ||
+	   ((*Current_Room).bottom_neighbor() != NULL &&
+		(*Current_Room).bottom_doorway().contains(_proposed_location.left(),_proposed_location.bottom()) &&
+		(*Current_Room).bottom_doorway().contains(_proposed_location.right(),_proposed_location.bottom())) ||
+	   ((*Current_Room).top_neighbor() != NULL &&
+		(*Current_Room).top_doorway().contains(_proposed_location.left(),_proposed_location.top()) &&
+		(*Current_Room).top_doorway().contains(_proposed_location.right(),_proposed_location.top())) ||
 		((_proposed_location.left() > WALL_WIDTH) &&
 		 (_proposed_location.right() < WINDOW_WIDTH - WALL_WIDTH) &&
 		 (_proposed_location.bottom() > HUD_HEIGHT + WALL_HEIGHT) &&
-		 (_proposed_location.top() < WINDOW_HEIGHT))))
+		 (_proposed_location.top() < WINDOW_HEIGHT)))
 		Bitty = _proposed_location;
 }
 
@@ -78,11 +77,6 @@ void wrap_display(void)
 	HeadsUpDisplay.draw();
 	(*Current_Room).draw();
 	
-	Left_Doorway.draw(FLOOR_COLOR);
-	Right_Doorway.draw(FLOOR_COLOR);
-	Bottom_Doorway.draw(FLOOR_COLOR);
-	Top_Doorway.draw(FLOOR_COLOR);
-
 	Bitty.draw(GLblue3);
 	glFlush(); 
 }
@@ -100,13 +94,25 @@ void wrap_key(unsigned char k, int x, int y)
 		move_bitty("UP");
 	
 	if(Bitty.right() < 0)
-		cerr << "EXITED LEFT" << endl;
+	{
+		Current_Room = (*Current_Room).left_neighbor();
+		Bitty.set_left(WINDOW_WIDTH);
+	}
 	else if(Bitty.left() > WINDOW_WIDTH)
-		cerr << "EXITED RIGHT" << endl;
+	{
+		Current_Room = (*Current_Room).right_neighbor();
+		Bitty.set_left(-AVATAR_WIDTH);
+	}
 	else if(Bitty.top() < HUD_HEIGHT)
-		cerr << "EXITED DOWN" << endl;
+	{
+		Current_Room = (*Current_Room).bottom_neighbor();
+		Bitty.set_bottom(WINDOW_HEIGHT);
+	}
 	else if(Bitty.bottom() > WINDOW_HEIGHT)
-		cerr << "EXITED UP" << endl;
+	{
+		Current_Room = (*Current_Room).top_neighbor();
+		Bitty.set_bottom(HUD_HEIGHT);
+	}
 	
 	/*else if(k == 'f')
 	 {
@@ -173,34 +179,6 @@ void wrap_mouse(int b, int state, int x, int y)
 {
 }
 
-void setup_floors()
-{
-	Main_Floor.set_left(MAIN_FLOOR_LEFT);
-	Main_Floor.set_bottom(MAIN_FLOOR_BOTTOM);
-	Main_Floor.set_width(MAIN_FLOOR_WIDTH);
-	Main_Floor.set_height(MAIN_FLOOR_HEIGHT);
-	
-	Left_Doorway.set_left(LEFT_DOORWAY_LEFT);
-	Left_Doorway.set_bottom(LEFT_DOORWAY_BOTTOM);
-	Left_Doorway.set_width(LEFT_DOORWAY_WIDTH);
-	Left_Doorway.set_height(LEFT_DOORWAY_HEIGHT);
-	
-	Right_Doorway.set_left(RIGHT_DOORWAY_LEFT);
-	Right_Doorway.set_bottom(RIGHT_DOORWAY_BOTTOM);
-	Right_Doorway.set_width(RIGHT_DOORWAY_WIDTH);
-	Right_Doorway.set_height(RIGHT_DOORWAY_HEIGHT);
-	
-	Bottom_Doorway.set_left(BOTTOM_DOORWAY_LEFT);
-	Bottom_Doorway.set_bottom(BOTTOM_DOORWAY_BOTTOM);
-	Bottom_Doorway.set_width(BOTTOM_DOORWAY_WIDTH);
-	Bottom_Doorway.set_height(BOTTOM_DOORWAY_HEIGHT);
-
-	Top_Doorway.set_left(TOP_DOORWAY_LEFT);
-	Top_Doorway.set_bottom(TOP_DOORWAY_BOTTOM);
-	Top_Doorway.set_width(TOP_DOORWAY_WIDTH);
-	Top_Doorway.set_height(TOP_DOORWAY_HEIGHT);	
-}
-
 int main(int argc, char** argv)
 {	
 	glutInit(&argc, argv);
@@ -210,15 +188,24 @@ int main(int argc, char** argv)
 	gluOrtho2D(0, WINDOW_WIDTH, 0, WINDOW_HEIGHT);
 	
 	Room first_room;
+	Room puzzle_room_1;
+	Room puzzle_room_2;
 	
 	Bitty.set_left(BLUEPRINT_SCREEN_WIDTH/2 - AVATAR_WIDTH/2);
 	Bitty.set_bottom(HUD_HEIGHT + BLUEPRINT_SCREEN_WIDTH/2 - AVATAR_HEIGHT/2);
 	Bitty.set_width(AVATAR_WIDTH);
 	Bitty.set_height(AVATAR_HEIGHT);
 	Bitty.set_direction("DOWN");
-	setup_floors();
 	
-	first_room.set_main_floor(Main_Floor);
+	Manufacturers_Room.set_bottom_neighbor(&first_room);
+	
+	first_room.set_right_neighbor(&puzzle_room_1);
+	first_room.set_top_neighbor(&Manufacturers_Room);
+	
+	puzzle_room_1.set_left_neighbor(&first_room);
+	puzzle_room_1.set_right_neighbor(&puzzle_room_2);
+	
+	puzzle_room_2.set_left_neighbor(&puzzle_room_1);
 	
 	Current_Room = &first_room;
 		

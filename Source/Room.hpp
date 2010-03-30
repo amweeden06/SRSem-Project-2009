@@ -27,6 +27,10 @@ namespace Sewers
 		Floor top_doorway() const { return _top_doorway; }
 		/* MUTATORS */
 		void set_main_floor(Floor f) { _main_floor = f; }
+		void set_left_neighbor(Room* r) { _left_neighbor = r; }
+		void set_right_neighbor(Room* r) { _right_neighbor = r; }
+		void set_bottom_neighbor(Room* r) { _bottom_neighbor = r; }
+		void set_top_neighbor(Room* r) { _top_neighbor = r; }
 		/* FUNCTIONS */
         int draw() const;
 	private:
