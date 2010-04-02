@@ -2,32 +2,35 @@
  *  Part of the Sewers project
  *     Aaron Weeden, Earlham College, 2009-2010
  */
-#include "Object.hpp"
+#ifndef AVATAROBJ
+#define AVATAROBJ
+
+#include "DrawingObject.hpp"
 
 namespace Sewers
-{
-	/* Avatar -- player-controlled object ("Bitty")
-	 *        -- functions to draw and animate
-	 */
-	class Avatar : public Object
-	{
+{	
+	/* CONSTANTS FOR DRAWING */
+	const GLcolor3 HEAD_COLOR = GLgreen3;
+	const GLcolor3 EYE_COLOR = GLblack3;
+	const GLcolor3 SHOE_COLOR = GLblack3;
+	
+	class Avatar : public DrawingObject
+	{		
 	public:
-		// CONSTRUCTORS
+		/* CONSTRUCTOR */
 		Avatar();
-		Avatar(const Avatar&);
-        // ACCESSORS
+        /* ACCESSORS */
         string direction() const { return _direction; }
         bool animation_frame() const { return _animation_frame; }
-        // MUTATORS
-        void set_direction(const string direction) { _direction = direction; }
+        /* MUTATORS */
+		void set_direction(string direction) { _direction = direction; }
         void set_animation_frame(bool a) { _animation_frame = a; }
-        // METHODS
-        void draw() const;
-		void help() const;
-    private:
-        string _direction; // Direction the avatar is facing
-        bool _animation_frame; // toggled to animate the avatar
+        /* DRAWING METHOD */
+        int draw(GLcolor3) const;
+	private:
+		string _direction; /* Direction in which the avatar is currently facing */
+		bool _animation_frame; /* 2-frame animator */
     };
-	
-    ostream& operator << (ostream&, const Avatar&);
 }
+
+#endif
