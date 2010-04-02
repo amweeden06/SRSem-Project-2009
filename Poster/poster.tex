@@ -1,0 +1,222 @@
+% Aaron's poster for the Earlham Annual Research Conference
+%
+% Poster based on PetaKit "how" poster, which quotes:
+% "All of the poster stuff was derived from:
+%
+% Template file for an a0 landscape poster.
+% Written by Graeme, 2001-03 based on Norman's original microlensing
+% poster.
+%
+% See discussion and documentation at
+% <http://www.astro.gla.ac.uk/users/norman/docs/posters/> 
+%
+% $Id: poster.tex,v 1.6 2010/04/02 14:07:13 leemasa Exp $
+%
+% and work that Josh Hursey and Josh McCoy did on the b-and-t-gromacs and 
+% Big-FE posters.  I have stripped the parts we don't use out.  
+
+% You might find the 'draft' option to a0 poster useful if you have
+% lots of graphics, because they can take some time to process and
+% display. (\documentclass[a0,draft]{a0poster})"
+%
+\documentclass[a0]{a0poster}
+
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\newcommand{\standardsize}{\fontsize{28}{33}\selectfont}
+
+% The textpos package is necessary to position textblocks at arbitary 
+% places on the page.
+%
+\usepackage[absolute]{textpos}
+
+\usepackage{url}
+
+% Graphics to include graphics. Times is nice on posters, but you
+% might want to switch it off and go for CMR fonts.
+%
+\usepackage{graphicx,wrapfig,times}
+
+% Avoid unnecessary hyphenation in paragraphs. Also requires
+% \raggedright below, after \begin{document}.
+%
+\usepackage[none]{hyphenat}
+
+% These colours are tried and tested for titles and headers. Don't
+% over use color!
+%
+\usepackage{color}
+\definecolor{DarkBlue}{rgb}{0.1,0.1,0.5}
+\definecolor{Red}{rgb}{0.9,0.0,0.1}
+\definecolor{Green}{rgb}{0.0,0.6,0.1}
+
+% See documentation for a0poster class for the size options here
+%
+\let
+\Textsize
+\normalsize
+\def\Head#1{\noindent\hbox to \hsize{\hfil{\LARGE\color{DarkBlue} #1}}\bigskip}
+\def\LHead#1{\noindent{\LARGE\color{DarkBlue} #1}\bigskip}
+\def\Subhead#1{\noindent{\large\color{DarkBlue} #1}}
+\def\Title#1{\noindent{\VeryHuge\color{Green} #1}}
+
+% Set up the grid
+%
+% Note that [40mm,40mm] is the margin round the edge of the page --
+% it is _not_ the grid size. That is always defined as 
+% PAGE_WIDTH/HGRID and PAGE_HEIGHT/VGRID. In this case we use
+% 23 x 12. This gives us three columns of width 7 boxes, with a gap of
+% width 1 in between them. 12 vertical boxes is a good number to work
+% with.
+%
+% Note however that texblocks can be positioned fractionally as well,
+% so really any convenient grid size can be used.
+%
+\TPGrid[40mm,40mm]{23}{12}      % 3 cols of width 7, plus 2 gaps width 1
+
+\parindent=0pt
+\parskip=0.5
+\baselineskip
+
+\begin{document}
+\large
+\raggedright
+
+% Understanding textblocks is the key to being able to do a poster in
+% LaTeX. In
+%
+%    \begin{textblock}{wid}(x,y)
+%    ...
+%    \end{textblock}
+%
+% the first argument gives the block width in units of the grid
+% cells specified above in \TPGrid; the second gives the (x,y)
+% position on the grid, with the y axis pointing down.
+%
+% You will have to do a lot of previewing to get everything in the 
+% right place.
+%
+% Watch out for hyphenation in titles - LaTeX will do it
+% but it looks awful.
+%
+
+% Title
+%
+\begin{textblock}{23}(0,0)
+\Title{\italics[Computer City: Sewers]: An Educational Game to Teach Digital Logic}
+\end{textblock}
+
+% Authors and institutions
+%
+\begin{textblock}{20}(0,0.6)
+\LHead{Aaron Weeden}
+\hfil
+\break
+\textsl{Earlham College -- amweeden06@cs.earlham.edu}
+\end{textblock}
+
+% Abstract
+% 
+\begin{textblock}{23}(0,1.2)
+\large
+\input{abstract.tex}
+\normalsize
+\end{textblock}
+
+% Logos at top of each column.
+% 
+%\begin{textblock}{2}(2.2,3.2)
+%\includegraphics{../artwork/littlefe.eps}
+%\end{textblock}
+%
+%\begin{textblock}{2}(10.9,3.1)
+%\includegraphics{../artwork/bccd.eps}
+%\end{textblock}
+%
+%\begin{textblock}{2}(18.0,3.4)
+%\includegraphics{../artwork/cserd.eps}
+%\end{textblock}
+
+% First column 
+% 
+\begin{textblock}{6}(0,2.6)
+\hrule
+\medskip
+\LHead{Technical Overview}
+\standardsize
+\input{technical.tex}
+\end{textblock}
+
+% Second column 
+% 
+\begin{textblock}{11}(6,2.7)
+\begin{center}
+\includegraphics[scale=2.4]{../artwork/PetaKit.eps}
+~\\
+\vspace{10mm}
+~\\
+\includegraphics[scale=3]{../artwork/strong.ps}
+
+A performance statistics graph produced with PetaKit
+\end{center}
+\end{textblock}
+
+% Third column 
+% 
+\begin{textblock}{5.5}(17,2.6)
+\hrule
+\standardsize
+\medskip
+\LHead{Design}
+
+\input{design.tex}  
+\end{textblock}
+
+% Logos along bottom edge of the poster.
+%
+\def\PosterBottom{11.5}
+\def\TopRow{11}
+\def\LogoHeight{40mm}
+\def\LogoSmall{25mm}
+
+\begin{textblock}{2}(0,\PosterBottom)
+\includegraphics[height=\LogoHeight]{../artwork/teragrid.eps}
+\end{textblock}
+
+\begin{textblock}{2}(2.7,\PosterBottom)
+\includegraphics[height=\LogoHeight]{../artwork/kean.eps}
+\end{textblock}
+
+\begin{textblock}{2}(4,\PosterBottom)
+\includegraphics[height=\LogoHeight]{../artwork/Earlham.eps}
+\end{textblock}
+
+\begin{textblock}{2}(7.7,11.4)
+\includegraphics[height=60mm]{../artwork/SC09.eps}
+\end{textblock}
+
+\begin{textblock}{2}(9,\PosterBottom)
+\includegraphics[height=\LogoHeight]{../artwork/shodor.eps}
+\end{textblock}
+
+\begin{textblock}{2}(12.6,\PosterBottom)
+\includegraphics[height=\LogoHeight]{../artwork/Blue_Waters.eps}
+\end{textblock}
+
+\begin{textblock}{2}(15.6,\PosterBottom)
+\includegraphics[height=50mm]{../artwork/oscer.eps}
+\end{textblock}
+
+\begin{textblock}{2}(16.8,\PosterBottom)
+\includegraphics[height=\LogoHeight]{../artwork/IU.eps}
+\end{textblock}
+
+\begin{textblock}{2}(17.7,\PosterBottom)
+\includegraphics[height=\LogoHeight]{../artwork/PSC.eps}
+\end{textblock}
+
+\begin{textblock}{2}(21.5,\PosterBottom)
+\includegraphics[height=\LogoHeight]{../artwork/Intel.eps}
+\end{textblock}
+
+\end{document}
