@@ -1,6 +1,5 @@
 % Aaron's poster for the Earlham Annual Research Conference
 %
-<<<<<<< HEAD
 % Template based on PetaKit "how" poster
 %
 \documentclass[a0]{a0poster}
@@ -9,48 +8,15 @@
 \pagestyle{empty}
 %
 \setcounter{secnumdepth}{0}
-%
-=======
-% Poster based on PetaKit "how" poster, which quotes:
-% "All of the poster stuff was derived from:
-%
-% Template file for an a0 landscape poster.
-% Written by Graeme, 2001-03 based on Norman's original microlensing
-% poster.
-%
-% See discussion and documentation at
-% <http://www.astro.gla.ac.uk/users/norman/docs/posters/> 
-%
-% $Id: poster.tex,v 1.6 2010/04/02 14:07:13 leemasa Exp $
-%
-% and work that Josh Hursey and Josh McCoy did on the b-and-t-gromacs and 
-% Big-FE posters.  I have stripped the parts we don't use out.  
-
-% You might find the 'draft' option to a0 poster useful if you have
-% lots of graphics, because they can take some time to process and
-% display. (\documentclass[a0,draft]{a0poster})"
-%
-\documentclass[a0]{a0poster}
-
-\pagestyle{empty}
-\setcounter{secnumdepth}{0}
->>>>>>> 936af068da594b6c6e1fc07ea804a4dd5b976b4e
 \newcommand{\standardsize}{\fontsize{28}{33}\selectfont}
 
 % The textpos package is necessary to position textblocks at arbitary 
 % places on the page.
 %
 \usepackage[absolute]{textpos}
-<<<<<<< HEAD
-\usepackage{url}
-
-% To include graphics. Times is nice on posters, but you
-=======
-
 \usepackage{url}
 
 % Graphics to include graphics. Times is nice on posters, but you
->>>>>>> 936af068da594b6c6e1fc07ea804a4dd5b976b4e
 % might want to switch it off and go for CMR fonts.
 %
 \usepackage{graphicx,wrapfig,times}
@@ -121,11 +87,7 @@
 % Title
 %
 \begin{textblock}{23}(0,0)
-<<<<<<< HEAD
 \Title{\textit{Computer City: Sewers}: An Educational Game to Teach Digital Logic}
-=======
-\Title{\italics[Computer City: Sewers]: An Educational Game to Teach Digital Logic}
->>>>>>> 936af068da594b6c6e1fc07ea804a4dd5b976b4e
 \end{textblock}
 
 % Authors and institutions
@@ -134,28 +96,16 @@
 \LHead{Aaron Weeden}
 \hfil
 \break
-<<<<<<< HEAD
 \textsl{Earlham College -- amweeden06@earlham.edu}
-=======
-\textsl{Earlham College -- amweeden06@cs.earlham.edu}
->>>>>>> 936af068da594b6c6e1fc07ea804a4dd5b976b4e
 \end{textblock}
 
 % Abstract
 % 
-<<<<<<< HEAD
 %\begin{textblock}{23}(0,1.2)
 %\large
 %\input{abstract.tex}
 %\normalsize
 %\end{textblock}
-=======
-\begin{textblock}{23}(0,1.2)
-\large
-\input{abstract.tex}
-\normalsize
-\end{textblock}
->>>>>>> 936af068da594b6c6e1fc07ea804a4dd5b976b4e
 
 % Logos at top of each column.
 % 
@@ -176,7 +126,6 @@
 \begin{textblock}{6}(0,2.6)
 \hrule
 \medskip
-<<<<<<< HEAD
 \LHead{Background}
 \standardsize
 \input{background.tex}
@@ -262,83 +211,6 @@ A gameplay screenshot
 \medskip
 \LHead{References}
 \input{references.tex}  
-=======
-\LHead{Technical Overview}
-\standardsize
-\input{technical.tex}
-\end{textblock}
-
-% Second column 
-% 
-\begin{textblock}{11}(6,2.7)
-\begin{center}
-\includegraphics[scale=2.4]{../artwork/PetaKit.eps}
-~\\
-\vspace{10mm}
-~\\
-\includegraphics[scale=3]{../artwork/strong.ps}
-
-A performance statistics graph produced with PetaKit
-\end{center}
-\end{textblock}
-
-% Third column 
-% 
-\begin{textblock}{5.5}(17,2.6)
-\hrule
-\standardsize
-\medskip
-\LHead{Design}
-
-\input{design.tex}  
-\end{textblock}
-
-% Logos along bottom edge of the poster.
-%
-\def\PosterBottom{11.5}
-\def\TopRow{11}
-\def\LogoHeight{40mm}
-\def\LogoSmall{25mm}
-
-\begin{textblock}{2}(0,\PosterBottom)
-\includegraphics[height=\LogoHeight]{../artwork/teragrid.eps}
-\end{textblock}
-
-\begin{textblock}{2}(2.7,\PosterBottom)
-\includegraphics[height=\LogoHeight]{../artwork/kean.eps}
-\end{textblock}
-
-\begin{textblock}{2}(4,\PosterBottom)
-\includegraphics[height=\LogoHeight]{../artwork/Earlham.eps}
-\end{textblock}
-
-\begin{textblock}{2}(7.7,11.4)
-\includegraphics[height=60mm]{../artwork/SC09.eps}
-\end{textblock}
-
-\begin{textblock}{2}(9,\PosterBottom)
-\includegraphics[height=\LogoHeight]{../artwork/shodor.eps}
-\end{textblock}
-
-\begin{textblock}{2}(12.6,\PosterBottom)
-\includegraphics[height=\LogoHeight]{../artwork/Blue_Waters.eps}
-\end{textblock}
-
-\begin{textblock}{2}(15.6,\PosterBottom)
-\includegraphics[height=50mm]{../artwork/oscer.eps}
-\end{textblock}
-
-\begin{textblock}{2}(16.8,\PosterBottom)
-\includegraphics[height=\LogoHeight]{../artwork/IU.eps}
-\end{textblock}
-
-\begin{textblock}{2}(17.7,\PosterBottom)
-\includegraphics[height=\LogoHeight]{../artwork/PSC.eps}
-\end{textblock}
-
-\begin{textblock}{2}(21.5,\PosterBottom)
-\includegraphics[height=\LogoHeight]{../artwork/Intel.eps}
->>>>>>> 936af068da594b6c6e1fc07ea804a4dd5b976b4e
 \end{textblock}
 
 \end{document}
