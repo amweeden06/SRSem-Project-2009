@@ -1,0 +1,67 @@
+%&pdflatex						% Used with Flashmode (automatic preview update)
+\documentclass[12pt]{article}	% I usually use amsart or article
+\usepackage[margin=1in]{geometry}	% Page margins
+\geometry{letterpaper}				% Paper size
+%\geometry{landscape}                		% Activate for landscape printing
+%\usepackage[parfill]{parskip}			% Begin paragraphs with an empty line not indent
+\usepackage{graphicx}				% Handle images
+\usepackage{natbib}					% Natural sciences bibliographic style
+\usepackage{hyperref}				% Add navigable URLs
+\usepackage{setspace}				% Allow for double spacing
+%\usepackage{times}				% Use Times for the base font
+%\usepackage{listings}
+
+\title{Computer City: Sewers:  An educational computer game for teaching digital logic}	% Paper title
+\author{Aaron Weeden}					% Author or no author (comment out)
+%\date{\today}						% Today's date, a given date, or no date (comment out)
+
+\begin{document}
+\maketitle							% Create title heading on first page
+\thispagestyle{empty}				% Suppress page number on first page
+% \pagestyle{empty}					% Suppress page number and header on other pages
+
+\doublespacing						% Start double spacing
+
+\tableofcontents
+
+\section*{Background}
+
+\subsection*{Digital Logic}
+The computer architecture can be thought of as a hierarchy, as seen in Figure 1 \citep{Tanenbaum}.  Programmers and other humans interact with the higher levels of the hierarchy, while the machine itself interacts with the lower levels.  Digital logic is the foundation of this hierarchy.  At this level, logic and arithmetic are performed on binary values (zeros and ones).  Conceptually, this logic and arithmetic can be explained by gates and truth tables.  Gates are objects that take input values and produce an output value.  Truth tables list the possible combinations of inputs and the outputs of those combinations.  The basic gate, the NAND gate (Figure 2), creates the foundation of the entire computer architecture; every other gate can be built as combinations of NANDs, and any funtionality of the computer architecture at higher levels can be broken down into functionality of NAND gates at the digital logic level.
+
+\subsection*{Educational Games in CS Education}
+Since 2000, there has been a general decrease in enrollment and retention of students in computer science departments \citep{Sung}, \citep{Wu}, \citep{Leutenegger}.  The diversity of participants in these departments has also been shown to decrease in upper-level courses, with fewer minorities and women participating in these classes \citep{Sung}, \citep{Wu}.  One of the more promising solutions to these problems is the incorporation of computer games into the computer science curriculum.  Games have been shown on multiple occassions to have a positive effect on motivation and engagement of students; and with included eduactional components, they also provide increases in learning \citep{Wu}, \citep{deLaet}, \citep{Bayliss}, \citep{Wolz}, \citep{Flavor}, \citep{Belfore}.  With this in mind, the author of this poster has developed {\textit{Computer City:  Sewers}, an educational game to teach digital logic, a fundamental topic in computer science.
+
+\section*{Storyline}
+
+The game presents a hypothetical city as a metaphor for the computer architecture.  In such a city, every aspect of the computer architecture has a corresponding metaphor; 1) buses in a computer correspond to the bus system of the city, 2) addresses in computer memory correspond to the addresses of buildings in the city, and so forth.  The playable portion of the city is the sewer, conceptually the lowest level of the city, corresponding to digital logic, conceptually the lowest level of the computer hierarchy.  The player takes the role of Bitty, a "bit" within the world of Computer City.  Bitty has been placed underground by his/her superiors to assist the engineers who work in the sewers.  Engineers require logic gates to do their work, but they do not have the means to produce them and are not aware of the effects of their work.  The work done by the engineers affects the higher levels of the city, but these effects are hidden from the engineers and Bitty.  To provide gates for the engineers, Bitty consults with a manufacturer, who is able to produce gates if Bitty is able to provide blueprints.
+
+\section*{Gameplay}
+The player uses the keyboard to move Bitty around and talk to other characters.  A Heads-Up Display (HUD) at the bottom of the screen allows the player to see current game statistics and progress, save, load, and quit.  The gate and truth table corresponding to the current player task are also displayed on the HUD.
+The player is assigned tasks by interacting with engineers.  Each engineer asks Bitty to return with a gate meeting certain specifications:  given certain inputs the gate should produce certain outputs.  To accept the task, the player must complete a truth table based on the engineer's description of the gate's specifications.  
+To construct a gate, Bitty consults with a manufacturer, who is able to construct gates for which there are existing blueprints.  The manufacturer initially knows only how to build a NAND gate, but each time the player constructs a new blueprint the manufacturer is able to build a new gate, which the player can use in subsequent blueprints.  Thus, gates are constructed from other gates.
+
+\section{Learning Goals}
+{\textit{Computer City:  Sewers} hopes to teach the following skills and concepts:
+Basic Gate Recognition (NAND, NOR, NOT, AND, OR, XOR)
+Truth Table Construction
+Abstraction -- Complex gates are built from collections of simpler gates
+Information Hiding -- Lowers levels construct a framework but are unaware how the framework is used, and upper levels use the framework but are unaware how it is constructed.
+
+\subsection*{Design Strategies}
+These strategies were obtained from research on the common design practices of educational computer game developers.  They include:
+Game centered on the lesson -- The player should be unable to progress through the game without using the knowledge gained from the game's underlying lesson.
+Clear connections to real-world applications -- Objects in the game should closely resemble their real-world counterparts, and the vocabulary of the game should closely match that of the real world.
+Decision-making opportunities -- Giving the player choices encourages exploration, which increases both motivation and the amount of material learned.
+Constant feedback -- When the player makes a decision, he/she should be aware of the results immediately.  In this way, the player is able to understand the connection between decisions and their consequences.
+
+\section*{Goals for the Future}
+Playtesting study -- An empirical study of the game's effectiveness in learning outcomes
+New levels -- The player learns about the ??? level and its connection to the digital logic level
+Classroom use -- Does the game fit well within a university-level curriculum?
+
+\section*{References}
+
+\bibliographystyle{plainnat}			% Use the plain style from the natbib package
+\bibliography{SrPaper}				% SrPaper.bib
+\end{document}  

@@ -1,5 +1,16 @@
 % Aaron's poster for the Earlham Annual Research Conference
 %
+<<<<<<< HEAD
+% Template based on PetaKit "how" poster
+%
+\documentclass[a0]{a0poster}
+
+%
+\pagestyle{empty}
+%
+\setcounter{secnumdepth}{0}
+%
+=======
 % Poster based on PetaKit "how" poster, which quotes:
 % "All of the poster stuff was derived from:
 %
@@ -23,16 +34,23 @@
 
 \pagestyle{empty}
 \setcounter{secnumdepth}{0}
+>>>>>>> 936af068da594b6c6e1fc07ea804a4dd5b976b4e
 \newcommand{\standardsize}{\fontsize{28}{33}\selectfont}
 
 % The textpos package is necessary to position textblocks at arbitary 
 % places on the page.
 %
 \usepackage[absolute]{textpos}
+<<<<<<< HEAD
+\usepackage{url}
+
+% To include graphics. Times is nice on posters, but you
+=======
 
 \usepackage{url}
 
 % Graphics to include graphics. Times is nice on posters, but you
+>>>>>>> 936af068da594b6c6e1fc07ea804a4dd5b976b4e
 % might want to switch it off and go for CMR fonts.
 %
 \usepackage{graphicx,wrapfig,times}
@@ -103,7 +121,11 @@
 % Title
 %
 \begin{textblock}{23}(0,0)
+<<<<<<< HEAD
+\Title{\textit{Computer City: Sewers}: An Educational Game to Teach Digital Logic}
+=======
 \Title{\italics[Computer City: Sewers]: An Educational Game to Teach Digital Logic}
+>>>>>>> 936af068da594b6c6e1fc07ea804a4dd5b976b4e
 \end{textblock}
 
 % Authors and institutions
@@ -112,16 +134,28 @@
 \LHead{Aaron Weeden}
 \hfil
 \break
+<<<<<<< HEAD
+\textsl{Earlham College -- amweeden06@earlham.edu}
+=======
 \textsl{Earlham College -- amweeden06@cs.earlham.edu}
+>>>>>>> 936af068da594b6c6e1fc07ea804a4dd5b976b4e
 \end{textblock}
 
 % Abstract
 % 
+<<<<<<< HEAD
+%\begin{textblock}{23}(0,1.2)
+%\large
+%\input{abstract.tex}
+%\normalsize
+%\end{textblock}
+=======
 \begin{textblock}{23}(0,1.2)
 \large
 \input{abstract.tex}
 \normalsize
 \end{textblock}
+>>>>>>> 936af068da594b6c6e1fc07ea804a4dd5b976b4e
 
 % Logos at top of each column.
 % 
@@ -142,6 +176,93 @@
 \begin{textblock}{6}(0,2.6)
 \hrule
 \medskip
+<<<<<<< HEAD
+\LHead{Background}
+\standardsize
+\input{background.tex}
+\end{textblock}
+
+\begin{textblock}{11}(0,2.7)
+\begin{center}
+\includegraphics[scale=2.4]{Hierarchy.eps}
+Figure 1:  Tanenbaum's Hierarchy
+\end{center}
+\end{textblock}
+
+\begin{textblock}{11}(0,2.7)
+\begin{center}
+\includegraphics[scale=2.4]{Hierarchy.eps}
+Figure 2:  The NAND gate and its truth table
+\end{center}
+\end{textblock}
+
+\begin{textblock}{6}(0,2.6)
+\hrule
+\medskip
+\LHead{Digital Logic}
+\standardsize
+\input{digilogi.tex}
+\end{textblock}
+
+\begin{textblock}{6}(0,2.6)
+\hrule
+\medskip
+\LHead{Storyline}
+\standardsize
+\input{storyline.tex}
+\end{textblock}
+
+% Second column 
+% 
+\begin{textblock}{6}(6,2.6)
+\hrule
+\medskip
+\LHead{Gameplay}
+\standardsize
+\input{gameplay.tex}
+\end{textblock}
+
+\begin{textblock}{11}(6,2.7)
+\begin{center}
+\includegraphics[scale=2.4]{ScreenShot.eps}
+
+A gameplay screenshot
+\end{center}
+\end{textblock}
+
+% Third column 
+% 
+\begin{textblock}{6}(6,2.6)
+\hrule
+\medskip
+\LHead{Learning Goals}
+\standardsize
+\input{learning_goals.tex}
+\end{textblock}
+
+\begin{textblock}{5.5}(17,2.6)
+\hrule
+\standardsize
+\medskip
+\LHead{Design Strategies}
+\input{design_strategies.tex}  
+\end{textblock}
+
+\begin{textblock}{5.5}(17,2.6)
+\hrule
+\standardsize
+\medskip
+\LHead{Goals for the Future}
+\input{goals_for_the_future.tex}  
+\end{textblock}
+
+\begin{textblock}{5.5}(17,2.6)
+\hrule
+\standardsize
+\medskip
+\LHead{References}
+\input{references.tex}  
+=======
 \LHead{Technical Overview}
 \standardsize
 \input{technical.tex}
@@ -217,6 +338,7 @@ A performance statistics graph produced with PetaKit
 
 \begin{textblock}{2}(21.5,\PosterBottom)
 \includegraphics[height=\LogoHeight]{../artwork/Intel.eps}
+>>>>>>> 936af068da594b6c6e1fc07ea804a4dd5b976b4e
 \end{textblock}
 
 \end{document}
